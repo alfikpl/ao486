@@ -1,0 +1,894 @@
+!SESSION 2013-11-02 21:27:04.222 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.equinox.p2.reconciler.dropins 4 0 2013-11-02 21:27:06.504
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.reconciler.dropins_1.1.100.v20110815-1419 [150]" could not be resolved. Reason: Missing Constraint: Require-Bundle: org.eclipse.equinox.p2.touchpoint.eclipse; bundle-version="1.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1327)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1311)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:389)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1131)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-02 21:30:06.504
+!MESSAGE Indexed 'exe_bsp' (77 sources, 55 headers) in 0.98 sec: 919 declarations; 2,181 references; 113 unresolved inclusions; 5 syntax errors; 193 unresolved names (5.86%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-02 21:30:07.971
+!MESSAGE Indexed 'exe' (1 sources, 13 headers) in 0.20 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-11-02 22:09:45.881
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-11-02 22:09:47.084
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /home/alek/aktualne/ao486/syn/soc/firmware/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2013-11-02 22:09:48.791
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [3-1.6]', --device=1, --instance=0, --go, --accept-bad-sysid, --reset-target, /home/alek/aktualne/ao486/syn/soc/firmware/exe/exe.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2013-11-02 22:09:48.793
+!MESSAGE Downloading ELF Process failed
+!SESSION 2013-11-05 23:36:52.505 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.osgi 2 0 2013-11-05 23:37:29.221
+!MESSAGE While loading class "org.eclipse.team.internal.ccvs.core.resources.CVSWorkspaceRoot", thread "Thread[Worker-12,5,main]" timed out waiting (5002ms) for thread "Thread[main,6,main]" to finish starting bundle "org.eclipse.team.cvs.core_3.3.400.I20110510-0800 [273]". To avoid deadlock, thread "Thread[Worker-12,5,main]" is proceeding but "org.eclipse.team.internal.ccvs.core.resources.CVSWorkspaceRoot" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:plugins/org.eclipse.team.cvs.core_3.3.400.I20110510-0800.jar" by thread "main".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1087)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:297)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:268)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:463)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:400)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:476)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:429)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.team.internal.ccvs.core.util.BuildCleanupListener.resourceChanged(BuildCleanupListener.java:120)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:146)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 22 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1087)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:297)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:268)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:463)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:400)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:476)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:429)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.team.internal.ccvs.core.util.BuildCleanupListener.resourceChanged(BuildCleanupListener.java:120)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:146)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 18:44:56.580
+!MESSAGE Indexed 'exe' (1 sources, 58 headers) in 0.43 sec: 1,672 declarations; 2,021 references; 0 unresolved inclusions; 0 syntax errors; 44 unresolved names (1.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 18:44:57.506
+!MESSAGE Indexed 'exe_bsp' (78 sources, 175 headers) in 0.92 sec: 5,017 declarations; 5,873 references; 1 unresolved inclusions; 2 syntax errors; 20 unresolved names (0.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 18:45:10.442
+!MESSAGE Indexed 'exe_bsp' (78 sources, 175 headers) in 0.77 sec: 5,017 declarations; 5,873 references; 1 unresolved inclusions; 2 syntax errors; 20 unresolved names (0.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 18:45:15.386
+!MESSAGE Indexed 'exe' (1 sources, 58 headers) in 0.21 sec: 1,672 declarations; 2,021 references; 0 unresolved inclusions; 0 syntax errors; 44 unresolved names (1.18%)
+!SESSION 2013-11-06 19:21:22.063 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:22:52.177
+!MESSAGE Indexed 'exe' (1 sources, 58 headers) in 0.54 sec: 1,672 declarations; 2,021 references; 0 unresolved inclusions; 0 syntax errors; 44 unresolved names (1.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:22:53.191
+!MESSAGE Indexed 'exe_bsp' (78 sources, 175 headers) in 0.99 sec: 5,017 declarations; 5,873 references; 1 unresolved inclusions; 2 syntax errors; 20 unresolved names (0.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:23:02.636
+!MESSAGE Indexed 'exe' (1 sources, 58 headers) in 0.24 sec: 1,510 declarations; 33 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.13%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:23:03.306
+!MESSAGE Indexed 'exe_bsp' (78 sources, 175 headers) in 0.67 sec: 4,724 declarations; 52 references; 1 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.04%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:23:10.633
+!MESSAGE Indexed 'exe' (1 sources, 58 headers) in 0.20 sec: 1,557 declarations; 197 references; 0 unresolved inclusions; 0 syntax errors; 44 unresolved names (2.45%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:23:11.215
+!MESSAGE Indexed 'exe_bsp' (78 sources, 175 headers) in 0.58 sec: 4,897 declarations; 1,165 references; 1 unresolved inclusions; 2 syntax errors; 20 unresolved names (0.33%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:23:32.868
+!MESSAGE Indexed 'exe' (1 sources, 58 headers) in 0.15 sec: 1,510 declarations; 33 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.13%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:23:33.360
+!MESSAGE Indexed 'exe_bsp' (78 sources, 175 headers) in 0.49 sec: 4,724 declarations; 52 references; 1 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.04%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:23:38.724
+!MESSAGE Indexed 'exe' (1 sources, 58 headers) in 0.13 sec: 1,510 declarations; 33 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.13%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:23:39.129
+!MESSAGE Indexed 'exe_bsp' (78 sources, 175 headers) in 0.40 sec: 4,724 declarations; 52 references; 1 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.04%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:23:50.579
+!MESSAGE Indexed 'exe' (1 sources, 58 headers) in 0.14 sec: 1,510 declarations; 33 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.13%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:24:45.268
+!MESSAGE Indexed 'exe' (1 sources, 58 headers) in 0.15 sec: 1,672 declarations; 2,021 references; 0 unresolved inclusions; 0 syntax errors; 44 unresolved names (1.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:24:45.692
+!MESSAGE Indexed 'exe_bsp' (78 sources, 175 headers) in 0.42 sec: 5,017 declarations; 5,873 references; 1 unresolved inclusions; 2 syntax errors; 20 unresolved names (0.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:32:35.369
+!MESSAGE Indexed 'exe' (1 sources, 60 headers) in 0.15 sec: 1,672 declarations; 2,023 references; 0 unresolved inclusions; 0 syntax errors; 44 unresolved names (1.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:32:35.844
+!MESSAGE Indexed 'exe_bsp' (78 sources, 175 headers) in 0.47 sec: 5,017 declarations; 5,873 references; 1 unresolved inclusions; 2 syntax errors; 20 unresolved names (0.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:32:44.102
+!MESSAGE Indexed 'exe_bsp' (78 sources, 175 headers) in 0.43 sec: 5,017 declarations; 5,873 references; 1 unresolved inclusions; 2 syntax errors; 20 unresolved names (0.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-11-06 19:32:49.520
+!MESSAGE Indexed 'exe' (1 sources, 60 headers) in 0.14 sec: 1,672 declarations; 2,023 references; 0 unresolved inclusions; 0 syntax errors; 44 unresolved names (1.18%)
+
+!ENTRY org.eclipse.core.jobs 2 2 2013-11-06 19:36:41.609
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob$ProgressUpdateJob
+!SESSION 2013-11-06 19:36:46.940 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui 4 0 2013-11-07 21:38:11.192
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)])
+	at org.eclipse.swt.SWT.error(SWT.java:4282)
+	at org.eclipse.swt.SWT.error(SWT.java:4197)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+	at org.eclipse.swt.SWT.error(SWT.java:4308)
+	at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1826)
+	at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:687)
+	at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
+	at org.eclipse.epp.usagedata.internal.ui.wizards.TermsOfUseWizardPage.createControl(TermsOfUseWizardPage.java:48)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:174)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:736)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:608)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at org.eclipse.epp.usagedata.internal.ui.uploaders.AskUserUploader$1.run(AskUserUploader.java:65)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+
+!ENTRY org.eclipse.jface 2 0 2013-11-18 21:07:20.582
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-11-18 21:07:20.582
+!MESSAGE A conflict occurred for ALT+ARROW_RIGHT:
+Binding(ALT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.hover.forwardMacroExpansion,Forward,
+		Step forward in macro expansions,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.cdt.internal.ui.text.c.hover.CMacroExpansionExplorationControl$4@8b4f65,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.macroExpansionHoverScope,,,system)
+Binding(ALT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.ui.navigate.forwardHistory,Forward History,
+		Move forward in the editor navigation history,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@98ad6),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-11-18 21:07:20.582
+!MESSAGE A conflict occurred for ALT+ARROW_LEFT:
+Binding(ALT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.hover.backwardMacroExpansion,Back,
+		Step backward in macro expansions,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.cdt.internal.ui.text.c.hover.CMacroExpansionExplorationControl$3@79fb1c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.macroExpansionHoverScope,,,system)
+Binding(ALT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.ui.navigate.backwardHistory,Backward History,
+		Move backward in the editor navigation history,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@550a48),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2013-11-18 21:07:30.043
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-11-18 21:07:30.043
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsAction@b4c725)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsAction@b4c725)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.macroExpansionHoverScope,,,system)
+!SESSION 2013-11-30 23:42:28.205 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-11-30 23:42:30.828
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 0 2013-11-30 23:42:36.196
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)])
+	at org.eclipse.swt.SWT.error(SWT.java:4282)
+	at org.eclipse.swt.SWT.error(SWT.java:4197)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+	at org.eclipse.swt.SWT.error(SWT.java:4308)
+	at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1826)
+	at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:687)
+	at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
+	at org.eclipse.epp.usagedata.internal.ui.wizards.TermsOfUseWizardPage.createControl(TermsOfUseWizardPage.java:48)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:174)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:736)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:608)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at org.eclipse.epp.usagedata.internal.ui.uploaders.AskUserUploader$1.run(AskUserUploader.java:65)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+!SESSION 2013-12-01 21:27:17.543 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-12-01 21:27:21.253
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2013-12-01 22:01:33.105
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-12-01 22:01:33.105
+!MESSAGE A conflict occurred for ALT+ARROW_RIGHT:
+Binding(ALT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.hover.forwardMacroExpansion,Forward,
+		Step forward in macro expansions,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.cdt.internal.ui.text.c.hover.CMacroExpansionExplorationControl$4@1318ddc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.macroExpansionHoverScope,,,system)
+Binding(ALT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.ui.navigate.forwardHistory,Forward History,
+		Move forward in the editor navigation history,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@5883d9),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-12-01 22:01:33.105
+!MESSAGE A conflict occurred for ALT+ARROW_LEFT:
+Binding(ALT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.hover.backwardMacroExpansion,Back,
+		Step backward in macro expansions,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.cdt.internal.ui.text.c.hover.CMacroExpansionExplorationControl$3@1384f06,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.macroExpansionHoverScope,,,system)
+Binding(ALT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.ui.navigate.backwardHistory,Backward History,
+		Move backward in the editor navigation history,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@1cc4bf5),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2013-12-01 22:01:33.113
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-12-01 22:01:33.113
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsAction@847678)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsAction@847678)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.macroExpansionHoverScope,,,system)
+
+!ENTRY org.eclipse.ui 4 0 2013-12-07 18:31:42.589
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)])
+	at org.eclipse.swt.SWT.error(SWT.java:4282)
+	at org.eclipse.swt.SWT.error(SWT.java:4197)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+	at org.eclipse.swt.SWT.error(SWT.java:4308)
+	at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1826)
+	at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:687)
+	at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
+	at org.eclipse.epp.usagedata.internal.ui.wizards.TermsOfUseWizardPage.createControl(TermsOfUseWizardPage.java:48)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:174)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:736)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:608)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at org.eclipse.epp.usagedata.internal.ui.uploaders.AskUserUploader$1.run(AskUserUploader.java:65)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+!SESSION 2013-12-23 23:26:33.773 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui 4 0 2013-12-23 23:26:43.111
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)])
+	at org.eclipse.swt.SWT.error(SWT.java:4282)
+	at org.eclipse.swt.SWT.error(SWT.java:4197)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+	at org.eclipse.swt.SWT.error(SWT.java:4308)
+	at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1826)
+	at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:687)
+	at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
+	at org.eclipse.epp.usagedata.internal.ui.wizards.TermsOfUseWizardPage.createControl(TermsOfUseWizardPage.java:48)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:174)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:736)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:608)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at org.eclipse.epp.usagedata.internal.ui.uploaders.AskUserUploader$1.run(AskUserUploader.java:65)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+!SESSION 2013-12-27 02:57:54.736 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui 4 0 2013-12-29 22:14:21.217
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)])
+	at org.eclipse.swt.SWT.error(SWT.java:4282)
+	at org.eclipse.swt.SWT.error(SWT.java:4197)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+	at org.eclipse.swt.SWT.error(SWT.java:4308)
+	at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1826)
+	at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:687)
+	at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
+	at org.eclipse.epp.usagedata.internal.ui.wizards.TermsOfUseWizardPage.createControl(TermsOfUseWizardPage.java:48)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:174)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:736)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:608)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at org.eclipse.epp.usagedata.internal.ui.uploaders.AskUserUploader$1.run(AskUserUploader.java:65)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+
+!ENTRY org.eclipse.core.jobs 2 2 2013-12-31 00:15:43.732
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob$ProgressUpdateJob
+!SESSION 2014-01-07 19:30:21.664 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui 4 0 2014-01-07 19:30:31.186
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)])
+	at org.eclipse.swt.SWT.error(SWT.java:4282)
+	at org.eclipse.swt.SWT.error(SWT.java:4197)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+	at org.eclipse.swt.SWT.error(SWT.java:4308)
+	at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1826)
+	at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:687)
+	at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
+	at org.eclipse.epp.usagedata.internal.ui.wizards.TermsOfUseWizardPage.createControl(TermsOfUseWizardPage.java:48)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:174)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:736)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:608)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at org.eclipse.epp.usagedata.internal.ui.uploaders.AskUserUploader$1.run(AskUserUploader.java:65)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+!SESSION 2014-01-09 20:14:45.530 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.core.jobs 2 2 2014-01-12 01:45:22.391
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob$ProgressUpdateJob
+
+!ENTRY org.eclipse.core.jobs 2 2 2014-01-12 01:45:22.392
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob$ProgressUpdateJob
+!SESSION 2014-01-15 20:29:46.145 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui 4 0 2014-01-15 20:29:54.300
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)])
+	at org.eclipse.swt.SWT.error(SWT.java:4282)
+	at org.eclipse.swt.SWT.error(SWT.java:4197)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+	at org.eclipse.swt.SWT.error(SWT.java:4308)
+	at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1826)
+	at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:687)
+	at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
+	at org.eclipse.epp.usagedata.internal.ui.wizards.TermsOfUseWizardPage.createControl(TermsOfUseWizardPage.java:48)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:174)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:736)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:608)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at org.eclipse.epp.usagedata.internal.ui.uploaders.AskUserUploader$1.run(AskUserUploader.java:65)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+!SESSION 2014-01-17 23:39:30.199 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-01-17 23:39:32.893
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2014-01-29 21:25:56.702 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-01-29 21:26:04.792
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 0 2014-01-29 21:26:10.074
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)])
+	at org.eclipse.swt.SWT.error(SWT.java:4282)
+	at org.eclipse.swt.SWT.error(SWT.java:4197)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+	at org.eclipse.swt.SWT.error(SWT.java:4308)
+	at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1826)
+	at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:687)
+	at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
+	at org.eclipse.epp.usagedata.internal.ui.wizards.TermsOfUseWizardPage.createControl(TermsOfUseWizardPage.java:48)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:174)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:736)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:608)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at org.eclipse.epp.usagedata.internal.ui.uploaders.AskUserUploader$1.run(AskUserUploader.java:65)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+
+!ENTRY org.eclipse.core.jobs 2 2 2014-01-29 23:59:09.618
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob$ProgressUpdateJob
+!SESSION 2014-03-23 22:31:52.923 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui 4 0 2014-03-23 22:32:02.222
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)])
+	at org.eclipse.swt.SWT.error(SWT.java:4282)
+	at org.eclipse.swt.SWT.error(SWT.java:4197)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+	at org.eclipse.swt.SWT.error(SWT.java:4308)
+	at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1826)
+	at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:687)
+	at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
+	at org.eclipse.epp.usagedata.internal.ui.wizards.TermsOfUseWizardPage.createControl(TermsOfUseWizardPage.java:48)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:174)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:736)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:608)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at org.eclipse.epp.usagedata.internal.ui.uploaders.AskUserUploader$1.run(AskUserUploader.java:65)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+!SESSION 2014-03-30 13:35:43.333 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui 4 0 2014-03-30 13:36:29.457
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)])
+	at org.eclipse.swt.SWT.error(SWT.java:4282)
+	at org.eclipse.swt.SWT.error(SWT.java:4197)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+	at org.eclipse.swt.SWT.error(SWT.java:4308)
+	at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1826)
+	at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:687)
+	at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
+	at org.eclipse.epp.usagedata.internal.ui.wizards.TermsOfUseWizardPage.createControl(TermsOfUseWizardPage.java:48)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:174)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:736)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:608)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at org.eclipse.epp.usagedata.internal.ui.uploaders.AskUserUploader$1.run(AskUserUploader.java:65)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more

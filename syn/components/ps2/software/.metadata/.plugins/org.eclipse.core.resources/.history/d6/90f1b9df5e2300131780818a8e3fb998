@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <unistd.h>
+
+#include <system.h>
+#include <io.h>
+
+int main() {
+	while(1) {
+		int impl = IORD(PIO_0_BASE, 0);
+		printf("Impl: %02x\n", impl);
+		usleep(1000000);
+
+		if(impl & 0x1) {
+			while((IORD_DIRECT(PS2_0_BASE, 4) & 1) == 1) {
+				int scancode = IORD(PS2_0_BASE, 0);
+				printf("code: %02x\n", scancode);
+			}
+		}
+	}
+
+	return 0;
+}

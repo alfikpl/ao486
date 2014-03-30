@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project exe ****
+
+make all 
+Info: Building ../exe_bsp/
+make --no-print-directory -C ../exe_bsp/
+[BSP build complete]
+[exe build complete]
+
+**** Build Finished ****

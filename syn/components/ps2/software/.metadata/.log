@@ -1,0 +1,397 @@
+!SESSION 2013-09-22 09:51:22.010 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.equinox.p2.reconciler.dropins 4 0 2013-09-22 09:51:24.447
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.reconciler.dropins_1.1.100.v20110815-1419 [150]" could not be resolved. Reason: Missing Constraint: Require-Bundle: org.eclipse.equinox.p2.touchpoint.eclipse; bundle-version="1.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1327)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1311)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:389)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1131)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-09-22 09:54:06.207
+!MESSAGE Indexed 'exe_bsp' (77 sources, 55 headers) in 0.88 sec: 919 declarations; 2,181 references; 113 unresolved inclusions; 5 syntax errors; 193 unresolved names (5.86%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-09-22 09:54:07.524
+!MESSAGE Indexed 'exe' (1 sources, 13 headers) in 0.03 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 09:59:36.202
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 09:59:37.717
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:04:27.233
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:04:28.936
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:06:01.961
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:06:22.030
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:06:23.454
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:06:41.531
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:07:02.905
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:07:04.537
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:12:04.114
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:12:05.543
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:13:58.479
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:14:00.095
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:14:59.053
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:15:00.536
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:17:19.219
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:17:20.698
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:18:44.589
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:19:04.659
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:19:06.196
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:20:54.160
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:20:55.729
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:25:51.530
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:25:53.130
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:26:30.377
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:26:50.444
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:26:51.928
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:31:59.849
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:32:19.914
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:32:21.376
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:37:03.285
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:37:05.022
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:40:29.033
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:40:49.103
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:40:50.535
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:41:53.153
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:41:54.760
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:59:50.674
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 10:59:52.298
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:14:40.292
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:14:41.865
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:16:32.957
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:16:34.627
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:17:33.243
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:17:33.665
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:17:35.273
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:17:42.981
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:17:43.326
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:17:44.936
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:18:08.359
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:18:08.855
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:18:10.506
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:18:24.745
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:18:25.160
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:18:26.723
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:32:51.668
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:32:52.020
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:32:53.597
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:33:06.759
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:33:06.777
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 11:33:08.178
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:28:33.333
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:28:33.350
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:28:34.726
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:30:17.206
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:30:17.221
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:30:18.597
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:45:29.894
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:45:29.909
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:45:31.282
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:56:12.801
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:56:12.817
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 12:56:14.192
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 14:52:45.944
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 14:52:45.960
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 14:52:47.334
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:06:40.122
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:06:40.138
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:06:41.513
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:33:08.777
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:33:08.793
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:33:10.168
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:35:35.554
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:35:35.570
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:35:36.941
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:44:03.073
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:44:03.088
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 15:44:04.461
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:05:03.966
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:05:03.981
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:05:05.355
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:13:55.598
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:13:55.613
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:13:56.987
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:17:59.246
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:17:59.262
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:18:00.638
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:18:46.580
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:18:46.597
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:18:48.094
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:20:29.271
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:20:29.287
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:20:31.740
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:21:08.179
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:21:08.194
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:21:09.568
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:28:07.672
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:28:07.689
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 17:28:09.067
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:04:28.668
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:04:28.683
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:04:30.058
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:12:51.483
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:12:51.498
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:12:52.870
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:13:12.074
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:13:12.090
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:13:13.464
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:17:27.470
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [3-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:17:27.486
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2013-09-22 18:17:28.856
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [3-1.6]' --device=1 --instance=0 --go --accept-bad-sysid /home/alek/aktualne/ps2/software/exe/exe.elf]

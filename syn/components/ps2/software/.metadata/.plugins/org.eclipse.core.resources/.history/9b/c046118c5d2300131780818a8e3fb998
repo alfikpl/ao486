@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <system.h>
+#include <io.h>
+
+int main() {
+	printf("Port: %x\n", IORD(PIO_0_BASE, 0));
+
+	return 0;
+}

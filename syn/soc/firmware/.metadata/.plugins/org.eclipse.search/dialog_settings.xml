@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.cdt.ui.pdomSearchViewPage">
+		<item value="true" key="showEnclosingDefinitions"/>
+	</section>
+</section>

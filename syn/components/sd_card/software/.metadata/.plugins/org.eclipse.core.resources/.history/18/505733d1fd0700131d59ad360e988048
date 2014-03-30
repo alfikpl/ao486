@@ -1,0 +1,15 @@
+
+#include <stdio.h>
+#include <system.h>
+#include <io.h>
+
+int main() {
+
+	volatile unsigned char buf[512];
+
+	int status = IORD(SD_CARD_0_BASE, 0);
+
+	printf("SD card status: %d\n", status);
+
+	return 0;
+}

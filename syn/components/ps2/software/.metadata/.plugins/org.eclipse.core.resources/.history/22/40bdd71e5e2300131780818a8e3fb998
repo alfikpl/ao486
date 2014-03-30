@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <unistd.h>
+
+#include <system.h>
+#include <io.h>
+
+int main() {
+	while(1) {
+		int status = IORD(PIO_0_BASE, 0);
+		printf("Port: %x\n", status);
+		usleep(1000000);
+
+		if()
+	}
+
+	return 0;
+}

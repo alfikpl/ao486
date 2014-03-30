@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <unistd.h>
+
+#include <system.h>
+#include <io.h>
+
+int main() {
+
+	IOWR_8DIRECT(PS2_0_BASE, 4, 0x60);
+	IOWR_8DIRECT(PS2_0_BASE, 0, 0x03);
+
+	usleep(100000);
+
+	IOWR_8DIRECT(PS2_0_BASE, 4, 0xD4);
+	IOWR_8DIRECT(PS2_0_BASE, 0, 0xF5);
+
+	while(1) {
+
+
+		int impl = IORD(PIO_0_BASE, 0);
+		//if(impl != 0x0C) printf("Impl: %02x\n", impl);
+		//usleep(1000000);
+
+		//if(impl & 0x1) {
+			int status;
+			while(((status = IORD_8DIRECT(PS2_0_BASE, 4)) & 1) == 1) {
+				int scancode = IORD_8DIRECT(PS2_0_BASE, 0);
+				printf("code: %02x, status: %02x\n", scancode, status);
+			}
+			//if(status != 0) printf("status: %02x\n", status);
+			//usleep(1000000);
+		//}
+	}
+
+	return 0;
+}

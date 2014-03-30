@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Nios II for project exe ****
+
+make clean 
+[exe clean complete]
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Nios II for project exe_bsp ****
+
+make clean 
+[BSP clean complete]
+
+**** Build Finished ****

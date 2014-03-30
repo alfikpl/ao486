@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchConfiguration">
+<booleanAttribute key="acceptBadSysId" value="true"/>
+<booleanAttribute key="acceptBadTimestamp" value="true"/>
+<stringAttribute key="byteStreamDeviceCableName" value="USB-Blaster on localhost [3-1.6]"/>
+<stringAttribute key="byteStreamDeviceDeviceID" value="1"/>
+<stringAttribute key="byteStreamDeviceInstanceID" value="0"/>
+<booleanAttribute key="disableNios2ConsoleView" value="true"/>
+<booleanAttribute key="downloadProgram" value="true"/>
+<stringAttribute key="elfFile" value="/home/alek/aktualne/ao486/syn/soc/firmware/exe/exe.elf"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="com.altera.debug.cdi.gdb.plugin.Nios2GdbCdiDebugger"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN_SYMBOL" value="main"/>
+<booleanAttribute key="org.eclipse.cdt.launch.ENABLE_REGISTER_BOOKKEEPING" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.launch.ENABLE_VARIABLE_BOOKKEEPING" value="false"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="exe.elf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="exe"/>
+<stringAttribute key="processorCableName" value="USB-Blaster on localhost [3-1.6]"/>
+<stringAttribute key="processorDeviceIndex" value="1"/>
+<stringAttribute key="processorInstanceId" value="0"/>
+<booleanAttribute key="resetHardware" value="true"/>
+<booleanAttribute key="runProgram" value="true"/>
+</launchConfiguration>
