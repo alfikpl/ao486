@@ -17,7 +17,7 @@ The ao486 processor model has the following features:
 
 The ao486 SoC consists of the following components:
 - ao486 processor,
-- IDE hard drive redirects to a HDL SD card driver,
+- IDE hard drive that redirects to a HDL SD card driver,
 - floppy controller that also redirects to the SD card driver,
 - 8259 PIC,
 - 8237 DMA,
@@ -88,7 +88,7 @@ The ao486 successfuly runs the following software:
 ### BIOS
 
 The ao486 project uses the BIOS from the Bochs project
-(http://http://bochs.sourceforge.net, version 2.6.2). Some minor changes
+(http://bochs.sourceforge.net, version 2.6.2). Some minor changes
 were required to support the hard drive.
 
 The VGA BIOS is from the VGABIOS project (http://www.nongnu.org/vgabios,
