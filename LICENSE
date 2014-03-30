@@ -1,3 +1,11 @@
+All files in the following directories:
+- rtl
+- ao486_tool
+- sim
+are licensed under the BSD license:
+
+--------------------------------------------------------------------------------
+
 Copyright (c) 2014, Aleksander Osman
 All rights reserved.
 
@@ -21,3 +29,19 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+
+All files in the following directories:
+- bochs486
+- bochsDevs
+are taken from the Bochs Project and are licensed under the LGPL license.
+
+--------------------------------------------------------------------------------
+
+The binary file sd/fd_1_44m/fdboot.img is taken from the FreeDOS project.
+
+The binary file sd/bios/bochs_legacy is a compiled BIOS from the Bochs project.
+
+The binary file sd/vgabios/vgabios-lgpl is a compiled VGA BIOS from the vgabios
+project.
