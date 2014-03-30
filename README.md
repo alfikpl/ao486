@@ -1,11 +1,11 @@
-# Description
+## Description
 
 The ao486 is an x86 compatible Verilog core implementing all features of a 486 SX.
 The core was modeled and tested based on the Bochs software x86 implementation.
 Together with the 486 core, the ao486 project also contains a SoC capable of
 booting the Linux kernel version 3.13 and Microsoft Windows 95.
 
-# Features
+## Features
 
 The ao486 processor model has the following features:
 - pipeline architecture with 4 main stages: decode, read, execute and write,
@@ -33,7 +33,7 @@ parts together, and supplies the SDRAM controller.
 
 The ao486 project is currently only running on the Terasic DE2-115 board.
 
-# Resource usage
+## Resource usage
 
 The project is synthesised for the Altera Cyclone IV E EP4CE115F29C7 device.
 Resource utilization is as follows:
@@ -77,7 +77,7 @@ Total PLLs : 1 / 4 ( 25 % )
 
 The maximum frequency is 39 MHz. The project uses a 30 MHz clock.
 
-# Running software
+## Running software
 
 The ao486 successfuly runs the following software:
 - Microsoft MS-DOS version 6.22,
@@ -85,7 +85,7 @@ The ao486 successfuly runs the following software:
 - Microsoft Windows 95,
 - Linux 3.13.1.
 
-# BIOS
+## BIOS
 
 The ao486 project uses the BIOS from the Bochs project. Some minor changes
 were required to support the hard drive.
@@ -93,14 +93,14 @@ were required to support the hard drive.
 The VGA BIOS is from the VGABIOS project. No changes were required. The VGA
 model does not have VBE extensions, so the extensions were disabled.
 
-# NIOS2 controller
+## NIOS2 controller
 
 The ao486 SoC uses a Altera NIOS2 processor for managing all components and
 displaying the contents of the On Screen Display.
 
 The OSD allows the user to insert and remove floppy disks.
 
-# License
+## License
 
 All files in the following directories:
 - rtl
