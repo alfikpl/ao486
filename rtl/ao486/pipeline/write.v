@@ -291,13 +291,8 @@ module write(
     input       [31:0]  dst_final,
     
     input               exe_mult_overflow,
-    input       [31:0]  exe_stack_offset,
-    
-    //debug
-    output       tb_finish_instr
+    input       [31:0]  exe_stack_offset   
 );
-
-assign tb_finish_instr = wr_finished || (wr_ready && wr_hlt_in_progress);
 
 //------------------------------------------------------------------------------
 

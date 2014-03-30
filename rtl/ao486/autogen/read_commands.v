@@ -72,36 +72,36 @@ wire cond_33 = rd_cmd == `CMD_io_allow && rd_cmdex == `CMDEX_io_allow_1;
 wire cond_34 = rd_io_allow_1_fault || rd_mutex_busy_active;
 wire cond_35 = rd_cmd == `CMD_io_allow && rd_cmdex == `CMDEX_io_allow_2;
 wire cond_36 = rd_io_allow_2_fault;
-wire cond_37 = rd_cmd == `CMD_INC_DEC && { rd_cmdex[3:1], 1'b0 } == `CMDEX_INC_DEC_modregrm;
-wire cond_38 = rd_cmd == `CMD_INC_DEC && { rd_cmdex[3:1], 1'b0 } == `CMDEX_INC_DEC_implicit;
-wire cond_39 = rd_mutex_busy_implicit_reg;
-wire cond_40 = rd_cmd == `CMD_SCAS;
-wire cond_41 = rd_mutex_busy_memory || (rd_mutex_busy_ecx && rd_prefix_group_1_rep != 2'd0);
-wire cond_42 = ~(rd_string_ignore);
+wire cond_37 = rd_cmd == `CMD_SCAS;
+wire cond_38 = rd_mutex_busy_memory || (rd_mutex_busy_ecx && rd_prefix_group_1_rep != 2'd0);
+wire cond_39 = ~(rd_string_ignore);
+wire cond_40 = rd_cmd == `CMD_INC_DEC && { rd_cmdex[3:1], 1'b0 } == `CMDEX_INC_DEC_modregrm;
+wire cond_41 = rd_cmd == `CMD_INC_DEC && { rd_cmdex[3:1], 1'b0 } == `CMDEX_INC_DEC_implicit;
+wire cond_42 = rd_mutex_busy_implicit_reg;
 wire cond_43 = rd_cmd == `CMD_RET_near && rd_cmdex != `CMDEX_RET_near_LAST;
 wire cond_44 = rd_cmd == `CMD_ARPL;
 wire cond_45 = rd_mutex_busy_modregrm_rm || rd_mutex_busy_modregrm_reg;
 wire cond_46 = rd_mutex_busy_memory || rd_mutex_busy_modregrm_reg;
 wire cond_47 = rd_cmd == `CMD_BSWAP;
-wire cond_48 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_task_gate_STEP_0;
-wire cond_49 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_task_gate_STEP_1;
-wire cond_50 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_int_trap_gate_STEP_1;
-wire cond_51 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_real_STEP_3;
-wire cond_52 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_real_STEP_4;
-wire cond_53 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_protected_STEP_1;
-wire cond_54 = (rd_cmd == `CMD_MOV_to_seg || rd_cmd == `CMD_LLDT || rd_cmd == `CMD_LTR) && rd_cmdex == `CMDEX_MOV_to_seg_LLDT_LTR_STEP_1;
-wire cond_55 = rd_cmd == `CMD_MOV_to_seg || cpl == 2'd0;
-wire cond_56 = rd_cmd == `CMD_MOV_to_seg;
-wire cond_57 = rd_cmd == `CMD_LLDT;
-wire cond_58 = rd_cmd == `CMD_LTR;
-wire cond_59 = rd_cmd == `CMD_LxS && rd_cmdex == `CMDEX_LxS_STEP_1;
-wire cond_60 = ~(rd_address_effective_ready) || rd_mutex_busy_memory;
-wire cond_61 = rd_operand_16bit;
-wire cond_62 = rd_cmd == `CMD_LxS && rd_cmdex == `CMDEX_LxS_STEP_2;
-wire cond_63 = rd_operand_32bit;
-wire cond_64 = rd_cmd == `CMD_LxS && rd_cmdex == `CMDEX_LxS_STEP_3;
-wire cond_65 = rd_cmd == `CMD_LxS && rd_cmdex == `CMDEX_LxS_STEP_LAST;
-wire cond_66 = rd_cmd == `CMD_CLC || rd_cmd == `CMD_CMC || rd_cmd == `CMD_CLD || rd_cmd == `CMD_STC || rd_cmd == `CMD_STD || rd_cmd == `CMD_SAHF;
+wire cond_48 = rd_cmd == `CMD_LxS && rd_cmdex == `CMDEX_LxS_STEP_1;
+wire cond_49 = ~(rd_address_effective_ready) || rd_mutex_busy_memory;
+wire cond_50 = rd_operand_16bit;
+wire cond_51 = rd_cmd == `CMD_LxS && rd_cmdex == `CMDEX_LxS_STEP_2;
+wire cond_52 = rd_operand_32bit;
+wire cond_53 = rd_cmd == `CMD_LxS && rd_cmdex == `CMDEX_LxS_STEP_3;
+wire cond_54 = rd_cmd == `CMD_LxS && rd_cmdex == `CMDEX_LxS_STEP_LAST;
+wire cond_55 = (rd_cmd == `CMD_MOV_to_seg || rd_cmd == `CMD_LLDT || rd_cmd == `CMD_LTR) && rd_cmdex == `CMDEX_MOV_to_seg_LLDT_LTR_STEP_1;
+wire cond_56 = rd_cmd == `CMD_MOV_to_seg || cpl == 2'd0;
+wire cond_57 = rd_cmd == `CMD_MOV_to_seg;
+wire cond_58 = rd_cmd == `CMD_LLDT;
+wire cond_59 = rd_cmd == `CMD_LTR;
+wire cond_60 = rd_cmd == `CMD_CLC || rd_cmd == `CMD_CMC || rd_cmd == `CMD_CLD || rd_cmd == `CMD_STC || rd_cmd == `CMD_STD || rd_cmd == `CMD_SAHF;
+wire cond_61 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_task_gate_STEP_0;
+wire cond_62 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_task_gate_STEP_1;
+wire cond_63 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_int_trap_gate_STEP_1;
+wire cond_64 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_real_STEP_3;
+wire cond_65 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_real_STEP_4;
+wire cond_66 = rd_cmd == `CMD_int && rd_cmdex == `CMDEX_int_protected_STEP_1;
 wire cond_67 = rd_cmd == `CMD_AAM || rd_cmd == `CMD_AAD;
 wire cond_68 = rd_mutex_busy_eax;
 wire cond_69 = rd_cmd == `CMD_load_seg && rd_cmdex == `CMDEX_load_seg_STEP_1;
@@ -162,22 +162,22 @@ wire cond_123 = rd_cmdex == `CMDEX_LGDT_LIDT_STEP_2;
 wire cond_124 = rd_cmd == `CMD_PUSHA;
 wire cond_125 = (rd_cmdex == `CMDEX_PUSHA_STEP_0 && rd_mutex_busy_eax) || (rd_cmdex == `CMDEX_PUSHA_STEP_1 && rd_mutex_busy_ecx) || (rd_cmdex == `CMDEX_PUSHA_STEP_2 && rd_mutex_busy_edx);
 wire cond_126 = rd_cmd == `CMD_SETcc;
-wire cond_127 = rd_cmd == `CMD_ENTER && rd_cmdex == `CMDEX_ENTER_FIRST;
-wire cond_128 = rd_mutex_busy_ebp;
-wire cond_129 = rd_cmd == `CMD_ENTER && rd_cmdex == `CMDEX_ENTER_LAST;
-wire cond_130 = rd_cmd == `CMD_ENTER && rd_cmdex == `CMDEX_ENTER_PUSH;
-wire cond_131 = rd_cmd == `CMD_ENTER && rd_cmdex == `CMDEX_ENTER_LOOP;
-wire cond_132 = rd_cmd == `CMD_CMPXCHG;
+wire cond_127 = rd_cmd == `CMD_CMPXCHG;
+wire cond_128 = rd_cmd == `CMD_ENTER && rd_cmdex == `CMDEX_ENTER_FIRST;
+wire cond_129 = rd_mutex_busy_ebp;
+wire cond_130 = rd_cmd == `CMD_ENTER && rd_cmdex == `CMDEX_ENTER_LAST;
+wire cond_131 = rd_cmd == `CMD_ENTER && rd_cmdex == `CMDEX_ENTER_PUSH;
+wire cond_132 = rd_cmd == `CMD_ENTER && rd_cmdex == `CMDEX_ENTER_LOOP;
 wire cond_133 = rd_cmd == `CMD_IMUL && rd_cmdex == `CMDEX_IMUL_modregrm_imm;
 wire cond_134 = rd_decoder[1:0] == 2'b11;
 wire cond_135 = rd_cmd == `CMD_IMUL && rd_cmdex == `CMDEX_IMUL_modregrm;
 wire cond_136 = rd_imul_modregrm_mutex_busy || rd_mutex_busy_modregrm_rm;
 wire cond_137 = rd_imul_modregrm_mutex_busy || rd_mutex_busy_memory;
-wire cond_138 = { rd_cmd[6:1], 1'd0 } == `CMD_SHxD && rd_cmdex != `CMDEX_SHxD_implicit;
-wire cond_139 = { rd_cmd[6:1], 1'd0 } == `CMD_SHxD && rd_cmdex == `CMDEX_SHxD_implicit;
-wire cond_140 = rd_mutex_busy_modregrm_rm || rd_mutex_busy_ecx || rd_mutex_busy_modregrm_reg;
-wire cond_141 = rd_mutex_busy_memory || rd_mutex_busy_ecx || rd_mutex_busy_modregrm_reg;
-wire cond_142 = rd_cmd == `CMD_LEAVE;
+wire cond_138 = rd_cmd == `CMD_LEAVE;
+wire cond_139 = { rd_cmd[6:1], 1'd0 } == `CMD_SHxD && rd_cmdex != `CMDEX_SHxD_implicit;
+wire cond_140 = { rd_cmd[6:1], 1'd0 } == `CMD_SHxD && rd_cmdex == `CMDEX_SHxD_implicit;
+wire cond_141 = rd_mutex_busy_modregrm_rm || rd_mutex_busy_ecx || rd_mutex_busy_modregrm_reg;
+wire cond_142 = rd_mutex_busy_memory || rd_mutex_busy_ecx || rd_mutex_busy_modregrm_reg;
 wire cond_143 = { rd_cmd[6:3], 3'd0 } == `CMD_Arith && rd_cmdex == `CMDEX_Arith_modregrm;
 wire cond_144 = rd_decoder[5:3] != 3'b111;
 wire cond_145 = rd_decoder[5:3] != 3'b111 && rd_arith_modregrm_to_rm;
@@ -185,10 +185,10 @@ wire cond_146 = rd_decoder[5:3] != 3'b111 && rd_arith_modregrm_to_reg;
 wire cond_147 = { rd_cmd[6:3], 3'd0 } == `CMD_Arith && rd_cmdex == `CMDEX_Arith_modregrm_imm;
 wire cond_148 = rd_decoder[13:11] != 3'b111;
 wire cond_149 = { rd_cmd[6:3], 3'd0 } == `CMD_Arith && rd_cmdex == `CMDEX_Arith_immediate;
-wire cond_150 = rd_cmd == `CMD_LOOP;
-wire cond_151 = rd_cmd == `CMD_MUL;
-wire cond_152 = rd_mutex_busy_eax || rd_mutex_busy_modregrm_rm;
-wire cond_153 = rd_mutex_busy_eax || rd_mutex_busy_memory;
+wire cond_150 = rd_cmd == `CMD_MUL;
+wire cond_151 = rd_mutex_busy_eax || rd_mutex_busy_modregrm_rm;
+wire cond_152 = rd_mutex_busy_eax || rd_mutex_busy_memory;
+wire cond_153 = rd_cmd == `CMD_LOOP;
 wire cond_154 = rd_cmd == `CMD_TEST && rd_cmdex == `CMDEX_TEST_modregrm;
 wire cond_155 = rd_cmd == `CMD_TEST && rd_cmdex == `CMDEX_TEST_modregrm_imm;
 wire cond_156 = rd_cmd == `CMD_TEST && rd_cmdex == `CMDEX_TEST_immediate;
@@ -207,21 +207,21 @@ wire cond_168 = rd_cmd == `CMD_PUSH && rd_cmdex == `CMDEX_PUSH_implicit;
 wire cond_169 = rd_cmd == `CMD_PUSH && rd_cmdex == `CMDEX_PUSH_modregrm;
 wire cond_170 = rd_cmd == `CMD_INT_INTO && rd_cmdex == `CMDEX_INT_INTO_INTO_STEP_0;
 wire cond_171 = rd_mutex_busy_eflags;
-wire cond_172 = rd_cmd == `CMD_IN && rd_cmdex != `CMDEX_IN_idle;
-wire cond_173 = rd_in_condition;
-wire cond_174 = ~(io_allow_check_needed) || rd_cmdex == `CMDEX_IN_protected;
-wire cond_175 = ~(rd_io_ready);
-wire cond_176 = (rd_cmd == `CMD_LAR || rd_cmd == `CMD_LSL || rd_cmd == `CMD_VERR || rd_cmd == `CMD_VERW) && rd_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_1;
-wire cond_177 = (rd_cmd == `CMD_LAR || rd_cmd == `CMD_LSL || rd_cmd == `CMD_VERR || rd_cmd == `CMD_VERW) && rd_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_2;
-wire cond_178 = ~(glob_param_1[15:2] == 14'd0) && ~(rd_descriptor_not_in_limits);
-wire cond_179 = (rd_cmd == `CMD_LAR || rd_cmd == `CMD_LSL) && rd_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_LAST;
-wire cond_180 = rd_cmd == `CMD_LAR;
-wire cond_181 = exe_mutex[`MUTEX_ACTIVE_BIT];
-wire cond_182 = glob_param_2[1:0] == 2'd0 && ((glob_param_2[2] == 1'd0 && rd_cmd == `CMD_LAR) || (glob_param_2[3] == 1'd0 && rd_cmd == `CMD_LSL));
-wire cond_183 = (rd_cmd == `CMD_VERR || rd_cmd == `CMD_VERW) && rd_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_LAST;
-wire cond_184 = glob_param_2[1:0] == 2'd0 && ((glob_param_2[4] == 1'd0 && rd_cmd == `CMD_VERR) || (glob_param_2[5] == 1'd0 && rd_cmd == `CMD_VERW));
-wire cond_185 = rd_cmd == `CMD_NOT;
-wire cond_186 = rd_cmd == `CMD_CPUID;
+wire cond_172 = rd_cmd == `CMD_CPUID;
+wire cond_173 = rd_cmd == `CMD_IN && rd_cmdex != `CMDEX_IN_idle;
+wire cond_174 = rd_in_condition;
+wire cond_175 = ~(io_allow_check_needed) || rd_cmdex == `CMDEX_IN_protected;
+wire cond_176 = ~(rd_io_ready);
+wire cond_177 = rd_cmd == `CMD_NOT;
+wire cond_178 = (rd_cmd == `CMD_LAR || rd_cmd == `CMD_LSL || rd_cmd == `CMD_VERR || rd_cmd == `CMD_VERW) && rd_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_1;
+wire cond_179 = (rd_cmd == `CMD_LAR || rd_cmd == `CMD_LSL || rd_cmd == `CMD_VERR || rd_cmd == `CMD_VERW) && rd_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_2;
+wire cond_180 = ~(glob_param_1[15:2] == 14'd0) && ~(rd_descriptor_not_in_limits);
+wire cond_181 = (rd_cmd == `CMD_LAR || rd_cmd == `CMD_LSL) && rd_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_LAST;
+wire cond_182 = rd_cmd == `CMD_LAR;
+wire cond_183 = exe_mutex[`MUTEX_ACTIVE_BIT];
+wire cond_184 = glob_param_2[1:0] == 2'd0 && ((glob_param_2[2] == 1'd0 && rd_cmd == `CMD_LAR) || (glob_param_2[3] == 1'd0 && rd_cmd == `CMD_LSL));
+wire cond_185 = (rd_cmd == `CMD_VERR || rd_cmd == `CMD_VERW) && rd_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_LAST;
+wire cond_186 = glob_param_2[1:0] == 2'd0 && ((glob_param_2[4] == 1'd0 && rd_cmd == `CMD_VERR) || (glob_param_2[5] == 1'd0 && rd_cmd == `CMD_VERW));
 wire cond_187 =  (rd_cmd == `CMD_int_2  && rd_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_0) || (rd_cmd == `CMD_CALL_2 && rd_cmdex == `CMDEX_CALL_2_call_gate_more_STEP_0) ;
 wire cond_188 = rd_ss_esp_from_tss_fault;
 wire cond_189 =  (rd_cmd == `CMD_int_2 && rd_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_1) || (rd_cmd == `CMD_CALL_2 && rd_cmdex == `CMDEX_CALL_2_call_gate_more_STEP_1) ;
@@ -233,9 +233,9 @@ wire cond_194 = rd_mutex_busy_ecx && rd_prefix_group_1_rep != 2'd0;
 wire cond_195 = ~(rd_string_ignore) && ~(io_allow_check_needed && rd_cmdex == `CMDEX_INS_real_1);
 wire cond_196 = rd_cmd == `CMD_INS && (rd_cmdex == `CMDEX_INS_real_2 || rd_cmdex == `CMDEX_INS_protected_2);
 wire cond_197 = rd_mutex_busy_edx || (rd_mutex_busy_ecx && rd_prefix_group_1_rep != 2'd0);
-wire cond_198 = rd_cmd == `CMD_PUSHF;
-wire cond_199 = rd_cmd == `CMD_OUTS;
-wire cond_200 = ~(rd_string_ignore) && ~(io_allow_check_needed && rd_cmdex == `CMDEX_OUTS_first);
+wire cond_198 = rd_cmd == `CMD_OUTS;
+wire cond_199 = ~(rd_string_ignore) && ~(io_allow_check_needed && rd_cmdex == `CMDEX_OUTS_first);
+wire cond_200 = rd_cmd == `CMD_PUSHF;
 wire cond_201 = rd_cmd == `CMD_JMP && rd_cmdex == `CMDEX_JMP_Jv_STEP_0;
 wire cond_202 = rd_cmd == `CMD_JMP  && rd_cmdex == `CMDEX_JMP_Ap_STEP_1;
 wire cond_203 = rd_cmd == `CMD_JMP_2 && rd_cmdex == `CMDEX_JMP_2_call_gate_STEP_0;
@@ -305,9 +305,9 @@ assign rd_glob_param_5_set =
     1'd0;
 assign rd_glob_param_2_set =
     (cond_43)? (`TRUE) :
-    (cond_51)? (`TRUE) :
-    (cond_59 && ~cond_60 && cond_61)? (`TRUE) :
-    (cond_64 && ~cond_61)? (`TRUE) :
+    (cond_48 && ~cond_49 && cond_50)? (`TRUE) :
+    (cond_53 && ~cond_50)? (`TRUE) :
+    (cond_64)? (`TRUE) :
     (cond_79 && cond_81)? (`TRUE) :
     (cond_89 && ~cond_16 && cond_90)? (`TRUE) :
     (cond_89 && ~cond_16 && ~cond_90)? (`TRUE) :
@@ -315,8 +315,8 @@ assign rd_glob_param_2_set =
     (cond_98 && cond_101)? (`TRUE) :
     (cond_158 && ~cond_9 && cond_159)? (`TRUE) :
     (cond_160 && ~cond_9 && cond_72)? (`TRUE) :
-    (cond_177 && cond_178 && ~cond_9)? (`TRUE) :
-    (cond_177 && ~cond_178)? (`TRUE) :
+    (cond_179 && cond_180 && ~cond_9)? (`TRUE) :
+    (cond_179 && ~cond_180)? (`TRUE) :
     (cond_203 && ~cond_16)? (`TRUE) :
     (cond_227 && ~cond_16 && cond_228)? (`TRUE) :
     (cond_241 && ~cond_16 && cond_242)? (`TRUE) :
@@ -335,24 +335,24 @@ assign rd_req_esp =
     (cond_103)? (`TRUE) :
     (cond_105)? (`TRUE) :
     (cond_124)? (`TRUE) :
-    (cond_127)? (`TRUE) :
-    (cond_129)? (`TRUE) :
+    (cond_128)? (`TRUE) :
     (cond_130)? (`TRUE) :
     (cond_131)? (`TRUE) :
-    (cond_142 && ~cond_9)? (`TRUE) :
+    (cond_132)? (`TRUE) :
+    (cond_138 && ~cond_9)? (`TRUE) :
     (cond_167)? (`TRUE) :
     (cond_168)? (`TRUE) :
     (cond_169)? (`TRUE) :
-    (cond_198)? (`TRUE) :
+    (cond_200)? (`TRUE) :
     (cond_222)? (`TRUE) :
     1'd0;
 assign rd_src_is_cmdex =
     (cond_124)? (`TRUE) :
-    (cond_127)? (`TRUE) :
+    (cond_128)? (`TRUE) :
     (cond_230)? (`TRUE) :
     1'd0;
 assign rd_req_implicit_reg =
-    (cond_38)? (`TRUE) :
+    (cond_41)? (`TRUE) :
     (cond_47)? (`TRUE) :
     (cond_103)? (`TRUE) :
     (cond_163)? (`TRUE) :
@@ -360,13 +360,13 @@ assign rd_req_implicit_reg =
     1'd0;
 assign rd_req_reg =
     (cond_6)? (`TRUE) :
-    (cond_65)? (`TRUE) :
+    (cond_54)? (`TRUE) :
     (cond_133)? (`TRUE) :
     (cond_135)? (          rd_decoder[3]) :
     (cond_143 && cond_1 && cond_144)? ( rd_arith_modregrm_to_reg) :
     (cond_143 && cond_3 && cond_146)? (`TRUE) :
     (cond_166)? (`TRUE) :
-    (cond_179 && ~cond_181 && cond_182)? (`TRUE) :
+    (cond_181 && ~cond_183 && cond_184)? (`TRUE) :
     (cond_216)? (`TRUE) :
     (cond_245)? (`TRUE) :
     (cond_258)? (`TRUE) :
@@ -377,7 +377,7 @@ assign rd_dst_is_0 =
 assign address_esi =
     (cond_114)? (`TRUE) :
     (cond_162)? (`TRUE) :
-    (cond_199)? (`TRUE) :
+    (cond_198)? (`TRUE) :
     (cond_249)? (`TRUE) :
     1'd0;
 assign address_stack_save =
@@ -391,19 +391,19 @@ assign address_stack_save =
 assign read_rmw_virtual =
     (cond_0 && cond_3 && ~cond_4)? (`TRUE) :
     (cond_30 && cond_3 && ~cond_9)? (`TRUE) :
-    (cond_37 && cond_3 && ~cond_9)? (`TRUE) :
+    (cond_40 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_44 && cond_3 && ~cond_46)? (`TRUE) :
     (cond_76 && cond_3 && ~cond_78)? (    rd_cmd[1:0] != 2'd0) :
     (cond_110 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_111 && cond_3 && ~cond_113)? (`TRUE) :
-    (cond_129)? (`TRUE) :
-    (cond_132 && cond_3 && ~cond_4)? (`TRUE) :
-    (cond_138 && cond_3 && ~cond_46)? (`TRUE) :
-    (cond_139 && cond_3 && ~cond_141)? (`TRUE) :
+    (cond_127 && cond_3 && ~cond_4)? (`TRUE) :
+    (cond_130)? (`TRUE) :
+    (cond_139 && cond_3 && ~cond_46)? (`TRUE) :
+    (cond_140 && cond_3 && ~cond_142)? (`TRUE) :
     (cond_143 && cond_3 && ~cond_46 && cond_145)? (`TRUE) :
     (cond_147 && cond_3 && ~cond_9 && cond_148)? (`TRUE) :
     (cond_165 && cond_3 && ~cond_4)? (`TRUE) :
-    (cond_185 && cond_3 && ~cond_9)? (`TRUE) :
+    (cond_177 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_193 && ~cond_194 && cond_195)? (`TRUE) :
     1'd0;
 assign address_stack_pop_speedup =
@@ -412,14 +412,14 @@ assign address_stack_pop_speedup =
     (cond_251 && cond_252)? (`TRUE) :
     1'd0;
 assign io_read =
-    (cond_172 && ~cond_173 && cond_174)? (`TRUE) :
+    (cond_173 && ~cond_174 && cond_175)? (`TRUE) :
     (cond_196 && ~cond_197 && cond_195)? (`TRUE) :
     1'd0;
 assign address_leave =
-    (cond_142)? (`TRUE) :
+    (cond_138)? (`TRUE) :
     1'd0;
 assign rd_dst_is_eax =
-    (cond_40 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_37 && ~cond_38 && cond_39)? (`TRUE) :
     (cond_67)? (`TRUE) :
     (cond_149)? (`TRUE) :
     (cond_156)? (`TRUE) :
@@ -441,8 +441,8 @@ assign address_bits_transform =
     (cond_76)? ( rd_cmdex == `CMDEX_BTx_modregrm) :
     1'd0;
 assign rd_src_is_1 =
-    (cond_37)? (`TRUE) :
-    (cond_38)? (`TRUE) :
+    (cond_40)? (`TRUE) :
+    (cond_41)? (`TRUE) :
     (cond_110)? (            rd_cmdex == `CMDEX_Shift_modregrm) :
     1'd0;
 assign read_system_dword =
@@ -456,13 +456,13 @@ assign address_stack_for_ret_first =
 assign rd_req_eax =
     (cond_67)? (`TRUE) :
     (cond_107)? (`TRUE) :
-    (cond_132)? (`TRUE) :
+    (cond_127)? (`TRUE) :
     (cond_135)? (          ~(rd_decoder[3])) :
     (cond_149 && cond_144)? (`TRUE) :
-    (cond_151)? (`TRUE) :
-    (cond_162 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_150)? (`TRUE) :
+    (cond_162 && ~cond_38 && cond_39)? (`TRUE) :
     (cond_163)? (`TRUE) :
-    (cond_186)? (`TRUE) :
+    (cond_172)? (`TRUE) :
     (cond_213 && cond_214)? (`TRUE) :
     (cond_221)? ( rd_cmd != `CMD_CWD) :
     (cond_226)? (`TRUE) :
@@ -487,12 +487,12 @@ assign read_virtual =
     (cond_7 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_11 && ~cond_9)? (`TRUE) :
     (cond_22 && ~cond_16)? (`TRUE) :
-    (cond_40 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_37 && ~cond_38 && cond_39)? (`TRUE) :
     (cond_43 && ~cond_9)? (`TRUE) :
-    (cond_54 && cond_55 && cond_3 && ~cond_9)? (`TRUE) :
-    (cond_59 && ~cond_60 && cond_61)? (`TRUE) :
-    (cond_62 && cond_63)? (`TRUE) :
-    (cond_64)? (`TRUE) :
+    (cond_48 && ~cond_49 && cond_50)? (`TRUE) :
+    (cond_51 && cond_52)? (`TRUE) :
+    (cond_53)? (`TRUE) :
+    (cond_55 && cond_56 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_75 && ~cond_9)? (`TRUE) :
     (cond_76 && cond_3 && ~cond_78)? (        rd_cmd[1:0] == 2'd0) :
     (cond_79 && ~cond_84 && cond_85)? (`TRUE) :
@@ -503,27 +503,27 @@ assign read_virtual =
     (cond_103 && ~cond_104)? (`TRUE) :
     (cond_105 && ~cond_104)? (`TRUE) :
     (cond_107 && cond_3 && ~cond_109)? (`TRUE) :
-    (cond_114 && ~cond_41 && cond_42)? (`TRUE) :
-    (cond_115 && cond_42)? (`TRUE) :
+    (cond_114 && ~cond_38 && cond_39)? (`TRUE) :
+    (cond_115 && cond_39)? (`TRUE) :
     (cond_117 && cond_118 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_121 && cond_118 && ~cond_9)? (`TRUE) :
-    (cond_131)? (`TRUE) :
+    (cond_132)? (`TRUE) :
     (cond_133 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_135 && cond_3 && ~cond_137)? (`TRUE) :
-    (cond_142 && ~cond_9)? (`TRUE) :
+    (cond_138 && ~cond_9)? (`TRUE) :
     (cond_143 && cond_3 && ~cond_46 && ~cond_145)? (`TRUE) :
     (cond_147 && cond_3 && ~cond_9 && ~cond_148)? (`TRUE) :
-    (cond_151 && cond_3 && ~cond_153)? (`TRUE) :
+    (cond_150 && cond_3 && ~cond_152)? (`TRUE) :
     (cond_154 && cond_3 && ~cond_46)? (`TRUE) :
     (cond_155 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_157)? (`TRUE) :
     (cond_158 && ~cond_9)? (`TRUE) :
     (cond_160 && ~cond_9)? (`TRUE) :
     (cond_161)? (`TRUE) :
-    (cond_162 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_162 && ~cond_38 && cond_39)? (`TRUE) :
     (cond_169 && cond_3 && ~cond_9)? (`TRUE) :
-    (cond_176 && cond_3 && ~cond_9)? (`TRUE) :
-    (cond_199 && ~cond_41 && cond_200)? (`TRUE) :
+    (cond_178 && cond_3 && ~cond_9)? (`TRUE) :
+    (cond_198 && ~cond_38 && cond_199)? (`TRUE) :
     (cond_205 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_206 && ~cond_9)? (`TRUE) :
     (cond_213 && cond_214 && ~cond_9)? (`TRUE) :
@@ -531,7 +531,7 @@ assign read_virtual =
     (cond_222 && ~cond_9)? (`TRUE) :
     (cond_224 && ~cond_9)? (`TRUE) :
     (cond_225 && ~cond_9)? (`TRUE) :
-    (cond_249 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_249 && ~cond_38 && cond_39)? (`TRUE) :
     (cond_250 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_251 && ~cond_104)? (`TRUE) :
     (cond_256 && ~cond_9)? (`TRUE) :
@@ -562,14 +562,14 @@ assign write_virtual_check =
     (cond_246)? (`TRUE) :
     1'd0;
 assign rd_req_esi =
-    (cond_114 && ~cond_41 && cond_42)? (`TRUE) :
-    (cond_115 && cond_42)? (`TRUE) :
-    (cond_162 && ~cond_41 && cond_42)? (`TRUE) :
-    (cond_199 && ~cond_41 && cond_200 && ~cond_5)? (`TRUE) :
-    (cond_249 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_114 && ~cond_38 && cond_39)? (`TRUE) :
+    (cond_115 && cond_39)? (`TRUE) :
+    (cond_162 && ~cond_38 && cond_39)? (`TRUE) :
+    (cond_198 && ~cond_38 && cond_199 && ~cond_5)? (`TRUE) :
+    (cond_249 && ~cond_38 && cond_39)? (`TRUE) :
     1'd0;
 assign rd_dst_is_implicit_reg =
-    (cond_38)? (`TRUE) :
+    (cond_41)? (`TRUE) :
     (cond_47)? (`TRUE) :
     (cond_103)? (`TRUE) :
     (cond_163)? (`TRUE) :
@@ -578,31 +578,31 @@ assign rd_dst_is_implicit_reg =
 assign rd_req_eflags =
     (cond_6)? (`TRUE) :
     (cond_30)? (`TRUE) :
-    (cond_37)? (`TRUE) :
-    (cond_38)? (`TRUE) :
-    (cond_40 && ~cond_41 && cond_42 && ~cond_5)? (`TRUE) :
+    (cond_37 && ~cond_38 && cond_39 && ~cond_5)? (`TRUE) :
+    (cond_40)? (`TRUE) :
+    (cond_41)? (`TRUE) :
     (cond_44 && cond_1)? (`TRUE) :
-    (cond_66)? (`TRUE) :
+    (cond_60)? (`TRUE) :
     (cond_67)? (`TRUE) :
     (cond_76)? (`TRUE) :
     (cond_110)? (`TRUE) :
     (cond_111)? (`TRUE) :
-    (cond_114 && ~cond_41 && cond_42)? (`TRUE) :
-    (cond_115 && cond_42)? (`TRUE) :
-    (cond_132)? (`TRUE) :
+    (cond_114 && ~cond_38 && cond_39)? (`TRUE) :
+    (cond_115 && cond_39)? (`TRUE) :
+    (cond_127)? (`TRUE) :
     (cond_133)? (`TRUE) :
     (cond_135)? (`TRUE) :
-    (cond_138)? (`TRUE) :
     (cond_139)? (`TRUE) :
+    (cond_140)? (`TRUE) :
     (cond_143)? (`TRUE) :
     (cond_147)? (`TRUE) :
     (cond_149)? (`TRUE) :
-    (cond_151)? (`TRUE) :
+    (cond_150)? (`TRUE) :
     (cond_154)? (`TRUE) :
     (cond_155)? (`TRUE) :
     (cond_156)? (`TRUE) :
-    (cond_179)? (`TRUE) :
-    (cond_183)? (`TRUE) :
+    (cond_181)? (`TRUE) :
+    (cond_185)? (`TRUE) :
     (cond_222)? (`TRUE) :
     (cond_223)? (`TRUE) :
     (cond_257)? (`TRUE) :
@@ -610,8 +610,8 @@ assign rd_req_eflags =
     1'd0;
 assign rd_extra_wire =
     (cond_14)? ( rd_decoder[55:24]) :
-    (cond_179 && cond_180)? ( { 8'd0, glob_descriptor[55:40], 8'd0 }) :
-    (cond_179 && ~cond_180)? ( glob_desc_limit) :
+    (cond_181 && cond_182)? ( { 8'd0, glob_descriptor[55:40], 8'd0 }) :
+    (cond_181 && ~cond_182)? ( glob_desc_limit) :
     (cond_202)? ( rd_decoder[55:24]) :
     32'd0;
 assign address_memoffset =
@@ -621,16 +621,16 @@ assign rd_src_is_reg =
     (cond_0)? (`TRUE) :
     (cond_44 && cond_1)? (`TRUE) :
     (cond_76)? (           rd_cmdex == `CMDEX_BTx_modregrm) :
-    (cond_132)? (`TRUE) :
-    (cond_138)? (`TRUE) :
+    (cond_127)? (`TRUE) :
     (cond_139)? (`TRUE) :
+    (cond_140)? (`TRUE) :
     (cond_143)? (  rd_arith_modregrm_to_rm) :
     (cond_154)? (`TRUE) :
     (cond_165)? (`TRUE) :
     (cond_217)? (`TRUE) :
     1'd0;
 assign io_read_address =
-    (cond_172)? ( (rd_cmdex == `CMDEX_IN_imm)? { 8'd0, rd_decoder[15:8] } : (rd_cmdex == `CMDEX_IN_protected)? glob_param_1[15:0] : edx[15:0]) :
+    (cond_173)? ( (rd_cmdex == `CMDEX_IN_imm)? { 8'd0, rd_decoder[15:8] } : (rd_cmdex == `CMDEX_IN_protected)? glob_param_1[15:0] : edx[15:0]) :
     (cond_196)? ( edx[15:0]) :
     16'd0;
 assign rd_req_memory =
@@ -638,7 +638,7 @@ assign rd_req_memory =
     (cond_27)? (`TRUE) :
     (cond_28 && cond_3)? (`TRUE) :
     (cond_30 && cond_3 && ~cond_9)? (`TRUE) :
-    (cond_37 && cond_3)? (`TRUE) :
+    (cond_40 && cond_3)? (`TRUE) :
     (cond_44 && cond_3)? (`TRUE) :
     (cond_76 && cond_3)? ( rd_cmd[1:0] != 2'd0) :
     (cond_106 && cond_3)? (`TRUE) :
@@ -647,29 +647,29 @@ assign rd_req_memory =
     (cond_116 && cond_3)? (`TRUE) :
     (cond_124)? (`TRUE) :
     (cond_126 && cond_3)? (`TRUE) :
-    (cond_127)? (`TRUE) :
-    (cond_130)? (`TRUE) :
+    (cond_127 && cond_3 && ~cond_4)? (`TRUE) :
+    (cond_128)? (`TRUE) :
     (cond_131)? (`TRUE) :
-    (cond_132 && cond_3 && ~cond_4)? (`TRUE) :
-    (cond_138 && cond_3)? (`TRUE) :
+    (cond_132)? (`TRUE) :
     (cond_139 && cond_3)? (`TRUE) :
+    (cond_140 && cond_3)? (`TRUE) :
     (cond_143 && cond_3 && cond_145)? (`TRUE) :
     (cond_147 && cond_3 && cond_148)? (`TRUE) :
     (cond_166 && cond_3)? (`TRUE) :
     (cond_167)? (`TRUE) :
     (cond_168)? (`TRUE) :
     (cond_169)? (`TRUE) :
-    (cond_185 && cond_3)? (`TRUE) :
-    (cond_191 && ~cond_192 && cond_42)? (`TRUE) :
+    (cond_177 && cond_3)? (`TRUE) :
+    (cond_191 && ~cond_192 && cond_39)? (`TRUE) :
     (cond_196 && ~cond_197 && cond_195)? (`TRUE) :
-    (cond_198)? (`TRUE) :
+    (cond_200)? (`TRUE) :
     (cond_213 && ~cond_214)? (`TRUE) :
     (cond_217 && cond_3)? (`TRUE) :
     (cond_219 && cond_3)? (`TRUE) :
     (cond_227 && ~cond_16 && cond_228)? (`TRUE) :
     (cond_231)? (`TRUE) :
     (cond_246)? (`TRUE) :
-    (cond_249 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_249 && ~cond_38 && cond_39)? (`TRUE) :
     1'd0;
 assign rd_glob_param_3_set =
     (cond_15 && ~cond_16 && cond_17)? (`TRUE) :
@@ -686,15 +686,15 @@ assign rd_glob_descriptor_value =
     (cond_15 && ~cond_16 && cond_17)? ( read_8) :
     (cond_19 && cond_20)? ( read_8) :
     (cond_21 && ~cond_16 && cond_17)? ( read_8) :
-    (cond_49 && cond_20)? ( read_8) :
-    (cond_50 && ~cond_16 && cond_17)? ( read_8) :
-    (cond_53)? ( read_8) :
+    (cond_62 && cond_20)? ( read_8) :
+    (cond_63 && ~cond_16 && cond_17)? ( read_8) :
+    (cond_66)? ( read_8) :
     (cond_69 && cond_70)? ( `DESC_MASK_P | `DESC_MASK_DPL | `DESC_MASK_SEG | `DESC_MASK_DATA_RWA | { 24'd0, 4'd0, glob_param_1[15:12], glob_param_1[11:0], 4'd0, 16'hFFFF }) :
     (cond_69 && cond_71)? ( `DESC_MASK_P | `DESC_MASK_SEG | { 24'd0, 4'd0, glob_param_1[15:12], glob_param_1[11:0], 4'd0, 16'd0 }) :
     (cond_69 && cond_72)? ( `DESC_MASK_SEG | { 24'd0, 24'd0, 16'd0 }) :
     (cond_73 && cond_74)? ( read_8) :
     (cond_89 && ~cond_16 && cond_90)? ( read_8) :
-    (cond_177 && cond_178 && ~cond_9)? ( read_8) :
+    (cond_179 && cond_180 && ~cond_9)? ( read_8) :
     (cond_190 && ~cond_16 && cond_90)? ( read_8) :
     (cond_204 && cond_17)? ( read_8) :
     (cond_209 && ~cond_16 && cond_17)? ( read_8) :
@@ -715,24 +715,24 @@ assign rd_src_is_memory =
     (cond_11)? (`TRUE) :
     (cond_30 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_35 && ~cond_36)? (`TRUE) :
-    (cond_40 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_37 && ~cond_38 && cond_39)? (`TRUE) :
     (cond_95)? (`TRUE) :
     (cond_103)? (`TRUE) :
     (cond_105)? (`TRUE) :
     (cond_107 && cond_3 && ~cond_109)? (`TRUE) :
-    (cond_114 && ~cond_41 && cond_42)? (`TRUE) :
-    (cond_115 && cond_42)? (`TRUE) :
+    (cond_114 && ~cond_38 && cond_39)? (`TRUE) :
+    (cond_115 && cond_39)? (`TRUE) :
     (cond_117 && cond_118 && cond_3)? (`TRUE) :
     (cond_121 && cond_118)? (`TRUE) :
-    (cond_131)? (`TRUE) :
+    (cond_132)? (`TRUE) :
     (cond_133 && cond_3)? (`TRUE) :
     (cond_135 && cond_3 && ~cond_137)? (`TRUE) :
-    (cond_142 && ~cond_9)? (`TRUE) :
+    (cond_138 && ~cond_9)? (`TRUE) :
     (cond_143 && cond_3)? (   rd_arith_modregrm_to_reg) :
-    (cond_151 && cond_3)? (`TRUE) :
-    (cond_162 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_150 && cond_3)? (`TRUE) :
+    (cond_162 && ~cond_38 && cond_39)? (`TRUE) :
     (cond_169 && cond_3)? (`TRUE) :
-    (cond_199 && ~cond_41 && cond_200)? (`TRUE) :
+    (cond_198 && ~cond_38 && cond_199)? (`TRUE) :
     (cond_205 && cond_3)? (`TRUE) :
     (cond_206)? (`TRUE) :
     (cond_213 && cond_214)? (`TRUE) :
@@ -743,14 +743,14 @@ assign rd_src_is_memory =
     (cond_232 && cond_236 && ~cond_9)? (`TRUE) :
     (cond_237 && cond_238)? (`TRUE) :
     (cond_239 && ~cond_16 && cond_240)? (`TRUE) :
-    (cond_249 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_249 && ~cond_38 && cond_39)? (`TRUE) :
     (cond_250 && cond_3)? (`TRUE) :
     (cond_251 && ~cond_104)? (`TRUE) :
     (cond_256)? (`TRUE) :
     (cond_258 && cond_3)? (`TRUE) :
     1'd0;
 assign read_system_qword =
-    (cond_53 && ~cond_16)? (`TRUE) :
+    (cond_66 && ~cond_16)? (`TRUE) :
     1'd0;
 assign rd_dst_is_modregrm_imm =
     (cond_133 && ~cond_134)? (`TRUE) :
@@ -773,9 +773,9 @@ assign rd_dst_is_rm =
     (cond_0 && cond_1)? (`TRUE) :
     (cond_28 && cond_1)? (`TRUE) :
     (cond_30 && cond_1)? (`TRUE) :
-    (cond_37 && cond_1 && ~cond_8)? (`TRUE) :
+    (cond_40 && cond_1 && ~cond_8)? (`TRUE) :
     (cond_44 && cond_1)? (`TRUE) :
-    (cond_54 && cond_55 && cond_1)? (`TRUE) :
+    (cond_55 && cond_56 && cond_1)? (`TRUE) :
     (cond_76 && cond_1)? (`TRUE) :
     (cond_106 && cond_1)? (`TRUE) :
     (cond_110 && cond_1)? (`TRUE) :
@@ -783,31 +783,31 @@ assign rd_dst_is_rm =
     (cond_116 && cond_1)? (`TRUE) :
     (cond_120)? (`TRUE) :
     (cond_126 && cond_1)? (`TRUE) :
-    (cond_132 && cond_1 && ~cond_2)? (`TRUE) :
-    (cond_138 && cond_1)? (`TRUE) :
+    (cond_127 && cond_1 && ~cond_2)? (`TRUE) :
     (cond_139 && cond_1)? (`TRUE) :
+    (cond_140 && cond_1)? (`TRUE) :
     (cond_143 && cond_1)? (   rd_arith_modregrm_to_rm) :
     (cond_147 && cond_1)? (`TRUE) :
     (cond_154 && cond_1)? (`TRUE) :
     (cond_155 && cond_1)? (`TRUE) :
     (cond_165 && cond_1)? (`TRUE) :
-    (cond_176 && cond_1 && ~cond_8)? (`TRUE) :
-    (cond_185 && cond_1)? (`TRUE) :
+    (cond_177 && cond_1)? (`TRUE) :
+    (cond_178 && cond_1 && ~cond_8)? (`TRUE) :
     (cond_217 && cond_1)? (`TRUE) :
     (cond_219 && cond_1)? (`TRUE) :
     (cond_254)? (`TRUE) :
     1'd0;
 assign rd_req_edx =
-    (cond_186)? (`TRUE) :
+    (cond_172)? (`TRUE) :
     (cond_221)? ( rd_cmd == `CMD_CWD) :
     1'd0;
 assign rd_src_is_io =
-    (cond_172 && ~cond_173 && cond_174)? (`TRUE) :
+    (cond_173 && ~cond_174 && cond_175)? (`TRUE) :
     (cond_196 && ~cond_197 && cond_195)? (`TRUE) :
     1'd0;
 assign rd_src_is_eax =
     (cond_163)? (`TRUE) :
-    (cond_191 && ~cond_192 && cond_42)? (`TRUE) :
+    (cond_191 && ~cond_192 && cond_39)? (`TRUE) :
     (cond_212)? (`TRUE) :
     (cond_213 && ~cond_214)? (`TRUE) :
     1'd0;
@@ -816,16 +816,16 @@ assign address_stack_for_ret_second =
     1'd0;
 assign rd_glob_param_1_set =
     (cond_18 && ~cond_16)? (`TRUE) :
-    (cond_48 && ~cond_16)? (`TRUE) :
-    (cond_52)? (`TRUE) :
-    (cond_54 && cond_55 && cond_1 && cond_56)? (`TRUE) :
-    (cond_54 && cond_55 && cond_1 && cond_57)? (`TRUE) :
-    (cond_54 && cond_55 && cond_1 && cond_58)? (`TRUE) :
-    (cond_54 && cond_55 && cond_3 && ~cond_9 && cond_56)? (`TRUE) :
-    (cond_54 && cond_55 && cond_3 && ~cond_9 && cond_57)? (`TRUE) :
-    (cond_54 && cond_55 && cond_3 && ~cond_9 && cond_58)? (`TRUE) :
-    (cond_62 && cond_63)? (`TRUE) :
-    (cond_64 && cond_61)? (`TRUE) :
+    (cond_51 && cond_52)? (`TRUE) :
+    (cond_53 && cond_50)? (`TRUE) :
+    (cond_55 && cond_56 && cond_1 && cond_57)? (`TRUE) :
+    (cond_55 && cond_56 && cond_1 && cond_58)? (`TRUE) :
+    (cond_55 && cond_56 && cond_1 && cond_59)? (`TRUE) :
+    (cond_55 && cond_56 && cond_3 && ~cond_9 && cond_57)? (`TRUE) :
+    (cond_55 && cond_56 && cond_3 && ~cond_9 && cond_58)? (`TRUE) :
+    (cond_55 && cond_56 && cond_3 && ~cond_9 && cond_59)? (`TRUE) :
+    (cond_61 && ~cond_16)? (`TRUE) :
+    (cond_65)? (`TRUE) :
     (cond_75)? (`TRUE) :
     (cond_79 && cond_82)? (`TRUE) :
     (cond_88)? (`TRUE) :
@@ -834,8 +834,8 @@ assign rd_glob_param_1_set =
     (cond_157)? ( rd_ready) :
     (cond_158 && ~cond_9 && cond_72)? (`TRUE) :
     (cond_160 && ~cond_9 && cond_159)? (`TRUE) :
-    (cond_176 && cond_1 && ~cond_8)? (`TRUE) :
-    (cond_176 && cond_3 && ~cond_9)? (`TRUE) :
+    (cond_178 && cond_1 && ~cond_8)? (`TRUE) :
+    (cond_178 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_203 && ~cond_16)? (`TRUE) :
     (cond_210 && ~cond_16)? (`TRUE) :
     1'd0;
@@ -856,26 +856,26 @@ assign address_stack_pop_next =
     (cond_161)? (`TRUE) :
     1'd0;
 assign rd_req_edi =
-    (cond_40 && ~cond_41 && cond_42 && ~cond_5)? (`TRUE) :
-    (cond_114 && ~cond_41 && cond_42)? (`TRUE) :
-    (cond_115 && cond_42)? (`TRUE) :
-    (cond_191 && ~cond_192 && cond_42)? (`TRUE) :
+    (cond_37 && ~cond_38 && cond_39 && ~cond_5)? (`TRUE) :
+    (cond_114 && ~cond_38 && cond_39)? (`TRUE) :
+    (cond_115 && cond_39)? (`TRUE) :
+    (cond_191 && ~cond_192 && cond_39)? (`TRUE) :
     (cond_196 && ~cond_197 && cond_195)? (`TRUE) :
-    (cond_249 && ~cond_41 && cond_42)? (`TRUE) :
+    (cond_249 && ~cond_38 && cond_39)? (`TRUE) :
     1'd0;
 assign rd_glob_descriptor_set =
     (cond_15 && ~cond_16 && cond_17)? (`TRUE) :
     (cond_19 && cond_20)? (`TRUE) :
     (cond_21 && ~cond_16 && cond_17)? (`TRUE) :
-    (cond_49 && cond_20)? (`TRUE) :
-    (cond_50 && ~cond_16 && cond_17)? (`TRUE) :
-    (cond_53)? (`TRUE) :
+    (cond_62 && cond_20)? (`TRUE) :
+    (cond_63 && ~cond_16 && cond_17)? (`TRUE) :
+    (cond_66)? (`TRUE) :
     (cond_69 && cond_70)? (`TRUE) :
     (cond_69 && cond_71)? (`TRUE) :
     (cond_69 && cond_72)? (`TRUE) :
     (cond_73 && cond_74)? (`TRUE) :
     (cond_89 && ~cond_16 && cond_90)? (`TRUE) :
-    (cond_177 && cond_178 && ~cond_9)? (`TRUE) :
+    (cond_179 && cond_180 && ~cond_9)? (`TRUE) :
     (cond_190 && ~cond_16 && cond_90)? (`TRUE) :
     (cond_204 && cond_17)? (`TRUE) :
     (cond_209 && ~cond_16 && cond_17)? (`TRUE) :
@@ -887,8 +887,8 @@ assign rd_glob_descriptor_set =
 assign read_system_word =
     (cond_33 && ~cond_34)? (`TRUE) :
     (cond_35 && ~cond_36)? (`TRUE) :
-    (cond_51 && ~cond_16)? (`TRUE) :
-    (cond_52 && ~cond_16)? (`TRUE) :
+    (cond_64 && ~cond_16)? (`TRUE) :
+    (cond_65 && ~cond_16)? (`TRUE) :
     (cond_88)? (`TRUE) :
     (cond_187 && ~cond_188)? (`TRUE) :
     (cond_189)? (  ~(rd_ss_esp_from_tss_386)) :
@@ -896,20 +896,20 @@ assign read_system_word =
     (cond_237 && cond_238)? (  glob_descriptor[`DESC_BITS_TYPE] <= 4'd3 || rd_cmdex > `CMDEX_task_switch_3_STEP_7) :
     1'd0;
 assign address_enter_last =
-    (cond_129)? (`TRUE) :
+    (cond_130)? (`TRUE) :
     1'd0;
 assign rd_dst_is_memory_last =
-    (cond_115 && cond_42)? (`TRUE) :
+    (cond_115 && cond_39)? (`TRUE) :
     1'd0;
 assign read_system_descriptor =
     (cond_15 && ~cond_16 && cond_17)? (`TRUE) :
     (cond_19 && cond_20)? (`TRUE) :
     (cond_21 && ~cond_16 && cond_17)? (`TRUE) :
-    (cond_49 && cond_20)? (`TRUE) :
-    (cond_50 && ~cond_16 && cond_17)? (`TRUE) :
+    (cond_62 && cond_20)? (`TRUE) :
+    (cond_63 && ~cond_16 && cond_17)? (`TRUE) :
     (cond_73 && cond_74 && ~cond_16)? (`TRUE) :
     (cond_89 && ~cond_16 && cond_90)? (`TRUE) :
-    (cond_177 && cond_178 && ~cond_9)? (`TRUE) :
+    (cond_179 && cond_180 && ~cond_9)? (`TRUE) :
     (cond_190 && ~cond_16 && cond_90)? (`TRUE) :
     (cond_204 && cond_17)? (`TRUE) :
     (cond_209 && ~cond_16 && cond_17)? (`TRUE) :
@@ -918,7 +918,7 @@ assign read_system_descriptor =
     (cond_243 && ~cond_16 && ~cond_70 && cond_244)? (`TRUE) :
     1'd0;
 assign address_edi =
-    (cond_40)? (`TRUE) :
+    (cond_37)? (`TRUE) :
     (cond_115)? (`TRUE) :
     (cond_193)? (`TRUE) :
     1'd0;
@@ -949,35 +949,35 @@ assign rd_waiting =
     (cond_33 && ~cond_34 && cond_5)? (`TRUE) :
     (cond_35 && cond_36)? (`TRUE) :
     (cond_35 && ~cond_36 && cond_5)? (`TRUE) :
-    (cond_37 && cond_1 && cond_8)? (`TRUE) :
-    (cond_37 && cond_3 && cond_9)? (`TRUE) :
-    (cond_37 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
-    (cond_38 && cond_39)? (`TRUE) :
-    (cond_40 && cond_41)? (`TRUE) :
-    (cond_40 && ~cond_41 && cond_42 && cond_5)? (`TRUE) :
+    (cond_37 && cond_38)? (`TRUE) :
+    (cond_37 && ~cond_38 && cond_39 && cond_5)? (`TRUE) :
+    (cond_40 && cond_1 && cond_8)? (`TRUE) :
+    (cond_40 && cond_3 && cond_9)? (`TRUE) :
+    (cond_40 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
+    (cond_41 && cond_42)? (`TRUE) :
     (cond_43 && cond_9)? (`TRUE) :
     (cond_43 && ~cond_9 && cond_5)? (`TRUE) :
     (cond_44 && cond_1 && cond_45)? (`TRUE) :
     (cond_44 && cond_3 && cond_46)? (`TRUE) :
     (cond_44 && cond_3 && ~cond_46 && cond_5)? (`TRUE) :
-    (cond_47 && cond_39)? (`TRUE) :
-    (cond_48 && cond_16)? (`TRUE) :
-    (cond_49 && cond_20 && cond_5)? (`TRUE) :
-    (cond_50 && cond_16)? (`TRUE) :
-    (cond_50 && ~cond_16 && cond_17 && cond_5)? (`TRUE) :
-    (cond_51 && cond_16)? (`TRUE) :
-    (cond_51 && ~cond_16 && cond_5)? (`TRUE) :
-    (cond_52 && cond_16)? (`TRUE) :
-    (cond_52 && ~cond_16 && cond_5)? (`TRUE) :
-    (cond_53 && cond_16)? (`TRUE) :
-    (cond_53 && ~cond_16 && cond_5)? (`TRUE) :
-    (cond_54 && cond_55 && cond_1 && cond_8)? (`TRUE) :
-    (cond_54 && cond_55 && cond_3 && cond_9)? (`TRUE) :
-    (cond_54 && cond_55 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
-    (cond_59 && cond_60)? (`TRUE) :
-    (cond_59 && ~cond_60 && cond_61 && cond_5)? (`TRUE) :
-    (cond_62 && cond_63 && cond_5)? (`TRUE) :
-    (cond_64 && cond_5)? (`TRUE) :
+    (cond_47 && cond_42)? (`TRUE) :
+    (cond_48 && cond_49)? (`TRUE) :
+    (cond_48 && ~cond_49 && cond_50 && cond_5)? (`TRUE) :
+    (cond_51 && cond_52 && cond_5)? (`TRUE) :
+    (cond_53 && cond_5)? (`TRUE) :
+    (cond_55 && cond_56 && cond_1 && cond_8)? (`TRUE) :
+    (cond_55 && cond_56 && cond_3 && cond_9)? (`TRUE) :
+    (cond_55 && cond_56 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
+    (cond_61 && cond_16)? (`TRUE) :
+    (cond_62 && cond_20 && cond_5)? (`TRUE) :
+    (cond_63 && cond_16)? (`TRUE) :
+    (cond_63 && ~cond_16 && cond_17 && cond_5)? (`TRUE) :
+    (cond_64 && cond_16)? (`TRUE) :
+    (cond_64 && ~cond_16 && cond_5)? (`TRUE) :
+    (cond_65 && cond_16)? (`TRUE) :
+    (cond_65 && ~cond_16 && cond_5)? (`TRUE) :
+    (cond_66 && cond_16)? (`TRUE) :
+    (cond_66 && ~cond_16 && cond_5)? (`TRUE) :
     (cond_67 && cond_68)? (`TRUE) :
     (cond_73 && cond_74 && cond_16)? (`TRUE) :
     (cond_73 && cond_74 && ~cond_16 && cond_5)? (`TRUE) :
@@ -1011,9 +1011,9 @@ assign rd_waiting =
     (cond_111 && cond_1 && cond_112)? (`TRUE) :
     (cond_111 && cond_3 && cond_113)? (`TRUE) :
     (cond_111 && cond_3 && ~cond_113 && cond_5)? (`TRUE) :
-    (cond_114 && cond_41)? (`TRUE) :
-    (cond_114 && ~cond_41 && cond_42 && cond_5)? (`TRUE) :
-    (cond_115 && cond_42 && cond_5)? (`TRUE) :
+    (cond_114 && cond_38)? (`TRUE) :
+    (cond_114 && ~cond_38 && cond_39 && cond_5)? (`TRUE) :
+    (cond_115 && cond_39 && cond_5)? (`TRUE) :
     (cond_116 && cond_3 && cond_29)? (`TRUE) :
     (cond_117 && cond_118 && cond_1 && cond_8)? (`TRUE) :
     (cond_117 && cond_118 && cond_3 && cond_9)? (`TRUE) :
@@ -1023,26 +1023,26 @@ assign rd_waiting =
     (cond_121 && cond_118 && ~cond_9 && cond_5)? (`TRUE) :
     (cond_124 && cond_125)? (`TRUE) :
     (cond_126 && cond_3 && cond_29)? (`TRUE) :
-    (cond_127 && cond_128)? (`TRUE) :
-    (cond_129 && cond_5)? (`TRUE) :
-    (cond_131 && cond_5)? (`TRUE) :
-    (cond_132 && cond_1 && cond_2)? (`TRUE) :
-    (cond_132 && cond_3 && cond_4)? (`TRUE) :
-    (cond_132 && cond_3 && ~cond_4 && cond_5)? (`TRUE) :
+    (cond_127 && cond_1 && cond_2)? (`TRUE) :
+    (cond_127 && cond_3 && cond_4)? (`TRUE) :
+    (cond_127 && cond_3 && ~cond_4 && cond_5)? (`TRUE) :
+    (cond_128 && cond_129)? (`TRUE) :
+    (cond_130 && cond_5)? (`TRUE) :
+    (cond_132 && cond_5)? (`TRUE) :
     (cond_133 && cond_1 && cond_8)? (`TRUE) :
     (cond_133 && cond_3 && cond_9)? (`TRUE) :
     (cond_133 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
     (cond_135 && cond_1 && cond_136)? (`TRUE) :
     (cond_135 && cond_3 && cond_137)? (`TRUE) :
     (cond_135 && cond_3 && ~cond_137 && cond_5)? (`TRUE) :
-    (cond_138 && cond_1 && cond_45)? (`TRUE) :
-    (cond_138 && cond_3 && cond_46)? (`TRUE) :
-    (cond_138 && cond_3 && ~cond_46 && cond_5)? (`TRUE) :
-    (cond_139 && cond_1 && cond_140)? (`TRUE) :
-    (cond_139 && cond_3 && cond_141)? (`TRUE) :
-    (cond_139 && cond_3 && ~cond_141 && cond_5)? (`TRUE) :
-    (cond_142 && cond_9)? (`TRUE) :
-    (cond_142 && ~cond_9 && cond_5)? (`TRUE) :
+    (cond_138 && cond_9)? (`TRUE) :
+    (cond_138 && ~cond_9 && cond_5)? (`TRUE) :
+    (cond_139 && cond_1 && cond_45)? (`TRUE) :
+    (cond_139 && cond_3 && cond_46)? (`TRUE) :
+    (cond_139 && cond_3 && ~cond_46 && cond_5)? (`TRUE) :
+    (cond_140 && cond_1 && cond_141)? (`TRUE) :
+    (cond_140 && cond_3 && cond_142)? (`TRUE) :
+    (cond_140 && cond_3 && ~cond_142 && cond_5)? (`TRUE) :
     (cond_143 && cond_1 && cond_2)? (`TRUE) :
     (cond_143 && cond_3 && cond_46)? (`TRUE) :
     (cond_143 && cond_3 && ~cond_46 && cond_5)? (`TRUE) :
@@ -1050,9 +1050,9 @@ assign rd_waiting =
     (cond_147 && cond_3 && cond_9)? (`TRUE) :
     (cond_147 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
     (cond_149 && cond_68)? (`TRUE) :
-    (cond_151 && cond_1 && cond_152)? (`TRUE) :
-    (cond_151 && cond_3 && cond_153)? (`TRUE) :
-    (cond_151 && cond_3 && ~cond_153 && cond_5)? (`TRUE) :
+    (cond_150 && cond_1 && cond_151)? (`TRUE) :
+    (cond_150 && cond_3 && cond_152)? (`TRUE) :
+    (cond_150 && cond_3 && ~cond_152 && cond_5)? (`TRUE) :
     (cond_154 && cond_1 && cond_2)? (`TRUE) :
     (cond_154 && cond_3 && cond_46)? (`TRUE) :
     (cond_154 && cond_3 && ~cond_46 && cond_5)? (`TRUE) :
@@ -1066,30 +1066,30 @@ assign rd_waiting =
     (cond_160 && cond_9)? (`TRUE) :
     (cond_160 && ~cond_9 && cond_5)? (`TRUE) :
     (cond_161 && cond_5)? (`TRUE) :
-    (cond_162 && cond_41)? (`TRUE) :
-    (cond_162 && ~cond_41 && cond_42 && cond_5)? (`TRUE) :
+    (cond_162 && cond_38)? (`TRUE) :
+    (cond_162 && ~cond_38 && cond_39 && cond_5)? (`TRUE) :
     (cond_163 && cond_164)? (`TRUE) :
     (cond_165 && cond_1 && cond_2)? (`TRUE) :
     (cond_165 && cond_3 && cond_4)? (`TRUE) :
     (cond_165 && cond_3 && ~cond_4 && cond_5)? (`TRUE) :
-    (cond_168 && cond_39)? (`TRUE) :
+    (cond_168 && cond_42)? (`TRUE) :
     (cond_169 && cond_1 && cond_8)? (`TRUE) :
     (cond_169 && cond_3 && cond_9)? (`TRUE) :
     (cond_169 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
     (cond_170 && cond_171)? (`TRUE) :
-    (cond_172 && cond_173)? (`TRUE) :
-    (cond_172 && ~cond_173 && cond_174 && cond_175)? (`TRUE) :
-    (cond_176 && cond_1 && cond_8)? (`TRUE) :
-    (cond_176 && cond_3 && cond_9)? (`TRUE) :
-    (cond_176 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
-    (cond_177 && cond_178 && cond_9)? (`TRUE) :
-    (cond_177 && cond_178 && ~cond_9 && cond_5)? (`TRUE) :
-    (cond_179 && cond_181)? (`TRUE) :
-    (cond_183 && cond_181)? (`TRUE) :
-    (cond_185 && cond_1 && cond_8)? (`TRUE) :
-    (cond_185 && cond_3 && cond_9)? (`TRUE) :
-    (cond_185 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
-    (cond_186 && cond_68)? (`TRUE) :
+    (cond_172 && cond_68)? (`TRUE) :
+    (cond_173 && cond_174)? (`TRUE) :
+    (cond_173 && ~cond_174 && cond_175 && cond_176)? (`TRUE) :
+    (cond_177 && cond_1 && cond_8)? (`TRUE) :
+    (cond_177 && cond_3 && cond_9)? (`TRUE) :
+    (cond_177 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
+    (cond_178 && cond_1 && cond_8)? (`TRUE) :
+    (cond_178 && cond_3 && cond_9)? (`TRUE) :
+    (cond_178 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
+    (cond_179 && cond_180 && cond_9)? (`TRUE) :
+    (cond_179 && cond_180 && ~cond_9 && cond_5)? (`TRUE) :
+    (cond_181 && cond_183)? (`TRUE) :
+    (cond_185 && cond_183)? (`TRUE) :
     (cond_187 && cond_188)? (`TRUE) :
     (cond_187 && ~cond_188 && cond_5)? (`TRUE) :
     (cond_189 && cond_5)? (`TRUE) :
@@ -1099,9 +1099,9 @@ assign rd_waiting =
     (cond_193 && cond_194)? (`TRUE) :
     (cond_193 && ~cond_194 && cond_195 && cond_5)? (`TRUE) :
     (cond_196 && cond_197)? (`TRUE) :
-    (cond_196 && ~cond_197 && cond_195 && cond_175)? (`TRUE) :
-    (cond_199 && cond_41)? (`TRUE) :
-    (cond_199 && ~cond_41 && cond_200 && cond_5)? (`TRUE) :
+    (cond_196 && ~cond_197 && cond_195 && cond_176)? (`TRUE) :
+    (cond_198 && cond_38)? (`TRUE) :
+    (cond_198 && ~cond_38 && cond_199 && cond_5)? (`TRUE) :
     (cond_203 && cond_16)? (`TRUE) :
     (cond_204 && cond_17 && cond_5)? (`TRUE) :
     (cond_205 && cond_1 && cond_8)? (`TRUE) :
@@ -1147,8 +1147,8 @@ assign rd_waiting =
     (cond_243 && ~cond_16 && ~cond_70 && cond_244 && cond_5)? (`TRUE) :
     (cond_245 && cond_32)? (`TRUE) :
     (cond_246 && cond_29)? (`TRUE) :
-    (cond_249 && cond_41)? (`TRUE) :
-    (cond_249 && ~cond_41 && cond_42 && cond_5)? (`TRUE) :
+    (cond_249 && cond_38)? (`TRUE) :
+    (cond_249 && ~cond_38 && cond_39 && cond_5)? (`TRUE) :
     (cond_250 && cond_1 && cond_8)? (`TRUE) :
     (cond_250 && cond_3 && cond_9)? (`TRUE) :
     (cond_250 && cond_3 && ~cond_9 && cond_5)? (`TRUE) :
@@ -1165,8 +1165,8 @@ assign rd_waiting =
     1'd0;
 assign address_ea_buffer =
     (cond_11 && cond_12)? (`TRUE) :
-    (cond_62)? (`TRUE) :
-    (cond_64 && cond_61)? (`TRUE) :
+    (cond_51)? (`TRUE) :
+    (cond_53 && cond_50)? (`TRUE) :
     (cond_121 && cond_123)? (`TRUE) :
     (cond_206 && cond_207)? (`TRUE) :
     (cond_225)? (`TRUE) :
@@ -1182,8 +1182,8 @@ assign address_stack_for_iret_first =
     (cond_91 && cond_92)? (`TRUE) :
     1'd0;
 assign rd_req_ecx =
-    (cond_150)? (`TRUE) :
-    (cond_186)? (`TRUE) :
+    (cond_153)? (`TRUE) :
+    (cond_172)? (`TRUE) :
     1'd0;
 assign read_rmw_system_dword =
     (cond_227 && ~cond_16 && cond_228 && ~cond_9)? (`TRUE) :
@@ -1194,9 +1194,9 @@ assign rd_src_is_imm_se =
     1'd0;
 assign rd_glob_param_2_value =
     (cond_43)? ( (rd_operand_16bit)? { 16'd0, read_4[15:0] } : read_4) :
-    (cond_51)? ( { 16'd0, read_4[15:0] }) :
-    (cond_59 && ~cond_60 && cond_61)? ( read_4) :
-    (cond_64 && ~cond_61)? ( read_4) :
+    (cond_48 && ~cond_49 && cond_50)? ( read_4) :
+    (cond_53 && ~cond_50)? ( read_4) :
+    (cond_64)? ( { 16'd0, read_4[15:0] }) :
     (cond_79 && cond_81)? ( (rd_operand_16bit)? { 16'd0, read_4[15:0] } : read_4) :
     (cond_89 && ~cond_16 && cond_90)? ( 32'd0) :
     (cond_89 && ~cond_16 && ~cond_90)? ( { 30'd0, rd_descriptor_not_in_limits, glob_param_1[15:2] == 14'd0 }) :
@@ -1204,8 +1204,8 @@ assign rd_glob_param_2_value =
     (cond_98 && cond_101)? ( (rd_operand_16bit)? { 16'd0, read_4[15:0] } : read_4) :
     (cond_158 && ~cond_9 && cond_159)? ( (rd_operand_16bit)? { 16'd0, read_4[15:0] } : read_4) :
     (cond_160 && ~cond_9 && cond_72)? ( (rd_operand_16bit)? { 16'd0, read_4[15:0] } : read_4) :
-    (cond_177 && cond_178 && ~cond_9)? ( 32'd0) :
-    (cond_177 && ~cond_178)? ( { 30'd0, rd_descriptor_not_in_limits, glob_param_1[15:2] == 14'd0 }) :
+    (cond_179 && cond_180 && ~cond_9)? ( 32'd0) :
+    (cond_179 && ~cond_180)? ( { 30'd0, rd_descriptor_not_in_limits, glob_param_1[15:2] == 14'd0 }) :
     (cond_203 && ~cond_16)? ( (glob_descriptor[`DESC_BITS_TYPE] == `DESC_CALL_GATE_386)? { glob_descriptor[63:48], glob_descriptor[15:0] } : { 16'd0, glob_descriptor[15:0] }) :
     (cond_227 && ~cond_16 && cond_228)? ( read_4) :
     (cond_241 && ~cond_16 && cond_242)? ( 32'd0) :
@@ -1221,15 +1221,15 @@ assign read_length_word =
     (cond_11 && cond_12)? (`TRUE) :
     (cond_22 && cond_23)? (`TRUE) :
     (cond_44 && cond_3)? (`TRUE) :
-    (cond_54 && cond_55 && cond_3)? (`TRUE) :
-    (cond_62 && cond_63)? (`TRUE) :
+    (cond_51 && cond_52)? (`TRUE) :
+    (cond_55 && cond_56 && cond_3)? (`TRUE) :
     (cond_75)? (`TRUE) :
     (cond_97)? (`TRUE) :
     (cond_117 && cond_118 && cond_3 && ~cond_9)? (`TRUE) :
     (cond_121 && cond_122)? (`TRUE) :
     (cond_157)? (`TRUE) :
-    (cond_176 && cond_3)? (`TRUE) :
-    (cond_177 && cond_178)? (`TRUE) :
+    (cond_178 && cond_3)? (`TRUE) :
+    (cond_179 && cond_180)? (`TRUE) :
     (cond_206 && cond_207)? (`TRUE) :
     (cond_246 && cond_247)? (`TRUE) :
     (cond_250 && cond_3)? (`TRUE) :
@@ -1238,7 +1238,7 @@ assign address_xlat_transform =
     (cond_256)? (`TRUE) :
     1'd0;
 assign address_enter =
-    (cond_131)? (`TRUE) :
+    (cond_132)? (`TRUE) :
     1'd0;
 assign rd_src_is_rm =
     (cond_7 && cond_1)? (`TRUE) :
@@ -1249,7 +1249,7 @@ assign rd_src_is_rm =
     (cond_133 && cond_1)? (`TRUE) :
     (cond_135 && cond_1)? (`TRUE) :
     (cond_143 && cond_1)? (   rd_arith_modregrm_to_reg) :
-    (cond_151 && cond_1)? (`TRUE) :
+    (cond_150 && cond_1)? (`TRUE) :
     (cond_169 && cond_1)? (`TRUE) :
     (cond_205 && cond_1)? (`TRUE) :
     (cond_216 && cond_1)? (`TRUE) :
@@ -1260,9 +1260,9 @@ assign rd_src_is_rm =
 assign rd_system_linear =
     (cond_33)? ( tr_base + 32'd102) :
     (cond_35)? ( tr_base + { 16'd0, rd_memory_last[15:0] } + { 16'd0, 3'd0, glob_param_1[15:3] }) :
-    (cond_51)? ( idtr_base + { 22'd0, exc_vector[7:0], 2'b00 }) :
-    (cond_52)? ( idtr_base + { 22'd0, exc_vector[7:0], 2'b10 }) :
-    (cond_53)? ( idtr_base + { 21'd0, exc_vector[7:0], 3'b000 }) :
+    (cond_64)? ( idtr_base + { 22'd0, exc_vector[7:0], 2'b00 }) :
+    (cond_65)? ( idtr_base + { 22'd0, exc_vector[7:0], 2'b10 }) :
+    (cond_66)? ( idtr_base + { 21'd0, exc_vector[7:0], 3'b000 }) :
     (cond_88)? ( tr_base) :
     (cond_187)? ( tr_base + rd_offset_for_ss_from_tss) :
     (cond_189)? ( tr_base + rd_offset_for_esp_from_tss) :
@@ -1275,16 +1275,16 @@ assign rd_system_linear =
     32'd0;
 assign rd_glob_param_1_value =
     (cond_18 && ~cond_16)? ( { 16'd0, glob_descriptor[31:16] }) :
-    (cond_48 && ~cond_16)? ( { 16'd0, glob_descriptor[31:16] }) :
-    (cond_52)? ( { 13'd0, `SEGMENT_CS, read_4[15:0] }) :
-    (cond_54 && cond_55 && cond_1 && cond_56)? ( { 13'd0, rd_decoder[13:11], dst_wire[15:0] }) :
-    (cond_54 && cond_55 && cond_1 && cond_57)? ( { 13'd0, `SEGMENT_LDT, dst_wire[15:0] }) :
-    (cond_54 && cond_55 && cond_1 && cond_58)? ( { 13'd0, `SEGMENT_TR, dst_wire[15:0] }) :
-    (cond_54 && cond_55 && cond_3 && ~cond_9 && cond_56)? ( { 13'd0, rd_decoder[13:11], read_4[15:0] }) :
-    (cond_54 && cond_55 && cond_3 && ~cond_9 && cond_57)? ( { 13'd0, `SEGMENT_LDT, read_4[15:0] }) :
-    (cond_54 && cond_55 && cond_3 && ~cond_9 && cond_58)? ( { 13'd0, `SEGMENT_TR, read_4[15:0] }) :
-    (cond_62 && cond_63)? ( { 13'd0, rd_decoder[4] & rd_decoder[2], (rd_decoder[6] & rd_decoder[0]) | rd_decoder[1], rd_decoder[0], read_4[15:0] }) :
-    (cond_64 && cond_61)? ( { 13'd0, rd_decoder[4] & rd_decoder[2], (rd_decoder[6] & rd_decoder[0]) | rd_decoder[1], rd_decoder[0], read_4[15:0] }) :
+    (cond_51 && cond_52)? ( { 13'd0, rd_decoder[4] & rd_decoder[2], (rd_decoder[6] & rd_decoder[0]) | rd_decoder[1], rd_decoder[0], read_4[15:0] }) :
+    (cond_53 && cond_50)? ( { 13'd0, rd_decoder[4] & rd_decoder[2], (rd_decoder[6] & rd_decoder[0]) | rd_decoder[1], rd_decoder[0], read_4[15:0] }) :
+    (cond_55 && cond_56 && cond_1 && cond_57)? ( { 13'd0, rd_decoder[13:11], dst_wire[15:0] }) :
+    (cond_55 && cond_56 && cond_1 && cond_58)? ( { 13'd0, `SEGMENT_LDT, dst_wire[15:0] }) :
+    (cond_55 && cond_56 && cond_1 && cond_59)? ( { 13'd0, `SEGMENT_TR, dst_wire[15:0] }) :
+    (cond_55 && cond_56 && cond_3 && ~cond_9 && cond_57)? ( { 13'd0, rd_decoder[13:11], read_4[15:0] }) :
+    (cond_55 && cond_56 && cond_3 && ~cond_9 && cond_58)? ( { 13'd0, `SEGMENT_LDT, read_4[15:0] }) :
+    (cond_55 && cond_56 && cond_3 && ~cond_9 && cond_59)? ( { 13'd0, `SEGMENT_TR, read_4[15:0] }) :
+    (cond_61 && ~cond_16)? ( { 16'd0, glob_descriptor[31:16] }) :
+    (cond_65)? ( { 13'd0, `SEGMENT_CS, read_4[15:0] }) :
     (cond_75)? ( { 13'd0, rd_decoder[5:3], read_4[15:0] }) :
     (cond_79 && cond_82)? ( { 13'd0, `SEGMENT_CS, read_4[15:0] }) :
     (cond_88)? ( { 14'd0, `TASK_SWITCH_FROM_IRET, read_4[15:0] }) :
@@ -1293,8 +1293,8 @@ assign rd_glob_param_1_value =
     (cond_157)? ( { `MC_PARAM_1_FLAG_CPL_FROM_PARAM_3, `SEGMENT_SS, read_4[15:0] }) :
     (cond_158 && ~cond_9 && cond_72)? ( { `MC_PARAM_1_FLAG_NO_WRITE, `SEGMENT_CS, read_4[15:0] }) :
     (cond_160 && ~cond_9 && cond_159)? ( { `MC_PARAM_1_FLAG_NO_WRITE, `SEGMENT_CS, read_4[15:0] }) :
-    (cond_176 && cond_1 && ~cond_8)? ( { 16'd0, dst_wire[15:0] }) :
-    (cond_176 && cond_3 && ~cond_9)? ( { 16'd0, read_4[15:0] }) :
+    (cond_178 && cond_1 && ~cond_8)? ( { 16'd0, dst_wire[15:0] }) :
+    (cond_178 && cond_3 && ~cond_9)? ( { 16'd0, read_4[15:0] }) :
     (cond_203 && ~cond_16)? ( { 13'd0, `SEGMENT_CS, glob_descriptor[31:16] }) :
     (cond_210 && ~cond_16)? ( { 16'd0, glob_descriptor[31:16] }) :
     32'd0;
@@ -1307,13 +1307,13 @@ assign rd_dst_is_modregrm_imm_se =
     1'd0;
 assign rd_dst_is_reg =
     (cond_6)? (`TRUE) :
-    (cond_65)? (`TRUE) :
+    (cond_54)? (`TRUE) :
     (cond_133)? (`TRUE) :
     (cond_135)? (          rd_decoder[3]) :
     (cond_143)? (  rd_arith_modregrm_to_reg) :
     (cond_166)? (`TRUE) :
-    (cond_179 && ~cond_181 && cond_182)? (`TRUE) :
-    (cond_183 && ~cond_181 && cond_184)? (`TRUE) :
+    (cond_181 && ~cond_183 && cond_184)? (`TRUE) :
+    (cond_185 && ~cond_183 && cond_186)? (`TRUE) :
     (cond_216)? (`TRUE) :
     (cond_225)? (`TRUE) :
     (cond_245)? (`TRUE) :
@@ -1324,13 +1324,13 @@ assign rd_src_is_implicit_reg =
     (cond_168)? (`TRUE) :
     1'd0;
 assign address_enter_init =
-    (cond_127)? (`TRUE) :
+    (cond_128)? (`TRUE) :
     1'd0;
 assign rd_dst_is_memory =
     (cond_0 && cond_3)? (`TRUE) :
     (cond_28 && cond_3)? (`TRUE) :
     (cond_30 && cond_3 && ~cond_9)? (`TRUE) :
-    (cond_37 && cond_3)? (`TRUE) :
+    (cond_40 && cond_3)? (`TRUE) :
     (cond_44 && cond_3)? (`TRUE) :
     (cond_76 && cond_3)? (`TRUE) :
     (cond_106 && cond_3)? (`TRUE) :
@@ -1338,15 +1338,15 @@ assign rd_dst_is_memory =
     (cond_111 && cond_3)? (`TRUE) :
     (cond_116 && cond_3)? (`TRUE) :
     (cond_126 && cond_3)? (`TRUE) :
-    (cond_132 && cond_3 && ~cond_4)? (`TRUE) :
-    (cond_138 && cond_3)? (`TRUE) :
+    (cond_127 && cond_3 && ~cond_4)? (`TRUE) :
     (cond_139 && cond_3)? (`TRUE) :
+    (cond_140 && cond_3)? (`TRUE) :
     (cond_143 && cond_3)? (   rd_arith_modregrm_to_rm) :
     (cond_147 && cond_3)? (`TRUE) :
     (cond_154 && cond_3)? (`TRUE) :
     (cond_155 && cond_3)? (`TRUE) :
     (cond_165 && cond_3)? (`TRUE) :
-    (cond_185 && cond_3)? (`TRUE) :
+    (cond_177 && cond_3)? (`TRUE) :
     (cond_213 && ~cond_214)? (`TRUE) :
     (cond_217 && cond_3)? (`TRUE) :
     (cond_219 && cond_3)? (`TRUE) :
@@ -1359,8 +1359,8 @@ assign rd_error_code =
     (cond_15 && ~cond_16 && cond_17)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_19 && cond_20)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_21 && ~cond_16 && cond_17)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
-    (cond_49 && cond_20)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
-    (cond_50 && ~cond_16 && cond_17)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
+    (cond_62 && cond_20)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
+    (cond_63 && ~cond_16 && cond_17)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_73 && cond_74)? ( { glob_param_1[15:2], 2'd0 }) :
     (cond_187)? ( `SELECTOR_FOR_CODE(tr)) :
     (cond_204 && cond_17)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
@@ -1370,7 +1370,7 @@ assign rd_error_code =
 assign rd_dst_is_edx_eax =
     (cond_107)? (`TRUE) :
     (cond_135)? (    ~(rd_decoder[3])) :
-    (cond_151)? (`TRUE) :
+    (cond_150)? (`TRUE) :
     1'd0;
 assign rd_src_is_modregrm_imm =
     (cond_76)? (  rd_cmdex == `CMDEX_BTx_modregrm_imm) :
@@ -1384,7 +1384,7 @@ assign address_stack_for_call_param_first =
     (cond_22 && cond_26)? (`TRUE) :
     1'd0;
 assign rd_req_ebx =
-    (cond_186)? (`TRUE) :
+    (cond_172)? (`TRUE) :
     1'd0;
 assign address_ea_buffer_plus_2 =
     (cond_121)? (`TRUE) :
@@ -1393,7 +1393,7 @@ assign address_ea_buffer_plus_2 =
 assign rd_req_edx_eax =
     (cond_107)? ( rd_decoder[0]) :
     (cond_135)? (      ~(rd_decoder[3]) && rd_decoder[0]) :
-    (cond_151)? ( rd_decoder[0]) :
+    (cond_150)? ( rd_decoder[0]) :
     1'd0;
 assign address_stack_for_iret_third =
     (cond_98 && cond_99)? (`TRUE) :
@@ -1402,14 +1402,14 @@ assign rd_src_is_ecx =
     (cond_111)? (`TRUE) :
     1'd0;
 assign rd_req_ebp =
-    (cond_129)? (`TRUE) :
-    (cond_142 && ~cond_9)? (`TRUE) :
+    (cond_130)? (`TRUE) :
+    (cond_138 && ~cond_9)? (`TRUE) :
     1'd0;
 assign rd_req_rm =
     (cond_6)? (      rd_modregrm_mod == 2'b11) :
     (cond_28 && cond_1)? (`TRUE) :
     (cond_30 && cond_1)? (`TRUE) :
-    (cond_37 && cond_1 && ~cond_8)? (`TRUE) :
+    (cond_40 && cond_1 && ~cond_8)? (`TRUE) :
     (cond_44 && cond_1)? (`TRUE) :
     (cond_76 && cond_1)? ( rd_cmd[1:0] != 2'd0) :
     (cond_106 && cond_1)? (`TRUE) :
@@ -1418,13 +1418,13 @@ assign rd_req_rm =
     (cond_116 && cond_1)? (`TRUE) :
     (cond_120)? (`TRUE) :
     (cond_126 && cond_1)? (`TRUE) :
-    (cond_132 && cond_1 && ~cond_2)? (`TRUE) :
-    (cond_138 && cond_1)? (`TRUE) :
+    (cond_127 && cond_1 && ~cond_2)? (`TRUE) :
     (cond_139 && cond_1)? (`TRUE) :
+    (cond_140 && cond_1)? (`TRUE) :
     (cond_143 && cond_1 && cond_144)? (  rd_arith_modregrm_to_rm) :
     (cond_147 && cond_1 && cond_148)? (`TRUE) :
     (cond_166 && cond_1)? (`TRUE) :
-    (cond_185 && cond_1)? (`TRUE) :
+    (cond_177 && cond_1)? (`TRUE) :
     (cond_217 && cond_1)? (`TRUE) :
     (cond_219 && cond_1)? (`TRUE) :
     (cond_254)? (`TRUE) :

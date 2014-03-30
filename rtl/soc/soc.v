@@ -46,6 +46,9 @@ module soc(
     inout               PS2_CLK2,
     inout               PS2_DAT2,
     
+    //KEYS
+    input       [3:0]   KEY,
+
     //SD
     output              SD_CLK,
     inout               SD_CMD,

@@ -50,53 +50,53 @@ wire cond_47 = mc_cmd == `CMD_io_allow && mc_cmdex_last == `CMDEX_io_allow_1;
 wire cond_48 = mc_cmd == `CMD_io_allow && mc_cmdex_last == `CMDEX_io_allow_2;
 wire cond_49 = mc_cmd == `CMD_RET_near && mc_cmdex_last == `CMDEX_RET_near_imm;
 wire cond_50 = mc_cmd == `CMD_RET_near && mc_cmdex_last == `CMDEX_RET_near;
-wire cond_51 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_STEP_0;
-wire cond_52 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_STEP_1 && real_mode;
-wire cond_53 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_0;
-wire cond_54 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_1;
-wire cond_55 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_2;
-wire cond_56 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_3;
-wire cond_57 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_4;
-wire cond_58 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_STEP_1 && ~(real_mode);
-wire cond_59 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_protected_STEP_0;
-wire cond_60 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_protected_STEP_1;
-wire cond_61 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_protected_STEP_2 && glob_descriptor[`DESC_BITS_TYPE] == `DESC_TASK_GATE;
-wire cond_62 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_task_gate_STEP_0;
-wire cond_63 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_task_gate_STEP_1;
-wire cond_64 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_protected_STEP_2 && glob_descriptor[`DESC_BITS_TYPE] != `DESC_TASK_GATE;
-wire cond_65 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_int_trap_gate_STEP_0;
-wire cond_66 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_int_trap_gate_STEP_1;
-wire cond_67 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_int_trap_gate_STEP_2 && `DESC_IS_CODE_NON_CONFORMING(glob_descriptor) && glob_descriptor[`DESC_BITS_DPL] < cpl;
-wire cond_68 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_0;
-wire cond_69 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_1;
-wire cond_70 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_2;
-wire cond_71 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_3 && v8086_mode;
-wire cond_72 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_4;
-wire cond_73 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_5;
-wire cond_74 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_6;
-wire cond_75 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_7;
-wire cond_76 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_3 && ~(v8086_mode);
-wire cond_77 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_8;
-wire cond_78 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_9;
-wire cond_79 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_0;
-wire cond_80 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_1;
-wire cond_81 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_2 && exc_push_error;
-wire cond_82 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_3;
-wire cond_83 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_2 && ~(exc_push_error);
-wire cond_84 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_4;
-wire cond_85 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_5;
-wire cond_86 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_int_trap_gate_STEP_2 && ~(`DESC_IS_CODE_NON_CONFORMING(glob_descriptor) && glob_descriptor[`DESC_BITS_DPL] < cpl);
-wire cond_87 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_0;
-wire cond_88 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_1;
-wire cond_89 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_2 && exc_push_error;
-wire cond_90 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_3;
-wire cond_91 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_2 && ~(exc_push_error);
-wire cond_92 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_4;
-wire cond_93 = (mc_cmd == `CMD_MOV_to_seg || mc_cmd == `CMD_LLDT || mc_cmd == `CMD_LTR) && mc_cmdex_last != `CMDEX_MOV_to_seg_LLDT_LTR_STEP_LAST;
-wire cond_94 = (mc_cmd == `CMD_MOV_to_seg || mc_cmd == `CMD_LLDT || mc_cmd == `CMD_LTR) && mc_cmdex_last == `CMDEX_MOV_to_seg_LLDT_LTR_STEP_LAST;
-wire cond_95 = mc_cmd == `CMD_LxS && mc_cmdex_last == `CMDEX_LxS_STEP_1;
-wire cond_96 = mc_cmd == `CMD_LxS && mc_cmdex_last == `CMDEX_LxS_STEP_2;
-wire cond_97 = mc_cmd == `CMD_LxS && mc_cmdex_last == `CMDEX_LxS_STEP_3;
+wire cond_51 = mc_cmd == `CMD_LxS && mc_cmdex_last == `CMDEX_LxS_STEP_1;
+wire cond_52 = mc_cmd == `CMD_LxS && mc_cmdex_last == `CMDEX_LxS_STEP_2;
+wire cond_53 = mc_cmd == `CMD_LxS && mc_cmdex_last == `CMDEX_LxS_STEP_3;
+wire cond_54 = (mc_cmd == `CMD_MOV_to_seg || mc_cmd == `CMD_LLDT || mc_cmd == `CMD_LTR) && mc_cmdex_last != `CMDEX_MOV_to_seg_LLDT_LTR_STEP_LAST;
+wire cond_55 = (mc_cmd == `CMD_MOV_to_seg || mc_cmd == `CMD_LLDT || mc_cmd == `CMD_LTR) && mc_cmdex_last == `CMDEX_MOV_to_seg_LLDT_LTR_STEP_LAST;
+wire cond_56 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_STEP_0;
+wire cond_57 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_STEP_1 && real_mode;
+wire cond_58 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_0;
+wire cond_59 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_1;
+wire cond_60 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_2;
+wire cond_61 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_3;
+wire cond_62 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_4;
+wire cond_63 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_STEP_1 && ~(real_mode);
+wire cond_64 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_protected_STEP_0;
+wire cond_65 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_protected_STEP_1;
+wire cond_66 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_protected_STEP_2 && glob_descriptor[`DESC_BITS_TYPE] == `DESC_TASK_GATE;
+wire cond_67 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_task_gate_STEP_0;
+wire cond_68 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_task_gate_STEP_1;
+wire cond_69 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_protected_STEP_2 && glob_descriptor[`DESC_BITS_TYPE] != `DESC_TASK_GATE;
+wire cond_70 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_int_trap_gate_STEP_0;
+wire cond_71 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_int_trap_gate_STEP_1;
+wire cond_72 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_int_trap_gate_STEP_2 && `DESC_IS_CODE_NON_CONFORMING(glob_descriptor) && glob_descriptor[`DESC_BITS_DPL] < cpl;
+wire cond_73 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_0;
+wire cond_74 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_1;
+wire cond_75 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_2;
+wire cond_76 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_3 && v8086_mode;
+wire cond_77 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_4;
+wire cond_78 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_5;
+wire cond_79 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_6;
+wire cond_80 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_7;
+wire cond_81 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_3 && ~(v8086_mode);
+wire cond_82 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_8;
+wire cond_83 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_more_STEP_9;
+wire cond_84 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_0;
+wire cond_85 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_1;
+wire cond_86 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_2 && exc_push_error;
+wire cond_87 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_3;
+wire cond_88 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_2 && ~(exc_push_error);
+wire cond_89 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_4;
+wire cond_90 = mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_5;
+wire cond_91 = mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_int_trap_gate_STEP_2 && ~(`DESC_IS_CODE_NON_CONFORMING(glob_descriptor) && glob_descriptor[`DESC_BITS_DPL] < cpl);
+wire cond_92 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_0;
+wire cond_93 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_1;
+wire cond_94 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_2 && exc_push_error;
+wire cond_95 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_3;
+wire cond_96 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_2 && ~(exc_push_error);
+wire cond_97 = mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_4;
 wire cond_98 = mc_cmd == `CMD_load_seg && (~(protected_mode) || (protected_mode && mc_cmdex_last == `CMDEX_load_seg_STEP_2));
 wire cond_99 = mc_cmd == `CMD_load_seg && protected_mode && mc_cmdex_last == `CMDEX_load_seg_STEP_1;
 wire cond_100 = mc_cmd == `CMD_POP_seg && mc_cmdex_last == `CMDEX_POP_seg_STEP_1;
@@ -220,10 +220,10 @@ wire cond_211 =
 (mc_cmd == `CMD_INVLPG && mc_cmdex_last == `CMDEX_INVLPG_STEP_2) ||
 (mc_cmd == `CMD_HLT && mc_cmdex_last == `CMDEX_HLT_STEP_0) ||
 (mc_cmd == `CMD_SCAS && mc_cmdex_last == `CMDEX_SCAS_STEP_0) ||
+(mc_cmd == `CMD_LxS && mc_cmdex_last == `CMDEX_LxS_STEP_LAST) ||
 (mc_cmd == `CMD_int && mc_cmdex_last == `CMDEX_int_real_STEP_5) ||
 (mc_cmd == `CMD_int_3 && mc_cmdex_last == `CMDEX_int_3_int_trap_gate_more_STEP_6) ||
 (mc_cmd == `CMD_int_2 && mc_cmdex_last == `CMDEX_int_2_int_trap_gate_same_STEP_5) ||
-(mc_cmd == `CMD_LxS && mc_cmdex_last == `CMDEX_LxS_STEP_LAST) ||
 (mc_cmd == `CMD_POP_seg && mc_cmdex_last == `CMDEX_POP_seg_STEP_LAST) ||
 (mc_cmd == `CMD_IRET && mc_cmdex_last == `CMDEX_IRET_real_v86_STEP_3) ||
 (mc_cmd == `CMD_IRET_2 && mc_cmdex_last == `CMDEX_IRET_2_idle) ||
@@ -235,8 +235,8 @@ wire cond_211 =
 (mc_cmd == `CMD_RET_far && mc_cmdex_last == `CMDEX_RET_far_same_STEP_4) ||
 (mc_cmd == `CMD_RET_far && mc_cmdex_last == `CMDEX_RET_far_outer_STEP_7) ||
 (mc_cmd == `CMD_LODS && mc_cmdex_last == `CMDEX_LODS_STEP_0) ||
-(mc_cmd == `CMD_IN && mc_cmdex_last == `CMDEX_IN_idle) ||
 (mc_cmd == `CMD_CPUID && mc_cmdex_last == `CMDEX_CPUID_STEP_LAST) ||
+(mc_cmd == `CMD_IN && mc_cmdex_last == `CMDEX_IN_idle) ||
 (mc_cmd == `CMD_STOS && mc_cmdex_last == `CMDEX_STOS_STEP_0) ||
 (mc_cmd == `CMD_OUTS && mc_cmdex_last == `CMDEX_OUTS_protected) ||
 (mc_cmd == `CMD_JMP && mc_cmdex_last == `CMDEX_JMP_Ev_Jv_STEP_1) ||
@@ -251,9 +251,9 @@ wire cond_211 =
 //======================================================== saves
 wire [6:0] mc_saved_command_to_reg =
     (cond_8)? ( `CMD_CALL) :
-    (cond_57)? ( `CMD_int) :
-    (cond_93)? ( `CMD_MOV_to_seg) :
-    (cond_97)? ( `CMD_LxS) :
+    (cond_53)? ( `CMD_LxS) :
+    (cond_54)? ( `CMD_MOV_to_seg) :
+    (cond_62)? ( `CMD_int) :
     (cond_100)? ( `CMD_POP_seg) :
     (cond_103)? ( `CMD_IRET) :
     (cond_114)? ( `CMD_IRET_2) :
@@ -268,9 +268,9 @@ wire [6:0] mc_saved_command_to_reg =
     mc_saved_command;
 wire [3:0] mc_saved_cmdex_to_reg =
     (cond_8)? (   `CMDEX_CALL_real_v8086_STEP_3) :
-    (cond_57)? (   `CMDEX_int_real_STEP_5) :
-    (cond_93)? (   `CMDEX_MOV_to_seg_LLDT_LTR_STEP_LAST) :
-    (cond_97)? (   `CMDEX_LxS_STEP_LAST) :
+    (cond_53)? (   `CMDEX_LxS_STEP_LAST) :
+    (cond_54)? (   `CMDEX_MOV_to_seg_LLDT_LTR_STEP_LAST) :
+    (cond_62)? (   `CMDEX_int_real_STEP_5) :
     (cond_100)? (   `CMDEX_POP_seg_STEP_LAST) :
     (cond_103)? (   `CMDEX_IRET_real_v86_STEP_3) :
     (cond_114)? (    (glob_param_1[`SELECTOR_BITS_RPL] == cpl)? `CMDEX_IRET_2_protected_same_STEP_0 : `CMDEX_IRET_2_protected_outer_STEP_0) :
@@ -342,53 +342,53 @@ assign mc_cmd_next =
     (cond_46)? (      `CMD_INVLPG) :
     (cond_47)? (      `CMD_io_allow) :
     (cond_48)? (      mc_saved_command) :
-    (cond_51)? (      `CMD_int) :
-    (cond_52)? (      `CMD_int) :
-    (cond_53)? (      `CMD_int) :
-    (cond_54)? (      `CMD_int) :
-    (cond_55)? (      `CMD_int) :
+    (cond_51)? (      `CMD_LxS) :
+    (cond_52)? (      `CMD_LxS) :
+    (cond_53)? (      `CMD_load_seg) :
+    (cond_54)? (      `CMD_load_seg) :
+    (cond_55)? (      `CMD_MOV_to_seg) :
     (cond_56)? (      `CMD_int) :
-    (cond_57)? (      `CMD_load_seg) :
+    (cond_57)? (      `CMD_int) :
     (cond_58)? (      `CMD_int) :
     (cond_59)? (      `CMD_int) :
     (cond_60)? (      `CMD_int) :
     (cond_61)? (      `CMD_int) :
-    (cond_62)? (      `CMD_int) :
-    (cond_63)? (      `CMD_task_switch) :
+    (cond_62)? (      `CMD_load_seg) :
+    (cond_63)? (      `CMD_int) :
     (cond_64)? (      `CMD_int) :
     (cond_65)? (      `CMD_int) :
     (cond_66)? (      `CMD_int) :
-    (cond_67)? (      `CMD_int_2) :
-    (cond_68)? (      `CMD_int_2) :
-    (cond_69)? (      `CMD_int_2) :
-    (cond_70)? (      `CMD_int_2) :
-    (cond_71)? (      `CMD_int_2) :
+    (cond_67)? (      `CMD_int) :
+    (cond_68)? (      `CMD_task_switch) :
+    (cond_69)? (      `CMD_int) :
+    (cond_70)? (      `CMD_int) :
+    (cond_71)? (      `CMD_int) :
     (cond_72)? (      `CMD_int_2) :
     (cond_73)? (      `CMD_int_2) :
     (cond_74)? (      `CMD_int_2) :
     (cond_75)? (      `CMD_int_2) :
     (cond_76)? (      `CMD_int_2) :
     (cond_77)? (      `CMD_int_2) :
-    (cond_78)? (      `CMD_int_3) :
-    (cond_79)? (      `CMD_int_3) :
-    (cond_80)? (      `CMD_int_3) :
-    (cond_81)? (      `CMD_int_3) :
-    (cond_82)? (      `CMD_int_3) :
+    (cond_78)? (      `CMD_int_2) :
+    (cond_79)? (      `CMD_int_2) :
+    (cond_80)? (      `CMD_int_2) :
+    (cond_81)? (      `CMD_int_2) :
+    (cond_82)? (      `CMD_int_2) :
     (cond_83)? (      `CMD_int_3) :
     (cond_84)? (      `CMD_int_3) :
     (cond_85)? (      `CMD_int_3) :
-    (cond_86)? (      `CMD_int_2) :
-    (cond_87)? (      `CMD_int_2) :
-    (cond_88)? (      `CMD_int_2) :
-    (cond_89)? (      `CMD_int_2) :
-    (cond_90)? (      `CMD_int_2) :
+    (cond_86)? (      `CMD_int_3) :
+    (cond_87)? (      `CMD_int_3) :
+    (cond_88)? (      `CMD_int_3) :
+    (cond_89)? (      `CMD_int_3) :
+    (cond_90)? (      `CMD_int_3) :
     (cond_91)? (      `CMD_int_2) :
     (cond_92)? (      `CMD_int_2) :
-    (cond_93)? (      `CMD_load_seg) :
-    (cond_94)? (      `CMD_MOV_to_seg) :
-    (cond_95)? (      `CMD_LxS) :
-    (cond_96)? (      `CMD_LxS) :
-    (cond_97)? (      `CMD_load_seg) :
+    (cond_93)? (      `CMD_int_2) :
+    (cond_94)? (      `CMD_int_2) :
+    (cond_95)? (      `CMD_int_2) :
+    (cond_96)? (      `CMD_int_2) :
+    (cond_97)? (      `CMD_int_2) :
     (cond_98)? (      mc_saved_command) :
     (cond_99)? (      `CMD_load_seg) :
     (cond_100)? (      `CMD_load_seg) :
@@ -548,53 +548,53 @@ assign mc_cmdex_current =
     (cond_48)? ( mc_saved_cmdex) :
     (cond_49)? ( `CMDEX_RET_near_LAST) :
     (cond_50)? ( `CMDEX_RET_near_LAST) :
-    (cond_51)? ( `CMDEX_int_STEP_1) :
-    (cond_52)? ( `CMDEX_int_real_STEP_0) :
-    (cond_53)? ( `CMDEX_int_real_STEP_1) :
-    (cond_54)? ( `CMDEX_int_real_STEP_2) :
-    (cond_55)? ( `CMDEX_int_real_STEP_3) :
-    (cond_56)? ( `CMDEX_int_real_STEP_4) :
-    (cond_57)? ( `CMDEX_load_seg_STEP_1) :
-    (cond_58)? ( `CMDEX_int_protected_STEP_0) :
-    (cond_59)? ( `CMDEX_int_protected_STEP_1) :
-    (cond_60)? ( `CMDEX_int_protected_STEP_2) :
-    (cond_61)? ( `CMDEX_int_task_gate_STEP_0) :
-    (cond_62)? ( `CMDEX_int_task_gate_STEP_1) :
-    (cond_63)? ( `CMDEX_task_switch_STEP_1) :
-    (cond_64)? ( `CMDEX_int_int_trap_gate_STEP_0) :
-    (cond_65)? ( `CMDEX_int_int_trap_gate_STEP_1) :
-    (cond_66)? ( `CMDEX_int_int_trap_gate_STEP_2) :
-    (cond_67)? ( `CMDEX_int_2_int_trap_gate_more_STEP_0) :
-    (cond_68)? ( `CMDEX_int_2_int_trap_gate_more_STEP_1) :
-    (cond_69)? ( `CMDEX_int_2_int_trap_gate_more_STEP_2) :
-    (cond_70)? ( `CMDEX_int_2_int_trap_gate_more_STEP_3) :
-    (cond_71)? ( `CMDEX_int_2_int_trap_gate_more_STEP_4) :
-    (cond_72)? ( `CMDEX_int_2_int_trap_gate_more_STEP_5) :
-    (cond_73)? ( `CMDEX_int_2_int_trap_gate_more_STEP_6) :
-    (cond_74)? ( `CMDEX_int_2_int_trap_gate_more_STEP_7) :
-    (cond_75)? ( `CMDEX_int_2_int_trap_gate_more_STEP_8) :
-    (cond_76)? ( `CMDEX_int_2_int_trap_gate_more_STEP_8) :
-    (cond_77)? ( `CMDEX_int_2_int_trap_gate_more_STEP_9) :
-    (cond_78)? ( `CMDEX_int_3_int_trap_gate_more_STEP_0) :
-    (cond_79)? ( `CMDEX_int_3_int_trap_gate_more_STEP_1) :
-    (cond_80)? ( `CMDEX_int_3_int_trap_gate_more_STEP_2) :
-    (cond_81)? ( `CMDEX_int_3_int_trap_gate_more_STEP_3) :
-    (cond_82)? ( `CMDEX_int_3_int_trap_gate_more_STEP_4) :
-    (cond_83)? ( `CMDEX_int_3_int_trap_gate_more_STEP_4) :
-    (cond_84)? ( `CMDEX_int_3_int_trap_gate_more_STEP_5) :
-    (cond_85)? ( `CMDEX_int_3_int_trap_gate_more_STEP_6) :
-    (cond_86)? ( `CMDEX_int_2_int_trap_gate_same_STEP_0) :
-    (cond_87)? ( `CMDEX_int_2_int_trap_gate_same_STEP_1) :
-    (cond_88)? ( `CMDEX_int_2_int_trap_gate_same_STEP_2) :
-    (cond_89)? ( `CMDEX_int_2_int_trap_gate_same_STEP_3) :
-    (cond_90)? ( `CMDEX_int_2_int_trap_gate_same_STEP_4) :
-    (cond_91)? ( `CMDEX_int_2_int_trap_gate_same_STEP_4) :
-    (cond_92)? ( `CMDEX_int_2_int_trap_gate_same_STEP_5) :
-    (cond_93)? ( `CMDEX_load_seg_STEP_1) :
-    (cond_94)? ( `CMDEX_MOV_to_seg_LLDT_LTR_STEP_LAST) :
-    (cond_95)? ( `CMDEX_LxS_STEP_2) :
-    (cond_96)? ( `CMDEX_LxS_STEP_3) :
-    (cond_97)? ( `CMDEX_load_seg_STEP_1) :
+    (cond_51)? ( `CMDEX_LxS_STEP_2) :
+    (cond_52)? ( `CMDEX_LxS_STEP_3) :
+    (cond_53)? ( `CMDEX_load_seg_STEP_1) :
+    (cond_54)? ( `CMDEX_load_seg_STEP_1) :
+    (cond_55)? ( `CMDEX_MOV_to_seg_LLDT_LTR_STEP_LAST) :
+    (cond_56)? ( `CMDEX_int_STEP_1) :
+    (cond_57)? ( `CMDEX_int_real_STEP_0) :
+    (cond_58)? ( `CMDEX_int_real_STEP_1) :
+    (cond_59)? ( `CMDEX_int_real_STEP_2) :
+    (cond_60)? ( `CMDEX_int_real_STEP_3) :
+    (cond_61)? ( `CMDEX_int_real_STEP_4) :
+    (cond_62)? ( `CMDEX_load_seg_STEP_1) :
+    (cond_63)? ( `CMDEX_int_protected_STEP_0) :
+    (cond_64)? ( `CMDEX_int_protected_STEP_1) :
+    (cond_65)? ( `CMDEX_int_protected_STEP_2) :
+    (cond_66)? ( `CMDEX_int_task_gate_STEP_0) :
+    (cond_67)? ( `CMDEX_int_task_gate_STEP_1) :
+    (cond_68)? ( `CMDEX_task_switch_STEP_1) :
+    (cond_69)? ( `CMDEX_int_int_trap_gate_STEP_0) :
+    (cond_70)? ( `CMDEX_int_int_trap_gate_STEP_1) :
+    (cond_71)? ( `CMDEX_int_int_trap_gate_STEP_2) :
+    (cond_72)? ( `CMDEX_int_2_int_trap_gate_more_STEP_0) :
+    (cond_73)? ( `CMDEX_int_2_int_trap_gate_more_STEP_1) :
+    (cond_74)? ( `CMDEX_int_2_int_trap_gate_more_STEP_2) :
+    (cond_75)? ( `CMDEX_int_2_int_trap_gate_more_STEP_3) :
+    (cond_76)? ( `CMDEX_int_2_int_trap_gate_more_STEP_4) :
+    (cond_77)? ( `CMDEX_int_2_int_trap_gate_more_STEP_5) :
+    (cond_78)? ( `CMDEX_int_2_int_trap_gate_more_STEP_6) :
+    (cond_79)? ( `CMDEX_int_2_int_trap_gate_more_STEP_7) :
+    (cond_80)? ( `CMDEX_int_2_int_trap_gate_more_STEP_8) :
+    (cond_81)? ( `CMDEX_int_2_int_trap_gate_more_STEP_8) :
+    (cond_82)? ( `CMDEX_int_2_int_trap_gate_more_STEP_9) :
+    (cond_83)? ( `CMDEX_int_3_int_trap_gate_more_STEP_0) :
+    (cond_84)? ( `CMDEX_int_3_int_trap_gate_more_STEP_1) :
+    (cond_85)? ( `CMDEX_int_3_int_trap_gate_more_STEP_2) :
+    (cond_86)? ( `CMDEX_int_3_int_trap_gate_more_STEP_3) :
+    (cond_87)? ( `CMDEX_int_3_int_trap_gate_more_STEP_4) :
+    (cond_88)? ( `CMDEX_int_3_int_trap_gate_more_STEP_4) :
+    (cond_89)? ( `CMDEX_int_3_int_trap_gate_more_STEP_5) :
+    (cond_90)? ( `CMDEX_int_3_int_trap_gate_more_STEP_6) :
+    (cond_91)? ( `CMDEX_int_2_int_trap_gate_same_STEP_0) :
+    (cond_92)? ( `CMDEX_int_2_int_trap_gate_same_STEP_1) :
+    (cond_93)? ( `CMDEX_int_2_int_trap_gate_same_STEP_2) :
+    (cond_94)? ( `CMDEX_int_2_int_trap_gate_same_STEP_3) :
+    (cond_95)? ( `CMDEX_int_2_int_trap_gate_same_STEP_4) :
+    (cond_96)? ( `CMDEX_int_2_int_trap_gate_same_STEP_4) :
+    (cond_97)? ( `CMDEX_int_2_int_trap_gate_same_STEP_5) :
     (cond_98)? ( mc_saved_cmdex) :
     (cond_99)? ( `CMDEX_load_seg_STEP_2) :
     (cond_100)? ( `CMDEX_load_seg_STEP_1) :
@@ -762,53 +762,53 @@ assign mc_cmd_current =
     (cond_48)? (   mc_saved_command) :
     (cond_49)? (   `CMD_RET_near) :
     (cond_50)? (   `CMD_RET_near) :
-    (cond_51)? (   `CMD_int) :
-    (cond_52)? (   `CMD_int) :
-    (cond_53)? (   `CMD_int) :
-    (cond_54)? (   `CMD_int) :
-    (cond_55)? (   `CMD_int) :
+    (cond_51)? (   `CMD_LxS) :
+    (cond_52)? (   `CMD_LxS) :
+    (cond_53)? (   `CMD_load_seg) :
+    (cond_54)? (   `CMD_load_seg) :
+    (cond_55)? (   `CMD_MOV_to_seg) :
     (cond_56)? (   `CMD_int) :
-    (cond_57)? (   `CMD_load_seg) :
+    (cond_57)? (   `CMD_int) :
     (cond_58)? (   `CMD_int) :
     (cond_59)? (   `CMD_int) :
     (cond_60)? (   `CMD_int) :
     (cond_61)? (   `CMD_int) :
-    (cond_62)? (   `CMD_int) :
-    (cond_63)? (   `CMD_task_switch) :
+    (cond_62)? (   `CMD_load_seg) :
+    (cond_63)? (   `CMD_int) :
     (cond_64)? (   `CMD_int) :
     (cond_65)? (   `CMD_int) :
     (cond_66)? (   `CMD_int) :
-    (cond_67)? (   `CMD_int_2) :
-    (cond_68)? (   `CMD_int_2) :
-    (cond_69)? (   `CMD_int_2) :
-    (cond_70)? (   `CMD_int_2) :
-    (cond_71)? (   `CMD_int_2) :
+    (cond_67)? (   `CMD_int) :
+    (cond_68)? (   `CMD_task_switch) :
+    (cond_69)? (   `CMD_int) :
+    (cond_70)? (   `CMD_int) :
+    (cond_71)? (   `CMD_int) :
     (cond_72)? (   `CMD_int_2) :
     (cond_73)? (   `CMD_int_2) :
     (cond_74)? (   `CMD_int_2) :
     (cond_75)? (   `CMD_int_2) :
     (cond_76)? (   `CMD_int_2) :
     (cond_77)? (   `CMD_int_2) :
-    (cond_78)? (   `CMD_int_3) :
-    (cond_79)? (   `CMD_int_3) :
-    (cond_80)? (   `CMD_int_3) :
-    (cond_81)? (   `CMD_int_3) :
-    (cond_82)? (   `CMD_int_3) :
+    (cond_78)? (   `CMD_int_2) :
+    (cond_79)? (   `CMD_int_2) :
+    (cond_80)? (   `CMD_int_2) :
+    (cond_81)? (   `CMD_int_2) :
+    (cond_82)? (   `CMD_int_2) :
     (cond_83)? (   `CMD_int_3) :
     (cond_84)? (   `CMD_int_3) :
     (cond_85)? (   `CMD_int_3) :
-    (cond_86)? (   `CMD_int_2) :
-    (cond_87)? (   `CMD_int_2) :
-    (cond_88)? (   `CMD_int_2) :
-    (cond_89)? (   `CMD_int_2) :
-    (cond_90)? (   `CMD_int_2) :
+    (cond_86)? (   `CMD_int_3) :
+    (cond_87)? (   `CMD_int_3) :
+    (cond_88)? (   `CMD_int_3) :
+    (cond_89)? (   `CMD_int_3) :
+    (cond_90)? (   `CMD_int_3) :
     (cond_91)? (   `CMD_int_2) :
     (cond_92)? (   `CMD_int_2) :
-    (cond_93)? (   `CMD_load_seg) :
-    (cond_94)? (   `CMD_MOV_to_seg) :
-    (cond_95)? (   `CMD_LxS) :
-    (cond_96)? (   `CMD_LxS) :
-    (cond_97)? (   `CMD_load_seg) :
+    (cond_93)? (   `CMD_int_2) :
+    (cond_94)? (   `CMD_int_2) :
+    (cond_95)? (   `CMD_int_2) :
+    (cond_96)? (   `CMD_int_2) :
+    (cond_97)? (   `CMD_int_2) :
     (cond_98)? (   mc_saved_command) :
     (cond_99)? (   `CMD_load_seg) :
     (cond_100)? (   `CMD_load_seg) :

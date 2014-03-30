@@ -115,11 +115,11 @@ assign e_bit_scan_reverse = (e_src_ze[31])? 5'd31 : (e_src_ze[30])? 5'd30 : (e_s
 assign e_bit_scan_zero = (exe_operand_16bit)? src[15:0] == 16'd0 : src[31:0] == 32'd0;
 
 //======================================================== conditions
-wire cond_0 = exe_cmd == `CMD_JCXZ;
-wire cond_1 = exe_mutex_current[`MUTEX_ECX_BIT];
-wire cond_2 = exe_jecxz_condition && exe_branch_eip > cs_limit;
-wire cond_3 = exe_cmd == `CMD_XADD && exe_cmdex == `CMDEX_XADD_FIRST;
-wire cond_4 = exe_cmd == `CMD_XADD && exe_cmdex == `CMDEX_XADD_LAST;
+wire cond_0 = exe_cmd == `CMD_XADD && exe_cmdex == `CMDEX_XADD_FIRST;
+wire cond_1 = exe_cmd == `CMD_XADD && exe_cmdex == `CMDEX_XADD_LAST;
+wire cond_2 = exe_cmd == `CMD_JCXZ;
+wire cond_3 = exe_mutex_current[`MUTEX_ECX_BIT];
+wire cond_4 = exe_jecxz_condition && exe_branch_eip > cs_limit;
 wire cond_5 = exe_cmd == `CMD_CALL && exe_cmdex == `CMDEX_CALL_protected_STEP_1;
 wire cond_6 = exe_cmd == `CMD_CALL_2  && exe_cmdex == `CMDEX_CALL_2_protected_seg_STEP_3;
 wire cond_7 = glob_param_2 > glob_desc_limit;
@@ -178,49 +178,49 @@ wire cond_59 = ~(tlbflushsingle_done);
 wire cond_60 = exe_cmd == `CMD_io_allow && exe_cmdex == `CMDEX_io_allow_2;
 wire cond_61 = (  exe_is_8bit                       && e_io_allow_bits[0]   != 1'd0) || (~(exe_is_8bit) && exe_operand_16bit && e_io_allow_bits[1:0] != 2'd0) || (~(exe_is_8bit) && exe_operand_32bit && e_io_allow_bits[3:0] != 4'd0);
 wire cond_62 = exe_cmd == `CMD_HLT && exe_cmdex == `CMDEX_HLT_STEP_0;
-wire cond_63 = exe_cmd == `CMD_INC_DEC;
-wire cond_64 = exe_cmd == `CMD_SCAS;
+wire cond_63 = exe_cmd == `CMD_SCAS;
+wire cond_64 = exe_cmd == `CMD_INC_DEC;
 wire cond_65 = exe_cmd == `CMD_RET_near && exe_cmdex != `CMDEX_RET_near_LAST;
 wire cond_66 = exe_cmdex == `CMDEX_RET_near;
 wire cond_67 = exe_cmdex == `CMDEX_RET_near_imm;
 wire cond_68 = exe_cmd == `CMD_ARPL;
 wire cond_69 = exe_cmd == `CMD_BSWAP;
-wire cond_70 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_int_trap_gate_STEP_0;
-wire cond_71 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_1;
-wire cond_72 = v8086_mode && exe_descriptor[`DESC_BITS_DPL] != 2'd0;
-wire cond_73 = ~(exe_trigger_gp_fault) && glob_param_3[15:2] == 14'd0;
-wire cond_74 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_3;
-wire cond_75 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_same_STEP_5;
-wire cond_76 = exe_cmd == `CMD_int_3 && (exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_4 || exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_5);
-wire cond_77 = ~(exe_mutex_current[`MUTEX_ACTIVE_BIT]) && exe_ready;
-wire cond_78 = exe_cmd == `CMD_int_3 && exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_6;
-wire cond_79 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_STEP_0;
-wire cond_80 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_STEP_1;
-wire cond_81 = exc_soft_int_ib && v8086_mode && iopl < 2'd3;
-wire cond_82 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_real_STEP_0;
-wire cond_83 = { 6'd0, exc_vector[7:0], 2'b11 } > idtr_limit;
-wire cond_84 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_real_STEP_1;
-wire cond_85 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_real_STEP_2;
-wire cond_86 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_real_STEP_3;
-wire cond_87 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_real_STEP_5;
-wire cond_88 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_protected_STEP_0;
-wire cond_89 = { 5'd0, exc_vector[7:0], 3'b111 } > idtr_limit;
-wire cond_90 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_protected_STEP_1;
-wire cond_91 = exe_descriptor[`DESC_BIT_SEG] || ( (   exe_descriptor[`DESC_BITS_TYPE] != `DESC_TASK_GATE && exe_descriptor[`DESC_BITS_TYPE] != `DESC_INTERRUPT_GATE_386 && exe_descriptor[`DESC_BITS_TYPE] != `DESC_INTERRUPT_GATE_286 && exe_descriptor[`DESC_BITS_TYPE] != `DESC_TRAP_GATE_386      && exe_descriptor[`DESC_BITS_TYPE] != `DESC_TRAP_GATE_286 ) || (exc_soft_int && exe_descriptor[`DESC_BITS_DPL] < cpl) );
-wire cond_92 = ~(exe_trigger_gp_fault) && exe_descriptor[`DESC_BIT_P] == `FALSE;
-wire cond_93 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_same_STEP_0;
-wire cond_94 = exe_int_2_int_trap_same_exception || (glob_param_2 > glob_desc_limit);
-wire cond_95 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_same_STEP_1;
-wire cond_96 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_same_STEP_2;
-wire cond_97 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_same_STEP_3;
-wire cond_98 = exe_cmd == `CMD_int_2  && exe_cmdex >= `CMDEX_int_2_int_trap_gate_more_STEP_4;
-wire cond_99 = exe_cmd == `CMD_int_3  && exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_0;
-wire cond_100 = exe_cmd == `CMD_int_3  && exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_1;
-wire cond_101 = exe_cmd == `CMD_int_3  && exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_2;
-wire cond_102 = exe_cmd == `CMD_int_3  && exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_3;
-wire cond_103 = (exe_cmd == `CMD_LLDT || exe_cmd == `CMD_LTR) && exe_cmdex == `CMDEX_MOV_to_seg_LLDT_LTR_STEP_1;
-wire cond_104 = cpl != 2'd0;
-wire cond_105 = exe_cmd == `CMD_LxS;
+wire cond_70 = exe_cmd == `CMD_LxS;
+wire cond_71 = (exe_cmd == `CMD_LLDT || exe_cmd == `CMD_LTR) && exe_cmdex == `CMDEX_MOV_to_seg_LLDT_LTR_STEP_1;
+wire cond_72 = cpl != 2'd0;
+wire cond_73 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_int_trap_gate_STEP_0;
+wire cond_74 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_1;
+wire cond_75 = v8086_mode && exe_descriptor[`DESC_BITS_DPL] != 2'd0;
+wire cond_76 = ~(exe_trigger_gp_fault) && glob_param_3[15:2] == 14'd0;
+wire cond_77 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_3;
+wire cond_78 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_same_STEP_5;
+wire cond_79 = exe_cmd == `CMD_int_3 && (exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_4 || exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_5);
+wire cond_80 = ~(exe_mutex_current[`MUTEX_ACTIVE_BIT]) && exe_ready;
+wire cond_81 = exe_cmd == `CMD_int_3 && exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_6;
+wire cond_82 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_STEP_0;
+wire cond_83 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_STEP_1;
+wire cond_84 = exc_soft_int_ib && v8086_mode && iopl < 2'd3;
+wire cond_85 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_real_STEP_0;
+wire cond_86 = { 6'd0, exc_vector[7:0], 2'b11 } > idtr_limit;
+wire cond_87 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_real_STEP_1;
+wire cond_88 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_real_STEP_2;
+wire cond_89 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_real_STEP_3;
+wire cond_90 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_real_STEP_5;
+wire cond_91 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_protected_STEP_0;
+wire cond_92 = { 5'd0, exc_vector[7:0], 3'b111 } > idtr_limit;
+wire cond_93 = exe_cmd == `CMD_int && exe_cmdex == `CMDEX_int_protected_STEP_1;
+wire cond_94 = exe_descriptor[`DESC_BIT_SEG] || ( (   exe_descriptor[`DESC_BITS_TYPE] != `DESC_TASK_GATE && exe_descriptor[`DESC_BITS_TYPE] != `DESC_INTERRUPT_GATE_386 && exe_descriptor[`DESC_BITS_TYPE] != `DESC_INTERRUPT_GATE_286 && exe_descriptor[`DESC_BITS_TYPE] != `DESC_TRAP_GATE_386      && exe_descriptor[`DESC_BITS_TYPE] != `DESC_TRAP_GATE_286 ) || (exc_soft_int && exe_descriptor[`DESC_BITS_DPL] < cpl) );
+wire cond_95 = ~(exe_trigger_gp_fault) && exe_descriptor[`DESC_BIT_P] == `FALSE;
+wire cond_96 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_same_STEP_0;
+wire cond_97 = exe_int_2_int_trap_same_exception || (glob_param_2 > glob_desc_limit);
+wire cond_98 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_same_STEP_1;
+wire cond_99 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_same_STEP_2;
+wire cond_100 = exe_cmd == `CMD_int_2 && exe_cmdex == `CMDEX_int_2_int_trap_gate_same_STEP_3;
+wire cond_101 = exe_cmd == `CMD_int_2  && exe_cmdex >= `CMDEX_int_2_int_trap_gate_more_STEP_4;
+wire cond_102 = exe_cmd == `CMD_int_3  && exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_0;
+wire cond_103 = exe_cmd == `CMD_int_3  && exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_1;
+wire cond_104 = exe_cmd == `CMD_int_3  && exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_2;
+wire cond_105 = exe_cmd == `CMD_int_3  && exe_cmdex == `CMDEX_int_3_int_trap_gate_more_STEP_3;
 wire cond_106 = exe_cmd == `CMD_AAD;
 wire cond_107 = mult_busy;
 wire cond_108 = exe_cmd == `CMD_AAM;
@@ -271,28 +271,28 @@ wire cond_152 = exe_cmd == `CMD_control_reg && exe_cmdex == `CMDEX_control_reg_S
 wire cond_153 = exe_cmd == `CMD_LGDT || exe_cmd == `CMD_LIDT;
 wire cond_154 = exe_cmd == `CMD_PUSHA;
 wire cond_155 = exe_cmdex[2:0] == 3'd4;
-wire cond_156 = exe_cmd == `CMD_SETcc;
-wire cond_157 = exe_condition;
-wire cond_158 = exe_cmd == `CMD_fpu && exe_cmdex == `CMDEX_ESC_STEP_0;
-wire cond_159 = cr0_em || cr0_ts;
-wire cond_160 = exe_cmd == `CMD_ENTER && exe_cmdex == `CMDEX_ENTER_FIRST;
-wire cond_161 = exe_cmd == `CMD_ENTER && exe_cmdex == `CMDEX_ENTER_LAST;
-wire cond_162 = exe_cmd == `CMD_ENTER && (exe_cmdex == `CMDEX_ENTER_PUSH || exe_cmdex == `CMDEX_ENTER_LOOP);
-wire cond_163 = exe_cmdex == `CMDEX_ENTER_PUSH;
-wire cond_164 = exe_cmd == `CMD_CMPXCHG;
-wire cond_165 = exe_mutex_current[`MUTEX_EAX_BIT];
+wire cond_156 = exe_cmd == `CMD_fpu && exe_cmdex == `CMDEX_ESC_STEP_0;
+wire cond_157 = cr0_em || cr0_ts;
+wire cond_158 = exe_cmd == `CMD_SETcc;
+wire cond_159 = exe_condition;
+wire cond_160 = exe_cmd == `CMD_CMPXCHG;
+wire cond_161 = exe_mutex_current[`MUTEX_EAX_BIT];
+wire cond_162 = exe_cmd == `CMD_ENTER && exe_cmdex == `CMDEX_ENTER_FIRST;
+wire cond_163 = exe_cmd == `CMD_ENTER && exe_cmdex == `CMDEX_ENTER_LAST;
+wire cond_164 = exe_cmd == `CMD_ENTER && (exe_cmdex == `CMDEX_ENTER_PUSH || exe_cmdex == `CMDEX_ENTER_LOOP);
+wire cond_165 = exe_cmdex == `CMDEX_ENTER_PUSH;
 wire cond_166 = exe_cmd == `CMD_IMUL;
-wire cond_167 = { exe_cmd[6:1], 1'd0 } == `CMD_SHxD;
-wire cond_168 = exe_cmd == `CMD_LEAVE;
+wire cond_167 = exe_cmd == `CMD_LEAVE;
+wire cond_168 = { exe_cmd[6:1], 1'd0 } == `CMD_SHxD;
 wire cond_169 = exe_cmd == `CMD_WBINVD && exe_cmdex == `CMDEX_WBINVD_STEP_0;
 wire cond_170 = exe_cmd == `CMD_WBINVD && exe_cmdex == `CMDEX_WBINVD_STEP_1;
 wire cond_171 = ~(e_wbinvd_code_done && e_wbinvd_data_done);
 wire cond_172 = { exe_cmd[6:3], 3'd0 } == `CMD_Arith;
 wire cond_173 = exe_cmd[2:1] == 2'b01 && exe_mutex_current[`MUTEX_EFLAGS_BIT];
-wire cond_174 = exe_cmd == `CMD_LOOP;
-wire cond_175 = exe_mutex_current[`MUTEX_ECX_BIT] || (exe_mutex_current[`MUTEX_EFLAGS_BIT] && (exe_cmdex == `CMDEX_LOOP_NE || exe_cmdex == `CMDEX_LOOP_E));
-wire cond_176 = exe_cmd_loop_condition && exe_branch_eip > cs_limit;
-wire cond_177 = exe_cmd == `CMD_MUL;
+wire cond_174 = exe_cmd == `CMD_MUL;
+wire cond_175 = exe_cmd == `CMD_LOOP;
+wire cond_176 = exe_mutex_current[`MUTEX_ECX_BIT] || (exe_mutex_current[`MUTEX_EFLAGS_BIT] && (exe_cmdex == `CMDEX_LOOP_NE || exe_cmdex == `CMDEX_LOOP_E));
+wire cond_177 = exe_cmd_loop_condition && exe_branch_eip > cs_limit;
 wire cond_178 = exe_cmd == `CMD_TEST;
 wire cond_179 = exe_cmd == `CMD_CLTS;
 wire cond_180 = exe_cmd == `CMD_RET_far  && exe_cmdex == `CMDEX_RET_far_STEP_1;
@@ -313,9 +313,9 @@ wire cond_194 = exe_cmdex == `CMDEX_PUSH_immediate_se;
 wire cond_195 = exe_cmd == `CMD_IN && exe_cmdex == `CMDEX_IN_protected;
 wire cond_196 = exe_cmd == `CMD_IN && (exe_cmdex == `CMDEX_IN_dx || exe_cmdex == `CMDEX_IN_imm);
 wire cond_197 = exe_cmdex == `CMDEX_IN_dx && exe_mutex_current[`MUTEX_EDX_BIT];
-wire cond_198 = (exe_cmd == `CMD_LAR || exe_cmd == `CMD_LSL) && exe_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_LAST;
-wire cond_199 = (exe_cmd == `CMD_LAR || exe_cmd == `CMD_LSL || exe_cmd == `CMD_VERR || exe_cmd == `CMD_VERW) && exe_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_2;
-wire cond_200 = exe_cmd == `CMD_NOT;
+wire cond_198 = exe_cmd == `CMD_NOT;
+wire cond_199 = (exe_cmd == `CMD_LAR || exe_cmd == `CMD_LSL) && exe_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_LAST;
+wire cond_200 = (exe_cmd == `CMD_LAR || exe_cmd == `CMD_LSL || exe_cmd == `CMD_VERR || exe_cmd == `CMD_VERW) && exe_cmdex == `CMDEX_LAR_LSL_VERR_VERW_STEP_2;
 wire cond_201 = (exe_cmd == `CMD_CALL && exe_cmdex == `CMDEX_CALL_protected_STEP_0) || (exe_cmd == `CMD_JMP  && exe_cmdex == `CMDEX_JMP_protected_STEP_0);
 wire cond_202 = glob_param_1[15:2] == 14'd0 || (exe_descriptor[`DESC_BIT_SEG] == `FALSE && ( exe_descriptor[`DESC_BITS_DPL] < cpl || exe_descriptor[`DESC_BITS_DPL] < exe_selector[`SELECTOR_BITS_RPL] || ((exe_descriptor[`DESC_BITS_TYPE] == 4'd1 || exe_descriptor[`DESC_BITS_TYPE] == 4'd9) && exe_selector[`SELECTOR_BIT_TI]) ||  exe_descriptor[`DESC_BITS_TYPE] == 4'd0  || exe_descriptor[`DESC_BITS_TYPE] == 4'd8  || exe_descriptor[`DESC_BITS_TYPE] == 4'd10 || exe_descriptor[`DESC_BITS_TYPE] == 4'd13 ||  exe_descriptor[`DESC_BITS_TYPE] == 4'd2  || exe_descriptor[`DESC_BITS_TYPE] == 4'd3  || exe_descriptor[`DESC_BITS_TYPE] == 4'd6  || exe_descriptor[`DESC_BITS_TYPE] == 4'd7  || exe_descriptor[`DESC_BITS_TYPE] == 4'd11 || exe_descriptor[`DESC_BITS_TYPE] == 4'd14 || exe_descriptor[`DESC_BITS_TYPE] == 4'd15)  ) || (exe_descriptor[`DESC_BIT_SEG] && ( `DESC_IS_DATA(exe_descriptor) || (`DESC_IS_CODE_NON_CONFORMING(exe_descriptor) && (exe_descriptor[`DESC_BITS_DPL] != cpl || exe_selector[`SELECTOR_BITS_RPL] > cpl)) || (`DESC_IS_CODE_CONFORMING(exe_descriptor)     &&  exe_descriptor[`DESC_BITS_DPL] > cpl))  ) ;
 wire cond_203 = ~(exe_trigger_gp_fault) && exe_descriptor[`DESC_BIT_P] == `FALSE &&  (exe_descriptor[`DESC_BIT_SEG] || exe_descriptor[`DESC_BITS_TYPE] == 4'd1 || exe_descriptor[`DESC_BITS_TYPE] == 4'd9 ||  exe_descriptor[`DESC_BITS_TYPE] == 4'd4 || exe_descriptor[`DESC_BITS_TYPE] == 4'd12 ||  exe_descriptor[`DESC_BITS_TYPE] == 4'd5)  ;
@@ -334,9 +334,9 @@ wire cond_215 = glob_param_5[0] == 1'b0 && ~(exe_trigger_ts_fault) && ~(glob_des
 wire cond_216 = exe_cmd == `CMD_STOS;
 wire cond_217 = exe_cmd == `CMD_INS;
 wire cond_218 = exe_mutex_current[`MUTEX_EDX_BIT];
-wire cond_219 = exe_cmd == `CMD_PUSHF;
-wire cond_220 = exe_mutex_current[`MUTEX_ESP_BIT] || exe_mutex_current[`MUTEX_EFLAGS_BIT];
-wire cond_221 = exe_cmd == `CMD_OUTS;
+wire cond_219 = exe_cmd == `CMD_OUTS;
+wire cond_220 = exe_cmd == `CMD_PUSHF;
+wire cond_221 = exe_mutex_current[`MUTEX_ESP_BIT] || exe_mutex_current[`MUTEX_EFLAGS_BIT];
 wire cond_222 = exe_cmd == `CMD_JMP  && (exe_cmdex == `CMDEX_JMP_Ev_STEP_0  || exe_cmdex == `CMDEX_JMP_Ep_STEP_0  || exe_cmdex == `CMDEX_JMP_Ap_STEP_0);
 wire cond_223 = exe_cmd == `CMD_JMP  && exe_cmdex == `CMDEX_JMP_Jv_STEP_0;
 wire cond_224 = exe_cmd == `CMD_CALL && exe_mutex_current[`MUTEX_ESP_BIT];
@@ -417,10 +417,10 @@ wire cond_298 = exe_cmd == `CMD_BSF;
 wire cond_299 = exe_cmd == `CMD_BSR;
 //======================================================== saves
 wire [31:0] exe_buffer_to_reg =
-    (cond_3)? ( dst) :
+    (cond_0)? ( dst) :
     (cond_134 && cond_36)? ( src) :
     (cond_139)? ( src) :
-    (cond_160 && ~cond_10)? ( exe_enter_offset) :
+    (cond_162 && ~cond_10)? ( exe_enter_offset) :
     (cond_191)? ( dst) :
     (cond_243)? ( src) :
     (cond_258 && cond_36)? ( src) :
@@ -442,7 +442,7 @@ assign tlbcheck_rw =
     (cond_256)? (       `TRUE) :
     1'd0;
 assign exe_cmpxchg_switch =
-    (cond_164)? (`TRUE) :
+    (cond_160)? (`TRUE) :
     1'd0;
 assign wbinvddata_do =
     (cond_170)? ( ~(e_wbinvd_data_done)) :
@@ -475,9 +475,9 @@ assign exe_eip_from_glob_param_2 =
     (cond_33)? (`TRUE) :
     (cond_46)? (`TRUE) :
     (cond_65)? (`TRUE) :
-    (cond_75)? (`TRUE) :
     (cond_78)? (`TRUE) :
-    (cond_87)? (`TRUE) :
+    (cond_81)? (`TRUE) :
+    (cond_90)? (`TRUE) :
     (cond_119)? (`TRUE) :
     (cond_122)? (`TRUE) :
     (cond_128)? (`TRUE) :
@@ -496,12 +496,12 @@ assign offset_esp =
     (cond_5)? (`TRUE) :
     1'd0;
 assign exe_trigger_np_fault =
-    (cond_90 && cond_92)? (`TRUE) :
+    (cond_93 && cond_95)? (`TRUE) :
     (cond_131 && cond_133)? (`TRUE) :
     (cond_201 && cond_203)? (`TRUE) :
-    (cond_207 && cond_92)? (`TRUE) :
-    (cond_211 && cond_92)? (`TRUE) :
-    (cond_232 && cond_92)? (`TRUE) :
+    (cond_207 && cond_95)? (`TRUE) :
+    (cond_211 && cond_95)? (`TRUE) :
+    (cond_232 && cond_95)? (`TRUE) :
     (cond_270 && cond_267 && cond_272)? (`TRUE) :
     (cond_273 && cond_267 && cond_272)? (`TRUE) :
     1'd0;
@@ -512,7 +512,7 @@ assign exe_eip_from_glob_param_2_16bit =
     (cond_135)? (`TRUE) :
     1'd0;
 assign exe_trigger_gp_fault =
-    (cond_0 && ~cond_1 && cond_2)? (`TRUE) :
+    (cond_2 && ~cond_3 && cond_4)? (`TRUE) :
     (cond_6 && cond_7)? (`TRUE) :
     (cond_13 && cond_14)? (`TRUE) :
     (cond_17 && cond_18)? (`TRUE) :
@@ -526,14 +526,14 @@ assign exe_trigger_gp_fault =
     (cond_62 && cond_54)? (`TRUE) :
     (cond_65 && cond_14)? (`TRUE) :
     (cond_71 && cond_72)? (`TRUE) :
-    (cond_74 && cond_44)? (`TRUE) :
-    (cond_80 && cond_81)? (`TRUE) :
-    (cond_82 && cond_83)? (`TRUE) :
-    (cond_86 && cond_14)? (`TRUE) :
-    (cond_88 && cond_89)? (`TRUE) :
-    (cond_90 && cond_91)? (`TRUE) :
+    (cond_74 && cond_75)? (`TRUE) :
+    (cond_77 && cond_44)? (`TRUE) :
+    (cond_83 && cond_84)? (`TRUE) :
+    (cond_85 && cond_86)? (`TRUE) :
+    (cond_89 && cond_14)? (`TRUE) :
+    (cond_91 && cond_92)? (`TRUE) :
     (cond_93 && cond_94)? (`TRUE) :
-    (cond_103 && cond_104)? (`TRUE) :
+    (cond_96 && cond_97)? (`TRUE) :
     (cond_110 && cond_111 && cond_112)? (`TRUE) :
     (cond_118 && cond_7)? (`TRUE) :
     (cond_120 && cond_44)? (`TRUE) :
@@ -543,9 +543,9 @@ assign exe_trigger_gp_fault =
     (cond_145 && cond_54)? (`TRUE) :
     (cond_146 && cond_54)? (`TRUE) :
     (cond_150 && cond_151)? (`TRUE) :
-    (cond_153 && cond_104)? (`TRUE) :
+    (cond_153 && cond_72)? (`TRUE) :
     (cond_169 && cond_54)? (`TRUE) :
-    (cond_174 && ~cond_175 && cond_176)? (`TRUE) :
+    (cond_175 && ~cond_176 && cond_177)? (`TRUE) :
     (cond_179 && cond_54)? (`TRUE) :
     (cond_181 && cond_182)? (`TRUE) :
     (cond_183 && cond_7)? (`TRUE) :
@@ -553,7 +553,7 @@ assign exe_trigger_gp_fault =
     (cond_201 && cond_202)? (`TRUE) :
     (cond_207 && cond_208)? (`TRUE) :
     (cond_211 && cond_212)? (`TRUE) :
-    (cond_219 && ~cond_220 && cond_124)? (`TRUE) :
+    (cond_220 && ~cond_221 && cond_124)? (`TRUE) :
     (cond_225 && cond_14)? (`TRUE) :
     (cond_228 && cond_14)? (`TRUE) :
     (cond_230 && cond_7)? (`TRUE) :
@@ -568,7 +568,7 @@ assign exe_glob_descriptor_value =
     (cond_24)? (  ss_cache) :
     (cond_26 && ~cond_20)? ( glob_descriptor_2) :
     (cond_45 && cond_36)? ( glob_descriptor_2) :
-    (cond_76 && cond_77)? ( glob_descriptor_2) :
+    (cond_79 && cond_80)? ( glob_descriptor_2) :
     (cond_120 && ~cond_44)? ( glob_descriptor_2) :
     (cond_121)? ( glob_descriptor_2) :
     (cond_184 && ~cond_44)? ( glob_descriptor_2) :
@@ -583,8 +583,8 @@ assign exe_glob_param_2_set =
     (cond_12 && cond_11)? (`TRUE) :
     (cond_12 && ~cond_11)? (`TRUE) :
     (cond_28)? (`TRUE) :
-    (cond_70)? (`TRUE) :
-    (cond_199)? (`TRUE) :
+    (cond_73)? (`TRUE) :
+    (cond_200)? (`TRUE) :
     (cond_222 && cond_11)? (`TRUE) :
     (cond_222 && ~cond_11)? (`TRUE) :
     (cond_223 && cond_11)? (`TRUE) :
@@ -613,9 +613,9 @@ assign exe_result2 =
     (cond_145)? ( src) :
     (cond_150)? ( src) :
     (cond_153)? ( src) :
-    (cond_164)? ( dst) :
+    (cond_160)? ( dst) :
     (cond_166)? ( mult_result[63:32]) :
-    (cond_177)? ( mult_result[63:32]) :
+    (cond_174)? ( mult_result[63:32]) :
     (cond_189)? ( src) :
     (cond_190)? ( dst) :
     (cond_195)? ( src) :
@@ -633,11 +633,11 @@ assign offset_new_stack_continue =
     (cond_39)? (`TRUE) :
     (cond_40)? (`TRUE) :
     (cond_41)? (`TRUE) :
-    (cond_98)? (`TRUE) :
-    (cond_99)? (`TRUE) :
-    (cond_100)? (`TRUE) :
     (cond_101)? (`TRUE) :
     (cond_102)? (`TRUE) :
+    (cond_103)? (`TRUE) :
+    (cond_104)? (`TRUE) :
+    (cond_105)? (`TRUE) :
     1'd0;
 assign tlbflushsingle_do =
     (cond_58)? (`TRUE) :
@@ -646,15 +646,15 @@ assign tlbflushsingle_address =
     (cond_58)? ( exe_linear) :
     32'd0;
 assign exe_result_signals =
-    (cond_0 && ~cond_1)? ( { 4'd0, exe_jecxz_condition }) :
+    (cond_2 && ~cond_3)? ( { 4'd0, exe_jecxz_condition }) :
     (cond_50 && ~cond_51)? ( { 4'd0, exe_condition }) :
     (cond_68)? ( { 4'd0, dst[1:0] < src[1:0] }) :
     (cond_117)? ( { 4'd0, e_bit_selected }) :
     (cond_142)? ( { e_shift_no_write, e_shift_oszapc_update, e_shift_cf_of_update, e_shift_oflag, e_shift_cflag }) :
     (cond_143)? ( { e_shift_no_write, e_shift_oszapc_update, e_shift_cf_of_update, e_shift_oflag, e_shift_cflag }) :
-    (cond_164)? ( { 4'd0, e_cmpxchg_eq }) :
-    (cond_167)? ( { e_shift_no_write, e_shift_oszapc_update, e_shift_cf_of_update, e_shift_oflag, e_shift_cflag }) :
-    (cond_174 && ~cond_175)? ( { 4'd0, exe_cmd_loop_condition }) :
+    (cond_160)? ( { 4'd0, e_cmpxchg_eq }) :
+    (cond_168)? ( { e_shift_no_write, e_shift_oszapc_update, e_shift_cf_of_update, e_shift_oflag, e_shift_cflag }) :
+    (cond_175 && ~cond_176)? ( { 4'd0, exe_cmd_loop_condition }) :
     (cond_296)? ( { 3'b0, exe_bcd_condition_af, exe_bcd_condition_cf }) :
     (cond_297)? ( { 4'd0, e_bit_scan_zero }) :
     5'd0;
@@ -674,31 +674,31 @@ assign exe_result_push =
     (cond_41 && cond_42)? ( exe_eip) :
     (cond_41 && ~cond_42)? ( { 16'd0, exe_eip[15:0] }) :
     (cond_47)? ( { 16'd0, e_seg_by_cmdex }) :
-    (cond_82)? ( exe_push_eflags) :
-    (cond_84)? ( { 16'd0, cs[15:0] }) :
-    (cond_85)? ( exe_eip) :
-    (cond_93)? ( exe_push_eflags) :
-    (cond_95)? ( { 16'd0, cs[15:0] }) :
-    (cond_96)? ( exe_eip) :
-    (cond_97)? ( { 16'd0, exc_error_code[15:0] }) :
-    (cond_98)? (    (exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_4)?  { 16'd0, gs } : (exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_5)?  { 16'd0, fs } : (exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_6)?  { 16'd0, ds } : (exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_7)?  { 16'd0, es } : (exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_8)?  { 16'd0, ss } : esp) :
-    (cond_99)? ( exe_push_eflags) :
-    (cond_100)? ( { 16'd0, cs[15:0] }) :
-    (cond_101)? ( exe_eip) :
-    (cond_102)? ( { 16'd0, exc_error_code[15:0] }) :
+    (cond_85)? ( exe_push_eflags) :
+    (cond_87)? ( { 16'd0, cs[15:0] }) :
+    (cond_88)? ( exe_eip) :
+    (cond_96)? ( exe_push_eflags) :
+    (cond_98)? ( { 16'd0, cs[15:0] }) :
+    (cond_99)? ( exe_eip) :
+    (cond_100)? ( { 16'd0, exc_error_code[15:0] }) :
+    (cond_101)? (    (exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_4)?  { 16'd0, gs } : (exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_5)?  { 16'd0, fs } : (exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_6)?  { 16'd0, ds } : (exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_7)?  { 16'd0, es } : (exe_cmdex == `CMDEX_int_2_int_trap_gate_more_STEP_8)?  { 16'd0, ss } : esp) :
+    (cond_102)? ( exe_push_eflags) :
+    (cond_103)? ( { 16'd0, cs[15:0] }) :
+    (cond_104)? ( exe_eip) :
+    (cond_105)? ( { 16'd0, exc_error_code[15:0] }) :
     (cond_154 && cond_155)? ( wr_esp_prev) :
     (cond_154 && ~cond_155)? ( src) :
-    (cond_160)? ( ebp) :
-    (cond_162 && cond_163)? ( exe_buffer) :
-    (cond_162 && ~cond_163)? ( src) :
-    (cond_168)? ( src) :
+    (cond_162)? ( ebp) :
+    (cond_164 && cond_165)? ( exe_buffer) :
+    (cond_164 && ~cond_165)? ( src) :
+    (cond_167)? ( src) :
     (cond_193 && cond_194)? ( { {24{src[7]}}, src[7:0] }) :
     (cond_193 && ~cond_194)? ( src) :
     (cond_213 && cond_205)? ( { 16'd0, ss[15:0] }) :
     (cond_216)? ( src) :
     (cond_217)? ( src) :
-    (cond_219)? ( exe_pushf_eflags) :
-    (cond_221)? ( src) :
+    (cond_219)? ( src) :
+    (cond_220)? ( exe_pushf_eflags) :
     (cond_236)? ( src) :
     (cond_238)? ( src) :
     (cond_257)? ( exe_push_eflags) :
@@ -706,11 +706,11 @@ assign exe_result_push =
     (cond_283)? ( src) :
     32'd0;
 assign exe_error_code =
-    (cond_71 && cond_72)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
-    (cond_88 && cond_89)? ( { 5'd0, exc_vector[7:0], 3'b010 }) :
-    (cond_90 && cond_91)? ( { 5'd0, exc_vector[7:0], 3'b010 }) :
-    (cond_90 && cond_92)? ( { 5'd0, exc_vector[7:0], 3'b010 }) :
-    (cond_93 && cond_94)? ( (exe_int_2_int_trap_same_exception)? `SELECTOR_FOR_CODE(glob_param_1) : 16'd0) :
+    (cond_74 && cond_75)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
+    (cond_91 && cond_92)? ( { 5'd0, exc_vector[7:0], 3'b010 }) :
+    (cond_93 && cond_94)? ( { 5'd0, exc_vector[7:0], 3'b010 }) :
+    (cond_93 && cond_95)? ( { 5'd0, exc_vector[7:0], 3'b010 }) :
+    (cond_96 && cond_97)? ( (exe_int_2_int_trap_same_exception)? `SELECTOR_FOR_CODE(glob_param_1) : 16'd0) :
     (cond_110 && cond_111 && cond_112)? ( { glob_param_1[15:2], 2'd0 }) :
     (cond_113 && cond_114)? ( { glob_param_1[15:2], 2'd0 }) :
     (cond_129 && cond_130)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
@@ -720,13 +720,13 @@ assign exe_error_code =
     (cond_201 && cond_202)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_201 && cond_203)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_207 && cond_208)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
-    (cond_207 && cond_92)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
+    (cond_207 && cond_95)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_211 && cond_212)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
-    (cond_211 && cond_92)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
+    (cond_211 && cond_95)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_213 && cond_214)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_213 && cond_215)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_232 && cond_233)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
-    (cond_232 && cond_92)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
+    (cond_232 && cond_95)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_246 && cond_247)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     (cond_246 && cond_248)? ( `SELECTOR_FOR_CODE(tr)) :
     (cond_264 && cond_265)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
@@ -738,8 +738,8 @@ assign exe_error_code =
     (cond_273 && cond_267 && cond_272)? ( `SELECTOR_FOR_CODE(glob_param_1)) :
     16'd0;
 assign exe_waiting =
-    (cond_0 && cond_1)? (`TRUE) :
-    (cond_0 && ~cond_1 && cond_2)? (`TRUE) :
+    (cond_2 && cond_3)? (`TRUE) :
+    (cond_2 && ~cond_3 && cond_4)? (`TRUE) :
     (cond_6 && cond_7)? (`TRUE) :
     (cond_8 && cond_9 && cond_10)? (`TRUE) :
     (cond_12 && cond_10)? (`TRUE) :
@@ -762,18 +762,18 @@ assign exe_waiting =
     (cond_62 && cond_54)? (`TRUE) :
     (cond_65 && cond_14)? (`TRUE) :
     (cond_71 && cond_72)? (`TRUE) :
-    (cond_71 && cond_73)? (`TRUE) :
-    (cond_74 && cond_44)? (`TRUE) :
-    (cond_76 && cond_20)? (`TRUE) :
+    (cond_74 && cond_75)? (`TRUE) :
+    (cond_74 && cond_76)? (`TRUE) :
+    (cond_77 && cond_44)? (`TRUE) :
     (cond_79 && cond_20)? (`TRUE) :
-    (cond_80 && cond_81)? (`TRUE) :
-    (cond_82 && cond_83)? (`TRUE) :
-    (cond_86 && cond_14)? (`TRUE) :
-    (cond_88 && cond_89)? (`TRUE) :
-    (cond_90 && cond_91)? (`TRUE) :
-    (cond_90 && cond_92)? (`TRUE) :
+    (cond_82 && cond_20)? (`TRUE) :
+    (cond_83 && cond_84)? (`TRUE) :
+    (cond_85 && cond_86)? (`TRUE) :
+    (cond_89 && cond_14)? (`TRUE) :
+    (cond_91 && cond_92)? (`TRUE) :
     (cond_93 && cond_94)? (`TRUE) :
-    (cond_103 && cond_104)? (`TRUE) :
+    (cond_93 && cond_95)? (`TRUE) :
+    (cond_96 && cond_97)? (`TRUE) :
     (cond_106 && cond_107)? (`TRUE) :
     (cond_108 && cond_109)? (`TRUE) :
     (cond_110 && cond_111 && cond_112)? (`TRUE) :
@@ -791,20 +791,20 @@ assign exe_waiting =
     (cond_145 && cond_54)? (`TRUE) :
     (cond_146 && cond_54)? (`TRUE) :
     (cond_150 && cond_151)? (`TRUE) :
-    (cond_153 && cond_104)? (`TRUE) :
+    (cond_153 && cond_72)? (`TRUE) :
     (cond_154 && cond_10)? (`TRUE) :
-    (cond_156 && cond_51)? (`TRUE) :
-    (cond_158 && cond_159)? (`TRUE) :
-    (cond_160 && cond_10)? (`TRUE) :
+    (cond_156 && cond_157)? (`TRUE) :
+    (cond_158 && cond_51)? (`TRUE) :
+    (cond_160 && cond_161)? (`TRUE) :
     (cond_162 && cond_10)? (`TRUE) :
-    (cond_164 && cond_165)? (`TRUE) :
+    (cond_164 && cond_10)? (`TRUE) :
     (cond_166 && cond_107)? (`TRUE) :
     (cond_169 && cond_54)? (`TRUE) :
     (cond_170 && cond_171)? (`TRUE) :
     (cond_172 && cond_173)? (`TRUE) :
-    (cond_174 && cond_175)? (`TRUE) :
-    (cond_174 && ~cond_175 && cond_176)? (`TRUE) :
-    (cond_177 && cond_107)? (`TRUE) :
+    (cond_174 && cond_107)? (`TRUE) :
+    (cond_175 && cond_176)? (`TRUE) :
+    (cond_175 && ~cond_176 && cond_177)? (`TRUE) :
     (cond_179 && cond_54)? (`TRUE) :
     (cond_181 && cond_182)? (`TRUE) :
     (cond_183 && cond_7)? (`TRUE) :
@@ -815,21 +815,21 @@ assign exe_waiting =
     (cond_201 && cond_202)? (`TRUE) :
     (cond_201 && cond_203)? (`TRUE) :
     (cond_207 && cond_208)? (`TRUE) :
-    (cond_207 && cond_92)? (`TRUE) :
+    (cond_207 && cond_95)? (`TRUE) :
     (cond_211 && cond_212)? (`TRUE) :
-    (cond_211 && cond_92)? (`TRUE) :
+    (cond_211 && cond_95)? (`TRUE) :
     (cond_213 && cond_214)? (`TRUE) :
     (cond_213 && cond_215)? (`TRUE) :
     (cond_217 && cond_218)? (`TRUE) :
-    (cond_219 && cond_220)? (`TRUE) :
-    (cond_219 && ~cond_220 && cond_124)? (`TRUE) :
-    (cond_221 && cond_218)? (`TRUE) :
+    (cond_219 && cond_218)? (`TRUE) :
+    (cond_220 && cond_221)? (`TRUE) :
+    (cond_220 && ~cond_221 && cond_124)? (`TRUE) :
     (cond_223 && cond_224)? (`TRUE) :
     (cond_225 && cond_14)? (`TRUE) :
     (cond_228 && cond_14)? (`TRUE) :
     (cond_230 && cond_7)? (`TRUE) :
     (cond_232 && cond_233)? (`TRUE) :
-    (cond_232 && cond_92)? (`TRUE) :
+    (cond_232 && cond_95)? (`TRUE) :
     (cond_234 && cond_7)? (`TRUE) :
     (cond_236 && cond_237)? (`TRUE) :
     (cond_240 && cond_51)? (`TRUE) :
@@ -872,9 +872,9 @@ assign exe_trigger_pf_fault =
     (cond_256 && cond_251)? (`TRUE) :
     1'd0;
 assign exe_branch =
-    (cond_0 && ~cond_1)? (         exe_jecxz_condition) :
+    (cond_2 && ~cond_3)? (         exe_jecxz_condition) :
     (cond_50 && ~cond_51)? (         exe_condition) :
-    (cond_174 && ~cond_175)? (         exe_cmd_loop_condition) :
+    (cond_175 && ~cond_176)? (         exe_cmd_loop_condition) :
     1'd0;
 assign offset_call =
     (cond_24)? (`TRUE) :
@@ -884,21 +884,21 @@ assign invddata_do =
     (cond_55)? ( ~(e_invd_data_done)) :
     1'd0;
 assign offset_int_real =
-    (cond_82)? (`TRUE) :
+    (cond_85)? (`TRUE) :
     1'd0;
 assign offset_iret_glob_param_4 =
     (cond_122)? (`TRUE) :
     (cond_186)? (   exe_decoder[0] == 1'b1) :
     1'd0;
 assign offset_leave =
-    (cond_168)? (`TRUE) :
+    (cond_167)? (`TRUE) :
     1'd0;
 assign offset_new_stack_minus =
     (cond_213 && cond_205)? (`TRUE) :
     1'd0;
 assign offset_call_int_same_first =
     (cond_29)? (`TRUE) :
-    (cond_93)? (`TRUE) :
+    (cond_96)? (`TRUE) :
     1'd0;
 assign exe_trigger_db_fault =
     (cond_286 && cond_294)? (`TRUE) :
@@ -906,8 +906,8 @@ assign exe_trigger_db_fault =
 assign exe_glob_descriptor_2_set =
     (cond_24)? (`TRUE) :
     (cond_34 && cond_36)? (`TRUE) :
-    (cond_71 && cond_36)? (`TRUE) :
-    (cond_76 && cond_77)? (`TRUE) :
+    (cond_74 && cond_36)? (`TRUE) :
+    (cond_79 && cond_80)? (`TRUE) :
     (cond_120 && ~cond_44)? (`TRUE) :
     (cond_121)? (`TRUE) :
     (cond_184 && ~cond_44)? (`TRUE) :
@@ -920,9 +920,9 @@ assign exe_glob_param_1_value =
     (cond_28)? ( { 7'd0, glob_descriptor[36:32], glob_descriptor[`DESC_BITS_TYPE] == `DESC_CALL_GATE_386, `SEGMENT_CS, glob_descriptor[31:16] }) :
     (cond_34 && cond_36)? ( { 13'd0, `SEGMENT_SS, glob_param_3[15:0] }) :
     (cond_45 && cond_36)? ( glob_param_3) :
-    (cond_70)? ( { 11'd0, glob_descriptor[`DESC_BIT_TYPE_BIT_0], glob_descriptor[`DESC_BITS_TYPE] >= `DESC_INTERRUPT_GATE_386, `SEGMENT_CS, glob_descriptor[31:16] }) :
-    (cond_71 && cond_36)? ( { 13'd0, `SEGMENT_SS, glob_param_3[15:0] }) :
-    (cond_76 && cond_77)? ( glob_param_3) :
+    (cond_73)? ( { 11'd0, glob_descriptor[`DESC_BIT_TYPE_BIT_0], glob_descriptor[`DESC_BITS_TYPE] >= `DESC_INTERRUPT_GATE_386, `SEGMENT_CS, glob_descriptor[31:16] }) :
+    (cond_74 && cond_36)? ( { 13'd0, `SEGMENT_SS, glob_param_3[15:0] }) :
+    (cond_79 && cond_80)? ( glob_param_3) :
     (cond_120 && ~cond_44)? ( glob_param_3) :
     (cond_121)? ( glob_param_3) :
     (cond_184 && ~cond_44)? ( glob_param_3) :
@@ -934,7 +934,7 @@ assign exe_glob_param_1_value =
     (cond_207 && cond_206)? ( { 14'd0, `TASK_SWITCH_FROM_JUMP, glob_param_1[15:0] }) :
     (cond_207 && cond_209)? ( { 14'd0, `TASK_SWITCH_FROM_INT,  glob_param_1[15:0] }) :
     (cond_217 && ~cond_218)? ( { 16'd0, edx[15:0] }) :
-    (cond_221 && ~cond_218)? ( { 16'd0, edx[15:0] }) :
+    (cond_219 && ~cond_218)? ( { 16'd0, edx[15:0] }) :
     (cond_226)? ( { 13'd0, `SEGMENT_CS, src[15:0] }) :
     (cond_227 && cond_11)? ( { 13'd0, `SEGMENT_CS, exe_extra[31:16] }) :
     (cond_227 && ~cond_11)? ( { 13'd0, `SEGMENT_CS, exe_extra[15:0] }) :
@@ -947,9 +947,9 @@ assign exe_glob_param_1_set =
     (cond_28)? (`TRUE) :
     (cond_34 && cond_36)? (`TRUE) :
     (cond_45 && cond_36)? (`TRUE) :
-    (cond_70)? (`TRUE) :
-    (cond_71 && cond_36)? (`TRUE) :
-    (cond_76 && cond_77)? (`TRUE) :
+    (cond_73)? (`TRUE) :
+    (cond_74 && cond_36)? (`TRUE) :
+    (cond_79 && cond_80)? (`TRUE) :
     (cond_120 && ~cond_44)? (`TRUE) :
     (cond_121)? (`TRUE) :
     (cond_184 && ~cond_44)? (`TRUE) :
@@ -961,7 +961,7 @@ assign exe_glob_param_1_set =
     (cond_207 && cond_206)? (`TRUE) :
     (cond_207 && cond_209)? (`TRUE) :
     (cond_217 && ~cond_218)? (`TRUE) :
-    (cond_221 && ~cond_218)? (`TRUE) :
+    (cond_219 && ~cond_218)? (`TRUE) :
     (cond_226)? (`TRUE) :
     (cond_227 && cond_11)? (`TRUE) :
     (cond_227 && ~cond_11)? (`TRUE) :
@@ -969,9 +969,9 @@ assign exe_glob_param_1_set =
     1'd0;
 assign offset_call_int_same_next =
     (cond_30)? (`TRUE) :
-    (cond_95)? (`TRUE) :
-    (cond_96)? (`TRUE) :
-    (cond_97)? (`TRUE) :
+    (cond_98)? (`TRUE) :
+    (cond_99)? (`TRUE) :
+    (cond_100)? (`TRUE) :
     1'd0;
 assign offset_call_keep =
     (cond_26)? (`TRUE) :
@@ -987,8 +987,8 @@ assign exe_is_8bit_clear =
     1'd0;
 assign exe_glob_param_3_value =
     (cond_34 && cond_36)? ( glob_param_1) :
-    (cond_71 && cond_36)? ( glob_param_1) :
-    (cond_76 && cond_77)? ( glob_param_1) :
+    (cond_74 && cond_36)? ( glob_param_1) :
+    (cond_79 && cond_80)? ( glob_param_1) :
     (cond_120 && ~cond_44)? ( glob_param_1) :
     (cond_121)? ( glob_param_1) :
     (cond_184 && ~cond_44)? ( glob_param_1) :
@@ -1006,8 +1006,8 @@ assign tlbcheck_do =
     (cond_256)? (`TRUE) :
     1'd0;
 assign offset_int_real_next =
-    (cond_84)? (`TRUE) :
-    (cond_85)? (`TRUE) :
+    (cond_87)? (`TRUE) :
+    (cond_88)? (`TRUE) :
     1'd0;
 assign tlbcheck_address =
     (cond_249)? (   glob_desc_base) :
@@ -1023,8 +1023,8 @@ assign exe_glob_param_2_value =
     (cond_12 && cond_11)? ( exe_arith_add[31:0]) :
     (cond_12 && ~cond_11)? ( { 16'd0, exe_arith_add[15:0] }) :
     (cond_28)? ( (glob_descriptor[`DESC_BITS_TYPE] == `DESC_CALL_GATE_386)? { glob_descriptor[63:48], glob_descriptor[15:0] } : { 16'd0, glob_descriptor[15:0] }) :
-    (cond_70)? ( (glob_descriptor[`DESC_BITS_TYPE] >= `DESC_INTERRUPT_GATE_386)? { glob_descriptor[63:48], glob_descriptor[15:0] } : { 16'd0, glob_descriptor[15:0] }) :
-    (cond_199)? ( { 26'd0, exe_cmd_verw_desc_invalid, exe_cmd_verr_desc_invalid, exe_cmd_lsl_desc_invalid, exe_cmd_lar_desc_invalid, glob_param_2[1:0] }) :
+    (cond_73)? ( (glob_descriptor[`DESC_BITS_TYPE] >= `DESC_INTERRUPT_GATE_386)? { glob_descriptor[63:48], glob_descriptor[15:0] } : { 16'd0, glob_descriptor[15:0] }) :
+    (cond_200)? ( { 26'd0, exe_cmd_verw_desc_invalid, exe_cmd_verr_desc_invalid, exe_cmd_lsl_desc_invalid, exe_cmd_lar_desc_invalid, glob_param_2[1:0] }) :
     (cond_222 && cond_11)? ( src) :
     (cond_222 && ~cond_11)? ( { 16'd0, src[15:0] }) :
     (cond_223 && cond_11)? ( exe_arith_add[31:0]) :
@@ -1032,18 +1032,18 @@ assign exe_glob_param_2_value =
     (cond_276)? ( exe_eip) :
     32'd0;
 assign exe_cmpxchg_switch_carry =
-    (cond_164)? ( e_cmpxchg_sub[32]) :
+    (cond_160)? ( e_cmpxchg_sub[32]) :
     1'd0;
 assign exe_trigger_nm_fault =
-    (cond_158 && cond_159)? (`TRUE) :
+    (cond_156 && cond_157)? (`TRUE) :
     1'd0;
 assign exe_arith_index =
-    (cond_3)? ( (`ARITH_VALID | `ARITH_ADD)) :
+    (cond_0)? ( (`ARITH_VALID | `ARITH_ADD)) :
     (cond_49)? ( (`ARITH_VALID | `ARITH_SUB)) :
-    (cond_63)? ( (exe_cmdex[0] == `FALSE)? (`ARITH_VALID | `ARITH_ADD) : (`ARITH_VALID | `ARITH_SUB)) :
-    (cond_64)? ( (`ARITH_VALID | `ARITH_SUB)) :
+    (cond_63)? ( (`ARITH_VALID | `ARITH_SUB)) :
+    (cond_64)? ( (exe_cmdex[0] == `FALSE)? (`ARITH_VALID | `ARITH_ADD) : (`ARITH_VALID | `ARITH_SUB)) :
     (cond_144)? ( (`ARITH_VALID | `ARITH_SUB)) :
-    (cond_164)? ( (`ARITH_VALID | `ARITH_SUB)) :
+    (cond_160)? ( (`ARITH_VALID | `ARITH_SUB)) :
     (cond_172)? ( {`TRUE, exe_cmd[2:0]}) :
     (cond_178)? ( (`ARITH_VALID | `ARITH_AND)) :
     4'd0;
@@ -1051,22 +1051,22 @@ assign exe_glob_descriptor_set =
     (cond_24)? (`TRUE) :
     (cond_26 && ~cond_20)? (`TRUE) :
     (cond_45 && cond_36)? (`TRUE) :
-    (cond_76 && cond_77)? (`TRUE) :
+    (cond_79 && cond_80)? (`TRUE) :
     (cond_120 && ~cond_44)? (`TRUE) :
     (cond_121)? (`TRUE) :
     (cond_184 && ~cond_44)? (`TRUE) :
     (cond_185)? ( exe_ready) :
     1'd0;
 assign exe_result =
-    (cond_3)? (  exe_arith_add[31:0]) :
-    (cond_4)? ( exe_buffer) :
+    (cond_0)? (  exe_arith_add[31:0]) :
+    (cond_1)? ( exe_buffer) :
     (cond_48)? ( { 16'd0, e_seg_by_cmdex }) :
     (cond_49)? ( exe_arith_sub[31:0]) :
-    (cond_63)? ( (exe_cmdex[0] == `FALSE)? exe_arith_add[31:0] : exe_arith_sub[31:0]) :
-    (cond_64)? ( exe_arith_sub[31:0]) :
+    (cond_63)? ( exe_arith_sub[31:0]) :
+    (cond_64)? ( (exe_cmdex[0] == `FALSE)? exe_arith_add[31:0] : exe_arith_sub[31:0]) :
     (cond_68)? ( { 16'd0, dst[15:2], src[1:0] }) :
     (cond_69 && cond_11)? ( { dst[7:0], dst[15:8], dst[23:16], dst[31:24] }) :
-    (cond_105)? ( glob_param_2) :
+    (cond_70)? ( glob_param_2) :
     (cond_106)? (  { 24'd0, e_aad_result }) :
     (cond_108)? (  { 16'd0, div_result_quotient[7:0], div_result_remainder[7:0] }) :
     (cond_117)? ( e_bit_result) :
@@ -1080,18 +1080,18 @@ assign exe_result =
     (cond_146 && cond_148)? ( cr2) :
     (cond_146 && cond_149)? ( cr3) :
     (cond_152)? ( e_cr0_reg) :
-    (cond_156 && cond_157)? ( 32'd1) :
-    (cond_164)? (  e_cmpxchg_result) :
+    (cond_158 && cond_159)? ( 32'd1) :
+    (cond_160)? (  e_cmpxchg_result) :
     (cond_166)? (  mult_result[31:0]) :
-    (cond_167)? ( e_shift_result) :
+    (cond_168)? ( e_shift_result) :
     (cond_172)? ( ({ 1'b0, exe_cmd[2:0] } == `ARITH_ADD)?   exe_arith_add[31:0] : ({ 1'b0, exe_cmd[2:0] } == `ARITH_OR)?    exe_arith_or : ({ 1'b0, exe_cmd[2:0] } == `ARITH_ADC)?   exe_arith_adc[31:0] : ({ 1'b0, exe_cmd[2:0] } == `ARITH_SBB)?   exe_arith_sbb[31:0] : ({ 1'b0, exe_cmd[2:0] } == `ARITH_AND)?   exe_arith_and : ({ 1'b0, exe_cmd[2:0] } == `ARITH_XOR)?   exe_arith_xor : exe_arith_sub[31:0]) :
-    (cond_177)? (  mult_result[31:0]) :
+    (cond_174)? (  mult_result[31:0]) :
     (cond_178)? ( exe_arith_and) :
     (cond_190)? (  src) :
     (cond_191)? (  src) :
     (cond_192)? ( exe_buffer) :
-    (cond_198)? ( exe_extra) :
-    (cond_200)? ( exe_arith_not) :
+    (cond_198)? ( exe_arith_not) :
+    (cond_199)? ( exe_extra) :
     (cond_239)? (  src) :
     (cond_278)? ( exe_address_effective) :
     (cond_279 && cond_280)? ( { 16'd0, gdtr_limit }) :
@@ -1112,7 +1112,7 @@ assign exe_result =
     32'd0;
 assign exe_trigger_ts_fault =
     (cond_34 && cond_35)? (`TRUE) :
-    (cond_71 && cond_73)? (`TRUE) :
+    (cond_74 && cond_76)? (`TRUE) :
     (cond_129 && cond_130)? (`TRUE) :
     (cond_131 && cond_132)? (`TRUE) :
     (cond_213 && cond_214)? (`TRUE) :
@@ -1125,8 +1125,8 @@ assign exe_trigger_ts_fault =
     1'd0;
 assign exe_glob_param_3_set =
     (cond_34 && cond_36)? (`TRUE) :
-    (cond_71 && cond_36)? (`TRUE) :
-    (cond_76 && cond_77)? (`TRUE) :
+    (cond_74 && cond_36)? (`TRUE) :
+    (cond_79 && cond_80)? (`TRUE) :
     (cond_120 && ~cond_44)? (`TRUE) :
     (cond_121)? (`TRUE) :
     (cond_184 && ~cond_44)? (`TRUE) :
@@ -1138,8 +1138,8 @@ assign exe_glob_param_3_set =
 assign exe_glob_descriptor_2_value =
     (cond_24)? ( glob_descriptor) :
     (cond_34 && cond_36)? ( glob_descriptor) :
-    (cond_71 && cond_36)? ( glob_descriptor) :
-    (cond_76 && cond_77)? ( glob_descriptor) :
+    (cond_74 && cond_36)? ( glob_descriptor) :
+    (cond_79 && cond_80)? ( glob_descriptor) :
     (cond_120 && ~cond_44)? ( glob_descriptor) :
     (cond_121)? ( glob_descriptor) :
     (cond_184 && ~cond_44)? ( glob_descriptor) :
@@ -1149,10 +1149,10 @@ assign dr6_bd_set =
     (cond_286 && cond_294)? ( `TRUE) :
     1'd0;
 assign offset_enter_last =
-    (cond_161)? (`TRUE) :
+    (cond_163)? (`TRUE) :
     1'd0;
 assign offset_new_stack =
-    (cond_74)? (`TRUE) :
+    (cond_77)? (`TRUE) :
     1'd0;
 assign offset_ret_imm =
     (cond_186)? (             exe_decoder[0] == 1'b0) :

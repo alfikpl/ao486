@@ -1405,9 +1405,7 @@ write write_inst(
     .src_final                     (src_final),                     //input [31:0]
     .dst_final                     (dst_final),                     //input [31:0]
     .exe_mult_overflow             (exe_mult_overflow),             //input
-    .exe_stack_offset              (exe_stack_offset),              //input [31:0]
-                 
-    .tb_finish_instr (tb_finish_instr)
+    .exe_stack_offset              (exe_stack_offset)               //input [31:0]
 );
 
 
