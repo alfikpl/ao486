@@ -87,11 +87,13 @@ The ao486 successfuly runs the following software:
 
 ### BIOS
 
-The ao486 project uses the BIOS from the Bochs project. Some minor changes
+The ao486 project uses the BIOS from the Bochs project
+(http://http://bochs.sourceforge.net, version 2.6.2). Some minor changes
 were required to support the hard drive.
 
-The VGA BIOS is from the VGABIOS project. No changes were required. The VGA
-model does not have VBE extensions, so the extensions were disabled.
+The VGA BIOS is from the VGABIOS project (http://www.nongnu.org/vgabios,
+version 0.7a). No changes were required. The VGA model does not have VBE
+extensions, so the extensions were disabled.
 
 ### NIOS2 controller
 
@@ -103,14 +105,16 @@ The OSD allows the user to insert and remove floppy disks.
 ### License
 
 All files in the following directories:
-- rtl
-- ao486_tool
+- rtl,
+- ao486_tool,
 - sim
+
 are licensed under the BSD license:
 
 All files in the following directories:
-- bochs486
+- bochs486,
 - bochsDevs
+
 are taken from the Bochs Project and are licensed under the LGPL license.
 
 The binary file sd/fd_1_44m/fdboot.img is taken from the FreeDOS project.
