@@ -161,11 +161,11 @@ To compile the VGABIOS do the following:
 
 - compile the soc Altera Quartus II project in syn/soc/soc.qpf
 - compile the firmware for the NIOS II by:
--- opening the Nios II Software Build Tools for Eclipse,
--- creating a workspace in the directory syn/soc/firmware,
--- importing the two projects 'exe' and 'exe_bsp',
--- genrating BSP on the 'exe_bsp' project,
--- compiling the 'exe' project
+1. opening the Nios II Software Build Tools for Eclipse,
+2. creating a workspace in the directory syn/soc/firmware,
+3. importing the two projects 'exe' and 'exe_bsp',
+4. genrating BSP on the 'exe_bsp' project,
+5. compiling the 'exe' project
 - compile the BIOS and copy the binary to the directory sd/bios
 - compile the VGABIOS and copy the binary to the directory sd/vgabios
 - compile the ao486_tool by running 'ant jar' in the directory ao486_tool
