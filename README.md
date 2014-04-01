@@ -123,3 +123,16 @@ The binary file sd/bios/bochs_legacy is a compiled BIOS from the Bochs project.
 
 The binary file sd/vgabios/vgabios-lgpl is a compiled VGA BIOS from the vgabios
 project.
+
+### Compiling
+
+#### ao486 processor
+
+#### SoC
+
+#### BIOS
+
+#### VGABIOS
+
+### Running the SoC on Terasic DE2-115
+
