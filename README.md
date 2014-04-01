@@ -169,11 +169,11 @@ To compile the VGABIOS do the following:
 - compile the BIOS and copy the binary to the directory sd/bios
 - compile the VGABIOS and copy the binary to the directory sd/vgabios
 - compile the ao486_tool by running 'ant jar' in the directory ao486_tool
-- run 'java -cp ./dist/ao486_tool.jar ao486.SDGenerator' in the directory ao486_tool,
-- copy the file ao486_tool/sd.dat to the first sectors of the SD card by using 'dd if=sd.dat of=/dev/sdXXX'.
 - edit the files in the directory sd/hdd. They contain the position of the virtual hard disk located on
   the SD card. The start entry must be a multiplicity of 512. The values are in bytes from the begining
   of the SD card,
+- run 'java -cp ./dist/ao486_tool.jar ao486.SDGenerator' in the directory ao486_tool,
+- copy the file ao486_tool/sd.dat to the first sectors of the SD card by using 'dd if=sd.dat of=/dev/sdXXX'.
 - program the FPGA using the SOF file,
 - load and run the firmware of the NIOS II controller,
 - select the BIOS file on the On Screen Display by using KEY0 for down, KEY1 for up and KEY2 for select,
