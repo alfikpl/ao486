@@ -138,6 +138,8 @@ To compile the ao486 processor load the project file from syn/components/ao486/a
 #### SoC
 To compile the ao486 SoC load the project file from syn/soc/soc.qpf.
 
+Before compiling in Altera Quartus II, the Qsys system must be generated.
+
 #### BIOS
 To compile the BIOS do the following:
 - extract the bochs-2.6.2 source archive,
@@ -166,14 +168,15 @@ To compile the VGABIOS do the following:
     - importing the two projects 'exe' and 'exe_bsp',
     - genrating BSP on the 'exe_bsp' project,
     - compiling the 'exe' project.
-- compile the BIOS and copy the binary to the directory sd/bios
-- compile the VGABIOS and copy the binary to the directory sd/vgabios
-- compile the ao486_tool by running 'ant jar' in the directory ao486_tool
+- compile the BIOS and copy the binary to the directory sd/bios,
+- compile the VGABIOS and copy the binary to the directory sd/vgabios,
+- compile the ao486_tool by running 'ant jar' in the directory ao486_tool,
 - edit the files in the directory sd/hdd. They contain the position of the virtual hard disk located on
   the SD card. The start entry must be a multiplicity of 512. The values are in bytes from the begining
   of the SD card,
 - run 'java -cp ./dist/ao486_tool.jar ao486.SDGenerator' in the directory ao486_tool,
 - copy the file ao486_tool/sd.dat to the first sectors of the SD card by using 'dd if=sd.dat of=/dev/sdXXX'.
+- insert the SD card to the Terasic DE2-115 board,
 - program the FPGA using the SOF file,
 - load and run the firmware of the NIOS II controller,
 - select the BIOS file on the On Screen Display by using KEY0 for down, KEY1 for up and KEY2 for select,
