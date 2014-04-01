@@ -125,14 +125,35 @@ The binary file sd/vgabios/vgabios-lgpl is a compiled VGA BIOS from the vgabios
 project.
 
 ### Compiling
+To compile the SoC, which contains the NIOS II microcontroller,  Altera Quartus II software is required.
+The Verilog components of the SoC, in particular the ao486 processor, should be possible to compile
+in any Verilog compiler. Currently synthesis project files are prepared only for Altera Quartus II.
+
+NOTE: In the current version some synthesis project files -- especially the paths in those files, could be
+broken.
 
 #### ao486 processor
+To compile the ao486 processor load the project file from syn/components/ao486/ao486.qpf.
 
 #### SoC
+To compile the ao486 SoC load the project file from syn/soc/soc.qpf.
 
 #### BIOS
+To compile the BIOS do the following:
+- extract the bochs-2.6.2 source archive,
+- apply the patches from the directory bios/bochs-2.6.2 to the source files located in the bios directory
+  of the extracted archive,
+- run ./configure in bochs
+- run make in bochs
+- the binary file BIOS-bochs-legacy works with ao486 SoC.
 
 #### VGABIOS
+To compile the VGABIOS do the following:
+- extract the vgabios-0.7a source archive,
+- apply the patches form the directory bios/vgabios-0.7a to the source files located in the extracted
+  archive,
+- run make in vgabios,
+- the binary file VGABIOS-lgpl-latest.bin works with ao486 SoC.
 
 ### Running the SoC on Terasic DE2-115
 
