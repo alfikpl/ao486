@@ -141,19 +141,44 @@ To compile the ao486 SoC load the project file from syn/soc/soc.qpf.
 #### BIOS
 To compile the BIOS do the following:
 - extract the bochs-2.6.2 source archive,
-- apply the patches from the directory bios/bochs-2.6.2 to the source files located in the bios directory
-  of the extracted archive,
+- apply the patch from the directory bios/bochs-2.6.2 by running in the extracted directory:
+  patch -p1 < (path to patch file)
 - run ./configure in bochs
 - run make in bochs
+- cd bios
+- make
 - the binary file BIOS-bochs-legacy works with ao486 SoC.
 
 #### VGABIOS
 To compile the VGABIOS do the following:
 - extract the vgabios-0.7a source archive,
-- apply the patches form the directory bios/vgabios-0.7a to the source files located in the extracted
-  archive,
+- apply the patch form the directory bios/vgabios-0.7a by running in the extracted directory:
+  patch -p1 < (path to patch file)
 - run make in vgabios,
 - the binary file VGABIOS-lgpl-latest.bin works with ao486 SoC.
 
 ### Running the SoC on Terasic DE2-115
 
+- compile the soc Altera Quartus II project in syn/soc/soc.qpf
+- compile the firmware for the NIOS II by:
+-- opening the Nios II Software Build Tools for Eclipse,
+-- creating a workspace in the directory syn/soc/firmware,
+-- importing the two projects 'exe' and 'exe_bsp',
+-- genrating BSP on the 'exe_bsp' project,
+-- compiling the 'exe' project
+- compile the BIOS and copy the binary to the directory sd/bios
+- compile the VGABIOS and copy the binary to the directory sd/vgabios
+- compile the ao486_tool by running 'ant jar' in the directory ao486_tool
+- run 'java -cp ./dist/ao486_tool.jar ao486.SDGenerator' in the directory ao486_tool,
+- copy the file ao486_tool/sd.dat to the first sectors of the SD card by using 'dd if=sd.dat of=/dev/sdXXX'.
+- edit the files in the directory sd/hdd. They contain the position of the virtual hard disk located on
+  the SD card. The start entry must be a multiplicity of 512. The values are in bytes from the begining
+  of the SD card,
+- program the FPGA using the SOF file,
+- load and run the firmware of the NIOS II controller,
+- select the BIOS file on the On Screen Display by using KEY0 for down, KEY1 for up and KEY2 for select,
+- select the VGABIOS file on the OSD,
+- select the hard drive on the OSD,
+- select the floppy on the OSD. Use the KEYs to select the floppy image. Use KEY3 to cancel.
+- after selecting the floppy or pressing cancel, ao486 boots,
+- to activate the OSD press KEY2.
