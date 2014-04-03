@@ -5,6 +5,9 @@ The core was modeled and tested based on the Bochs software x86 implementation.
 Together with the 486 core, the ao486 project also contains a SoC capable of
 booting the Linux kernel version 3.13 and Microsoft Windows 95.
 
+### Current status
+- 31 March 2014 - initial version 1.0.
+
 ### Features
 
 The ao486 processor model has the following features:
