@@ -77,6 +77,20 @@ Total PLLs : 1 / 4 ( 25 % )
 
 The maximum frequency is 39 MHz. The project uses a 30 MHz clock.
 
+### CPU benchmarks
+
+The package DosTests.zip from
+http://www.roylongbottom.org.uk/dhrystone%20results.htm
+was used to benchmark the ao486.
+
+| Test                               | Result        |
+-------------------------------------|---------------|
+| Dhryston 1 Benchmark Non-Optimised | 1.00 VAX MIPS |
+| Dhryston 1 Benchmark Optimised     | 4.58 VAX MIPS |
+| Dhryston 2 Benchmark Non-Optimised | 1.01 VAX MIPS | 
+| Dhryston 2 Benchmark Optimised     | 3.84 VAX MIPS |
+
+
 ### Running software
 
 The ao486 successfuly runs the following software:
