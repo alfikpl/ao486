@@ -117,7 +117,7 @@
    name="driver_sd"
    file="./../../rtl/soc/driver_sd/driver_sd_hw.tcl"
    displayName="driver_sd"
-   version="1.0"
+   version="2.0"
    description=""
    tags="AUTHORSHIP= /// CONNECTION_TYPES=avalon,clock,conduit,reset /// INTERNAL_COMPONENT=false"
    categories="ao486"

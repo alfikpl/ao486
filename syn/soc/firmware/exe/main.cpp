@@ -949,7 +949,7 @@ int main() {
 	
 	runtime_menu();
 	
-	//release reset - start executing
+	//reset cycle - start executing
 	IOWR(PIO_OUTPUT_BASE, 0, 0x00);
 	
 	while(true) {

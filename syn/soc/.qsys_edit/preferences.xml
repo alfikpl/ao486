@@ -3,7 +3,7 @@
  <debug showDebugMenu="1" showDebugLogEntries="1" />
  <systemtable>
   <columns>
-   <connections preferredWidth="463" />
+   <connections preferredWidth="495" />
    <irq preferredWidth="47" visible="1" />
    <name preferredWidth="195" />
    <export preferredWidth="141" />
@@ -16,7 +16,7 @@
    <frequency preferredWidth="502" />
   </columns>
  </clocktable>
- <library expandedCategories="Library,Project,Project/ao486" />
+ <library expandedCategories="Project,Library" />
  <window width="1928" height="1173" x="0" y="0" />
  <hdlexample language="VERILOG" />
  <generation block_symbol_file="0" />

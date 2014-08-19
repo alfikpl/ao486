@@ -22,10 +22,10 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Apr 2, 2014 12:46:00 AM</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Aug 19, 2014 8:37:51 PM</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1396392360587</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1408473471717</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>/home/alek/aktualne/github/ao486/syn/soc/firmware/exe_bsp</td>
@@ -189,7 +189,7 @@
 <td width="20%">Description:</td><td>Build a custom version of newlib with the specified space-separated compiler flags.</td>
 </tr>
 <tr mode="wrap">
-<td width="20%">Restrictions:</td><td>The custom newlib build will be placed in the &amp;lt;bsp root&gt;/newlib directory, and will be used only for applications that utilize this BSP.</td>
+<td width="20%">Restrictions:</td><td>The custom newlib build will be placed in the &lt;bsp root&gt;/newlib directory, and will be used only for applications that utilize this BSP.</td>
 </tr>
 </table>
 <br>
@@ -429,7 +429,7 @@
 <td width="20%">Destination:</td><td>public_mk_define</td>
 </tr>
 <tr mode="wrap">
-<td width="20%">Description:</td><td>Turns on HAL runtime stack checking feature. Enabling this setting causes additional code to be placed into each subroutine call to generate an exception if a stack collision occurs with the heap or statically allocated data. If true, adds -DALT_STACK_CHECK and -fstack-check to ALT_CPPFLAGS in public.mk.</td>
+<td width="20%">Description:</td><td>Turns on HAL runtime stack checking feature. Enabling this setting causes additional code to be placed into each subroutine call to generate an exception if a stack collision occurs with the heap or statically allocated data. If true, adds -DALT_STACK_CHECK and -fstack-limit-register=et to ALT_CPPFLAGS in public.mk.</td>
 </tr>
 <tr mode="wrap">
 <td width="20%">Restrictions:</td><td>none</td>

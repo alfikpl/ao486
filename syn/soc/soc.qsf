@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY soc
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:43:53  OCTOBER 31, 2013"
-set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name LAST_QUARTUS_VERSION 14.0
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -327,7 +327,7 @@ set_global_assignment -name SEARCH_PATH ./../../rtl/ao486
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name ENABLE_SIGNALTAP OFF
-set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp_win95_ao486.stp
+set_global_assignment -name QIP_FILE firmware/exe/mem_init/meminit.qip
 set_global_assignment -name VERILOG_FILE ../../rtl/common/simple_single_rom.v
 set_global_assignment -name VERILOG_FILE ../../rtl/common/simple_bidir_ram.v
 set_global_assignment -name VERILOG_FILE ../../rtl/common/simple_rom.v
@@ -338,21 +338,5 @@ set_global_assignment -name QIP_FILE system/synthesis/system.qip
 set_global_assignment -name VERILOG_FILE ../../rtl/soc/soc.v
 set_global_assignment -name QIP_FILE altera/pll.qip
 set_global_assignment -name SDC_FILE soc.sdc
-set_global_assignment -name SIGNALTAP_FILE output_files/pc_bus.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_ao486_io.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_interrupt.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_floppy.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_dma.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_vga.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_ram_irq.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_vga_color.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_hdd.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_ps2.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_regs.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_win311_start.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_win311_start_eip.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_win311_tlb.stp
-set_global_assignment -name SIGNALTAP_FILE output_files/stp_rtc_pit.stp
-set_global_assignment -name CDF_FILE Chain1.cdf
 set_global_assignment -name SIGNALTAP_FILE output_files/stp_win95_ao486.stp
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

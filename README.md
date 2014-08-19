@@ -6,7 +6,8 @@ Together with the 486 core, the ao486 project also contains a SoC capable of
 booting the Linux kernel version 3.13 and Microsoft Windows 95.
 
 ### Current status
-- 31 March 2014 - initial version 1.0.
+- 31 March 2014  - initial version 1.0.
+- 19 August 2014 - driver_sd update, ps2 fix.
 
 ### Features
 

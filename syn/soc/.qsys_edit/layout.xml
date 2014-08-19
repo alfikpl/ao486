@@ -553,13 +553,14 @@
 									</child>
 								</children>
 							</root>
-							<root name="external">
+							<root name="ccontrol south">
 								<layout factory="predefined">
-									<replacement id="rootexternal"/>
+									<replacement id="rootccontrol south"/>
 									<delegate id="delegate_CommonDockStationFactory">
-										<id>external</id>
+										<id>ccontrol south</id>
 										<root>true</root>
-										<content delegate="screen dock">
+										<content delegate="flap dock">
+											<window auto="true" direction="SOUTH"/>
 											<placeholders>
 												<version>0</version>
 												<format>dock.PlaceholderList</format>
@@ -569,7 +570,7 @@
 								</layout>
 								<adjacent>
 									<layout factory="dock.RootStationAdjacentFactory">
-										<type>dock.CExternalizeArea</type>
+										<type>dock.CContentArea.minimize</type>
 									</layout>
 								</adjacent>
 								<children ignore="false"/>
@@ -596,14 +597,13 @@
 								</adjacent>
 								<children ignore="false"/>
 							</root>
-							<root name="ccontrol south">
+							<root name="external">
 								<layout factory="predefined">
-									<replacement id="rootccontrol south"/>
+									<replacement id="rootexternal"/>
 									<delegate id="delegate_CommonDockStationFactory">
-										<id>ccontrol south</id>
+										<id>external</id>
 										<root>true</root>
-										<content delegate="flap dock">
-											<window auto="true" direction="SOUTH"/>
+										<content delegate="screen dock">
 											<placeholders>
 												<version>0</version>
 												<format>dock.PlaceholderList</format>
@@ -613,7 +613,7 @@
 								</layout>
 								<adjacent>
 									<layout factory="dock.RootStationAdjacentFactory">
-										<type>dock.CContentArea.minimize</type>
+										<type>dock.CExternalizeArea</type>
 									</layout>
 								</adjacent>
 								<children ignore="false"/>
@@ -795,9 +795,9 @@
 																<placeholder>dock.single.Instance\ Parameters</placeholder>
 																<placeholder>dock.single.Clock\ Domains\ \-\ Beta</placeholder>
 																<placeholder>dock.single.Data\ Path</placeholder>
-																<placeholder>dock.single.Domains</placeholder>
-																<placeholder>dock.single.Instrumentation</placeholder>
 																<placeholder>dock.single.Data\ Path\ \-\ Beta</placeholder>
+																<placeholder>dock.single.Instrumentation</placeholder>
+																<placeholder>dock.single.Domains</placeholder>
 																<placeholder>dock.single.HDL\ Example</placeholder>
 															</placeholders>
 															<placeholder-map>

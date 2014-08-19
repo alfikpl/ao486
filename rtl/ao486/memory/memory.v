@@ -28,9 +28,7 @@
 
 module memory(
     input               clk,
-    
     input               rst_n,
-    input               rst_internal_n,
     
     //REQ:
     input               read_do,
@@ -173,7 +171,7 @@ wire [55:0] resp_writeburst_data;
 
 link_writeburst link_writeburst_inst(
     .clk                            (clk),
-    .rst_n                          (rst_internal_n),
+    .rst_n                          (rst_n),
     
     // writeburst REQ
     .req_writeburst_do              (req_writeburst_do),            //input
@@ -210,7 +208,7 @@ wire [127:0] resp_writeline_line;
 
 link_writeline link_writeline_inst(
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     // writeline REQ
     .req_writeline_do       (req_writeline_do),         //input
@@ -245,7 +243,7 @@ wire [95:0]  resp_readburst_data;
 
 link_readburst link_readburst_inst(
     .clk                    (clk),
-    .rst_n                  (rst_internal_n),
+    .rst_n                  (rst_n),
     
     // readburst REQ
     .req_readburst_do               (req_readburst_do),             //input
@@ -281,7 +279,7 @@ wire [127:0] resp_readline_line;
 
 link_readline link_readline_inst(
     .clk                    (clk),
-    .rst_n                  (rst_internal_n),
+    .rst_n                  (rst_n),
     
     // readline REQ
     .req_readline_do        (req_readline_do),      //input
@@ -316,7 +314,7 @@ wire         resp_readcode_partial_done;
 
 link_readcode link_readcode_inst(
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     // readcode REQ
     .req_readcode_do                (req_readcode_do),            //input
@@ -355,7 +353,7 @@ wire [63:0]      resp_dcacheread_data;
 
 link_dcacheread link_dcacheread_inst(
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     // dcacheread REQ
     .req_dcacheread_do                  (req_dcacheread_do),              //input
@@ -396,7 +394,7 @@ wire  [31:0]      resp_dcachewrite_data;
 
 link_dcachewrite link_dcachewrite_inst(
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     // dcachewrite REQ
     .req_dcachewrite_do                 (req_dcachewrite_do),             //input
@@ -578,7 +576,7 @@ avalon_mem avalon_mem_inst(
 dcache dcache_inst(
     // global
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     //RESP:
     .dcacheread_do              (resp_dcacheread_do),              //input
@@ -659,7 +657,7 @@ dcache dcache_inst(
 
 dcache_to_icache_fifo dcache_to_icache_fifo_inst(
     .clk            (clk),
-    .rst_n          (rst_internal_n),
+    .rst_n          (rst_n),
     
     //RESP:
     .dcachetoicache_write_do        (dcachetoicache_write_do),        //input
@@ -678,7 +676,7 @@ dcache_to_icache_fifo dcache_to_icache_fifo_inst(
 
 icache icache_inst(
     .clk            (clk),
-    .rst_n          (rst_internal_n),
+    .rst_n          (rst_n),
     
     //RESP:
     .pr_reset       (pr_reset),   //input
@@ -727,7 +725,7 @@ icache icache_inst(
 memory_read memory_read_inst(
     // global
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     // read step
     .rd_reset           (rd_reset),   //input
@@ -768,7 +766,7 @@ memory_read memory_read_inst(
 
 memory_write memory_write_inst(
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     // write step
     .wr_reset           (wr_reset),   //input
@@ -808,7 +806,7 @@ memory_write memory_write_inst(
 
 prefetch prefetch_inst(
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     .pr_reset       (pr_reset),   //input
     
@@ -836,7 +834,7 @@ prefetch prefetch_inst(
 
 prefetch_fifo prefetch_fifo_inst(
     .clk            (clk),
-    .rst_n          (rst_internal_n),
+    .rst_n          (rst_n),
     
     .pr_reset       (pr_reset),   //input
     
@@ -867,7 +865,7 @@ prefetch_fifo prefetch_fifo_inst(
 
 prefetch_control prefetch_control_inst(
     .clk                    (clk),
-    .rst_n                  (rst_internal_n),
+    .rst_n                  (rst_n),
     
     .pr_reset       (pr_reset), //input //same as reset to icache
     
@@ -906,7 +904,7 @@ prefetch_control prefetch_control_inst(
 
 tlb tlb_inst(
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
 
     .pr_reset       (pr_reset),   //input
     .rd_reset       (rd_reset),   //input

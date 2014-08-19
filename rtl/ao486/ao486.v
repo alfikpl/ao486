@@ -30,8 +30,6 @@ module ao486 (
     input               clk,
     input               rst_n,
     
-    input               rst_internal_n,
-    
     //--------------------------------------------------------------------------
     input               interrupt_do,
     input   [7:0]       interrupt_vector,
@@ -154,7 +152,7 @@ wire        exc_pf_check;
 
 exception exception_inst(
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     //exception indicators
     .dec_gp_fault                  (dec_gp_fault),                  //input
@@ -342,7 +340,7 @@ wire [31:0] glob_desc_2_limit;
 
 global_regs global_regs_inst(
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     //input
     .glob_param_1_set              (glob_param_1_set),              //input
@@ -450,7 +448,6 @@ wire        wr_reset;
 memory memory_inst(
     .clk                (clk),
     .rst_n              (rst_n),
-    .rst_internal_n     (rst_internal_n),
     
     //REQ:
     .read_do                       (read_do),                       //input
@@ -564,7 +561,7 @@ memory memory_inst(
 
 pipeline pipeline_inst(
     .clk                (clk),
-    .rst_n              (rst_internal_n),
+    .rst_n              (rst_n),
     
     //to memory
     .pr_reset                      (pr_reset),                      //output

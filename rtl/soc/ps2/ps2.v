@@ -158,7 +158,7 @@ end
 
 reg disable_mouse;
 always @(posedge clk or negedge rst_n) begin
-    if(rst_n == 1'b0)                   disable_mouse <= 1'b1;
+    if(rst_n == 1'b0)                   disable_mouse <= 1'b0;
     else if(cmd_write_command_byte)     disable_mouse <= io_writedata[5];
     else if(cmd_disable_mouse)          disable_mouse <= 1'b1;
     else if(cmd_enable_mouse)           disable_mouse <= 1'b0;
@@ -167,7 +167,7 @@ end
 
 reg disable_mouse_visible;
 always @(posedge clk or negedge rst_n) begin
-    if(rst_n == 1'b0)                   disable_mouse_visible <= 1'b1;
+    if(rst_n == 1'b0)                   disable_mouse_visible <= 1'b0;
     else if(cmd_write_command_byte)     disable_mouse_visible <= io_writedata[5];
     else if(cmd_disable_mouse)          disable_mouse_visible <= 1'b1;
     else if(cmd_enable_mouse)           disable_mouse_visible <= 1'b0;

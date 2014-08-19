@@ -78,12 +78,12 @@ ALT_CPPFLAGS += -DSYSTEM_BUS_WIDTH=32 \
 
 # This following VERSION comment indicates the version of the tool used to 
 # generate this makefile. A makefile variable is provided for VERSION as well. 
-# ACDS_VERSION: 13.1
-ACDS_VERSION := 13.1
+# ACDS_VERSION: 14.0
+ACDS_VERSION := 14.0
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 162
+# BUILD_NUMBER: 200
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
@@ -149,7 +149,7 @@ ELF_PATCH_FLAG  += --simulation_enabled false
 # setting altera_avalon_jtag_uart_driver.enable_small_driver is false
 
 # Build a custom version of newlib with the specified space-separated compiler 
-# flags. The custom newlib build will be placed in the &lt;bsp root>/newlib 
+# flags. The custom newlib build will be placed in the <bsp root>/newlib 
 # directory, and will be used only for applications that utilize this BSP. 
 # setting hal.custom_newlib_flags is none
 
@@ -158,25 +158,25 @@ ELF_PATCH_FLAG  += --simulation_enabled false
 # multiple inheritance and exceptions are not supported. If false, adds 
 # -DALT_NO_C_PLUS_PLUS to ALT_CPPFLAGS in public.mk, and reduces code 
 # footprint. none 
-# setting hal.enable_c_plus_plus is 0
+# setting hal.enable_c_plus_plus is false
 ALT_CPPFLAGS += -DALT_NO_C_PLUS_PLUS
 
 # When your application exits, close file descriptors, call C++ destructors, 
 # etc. Code footprint can be reduced by disabling clean exit. If disabled, adds 
 # -DALT_NO_CLEAN_EXIT to ALT_CPPFLAGS -D'exit(a)=_exit(a)' in public.mk. none 
-# setting hal.enable_clean_exit is 0
+# setting hal.enable_clean_exit is false
 ALT_CPPFLAGS += -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)'
 
 # Add exit() support. This option increases code footprint if your "main()" 
 # routine does "return" or call "exit()". If false, adds -DALT_NO_EXIT to 
 # ALT_CPPFLAGS in public.mk, and reduces footprint none 
-# setting hal.enable_exit is 0
+# setting hal.enable_exit is false
 ALT_CPPFLAGS += -DALT_NO_EXIT
 
 # Causes code to be compiled with gprof profiling enabled and the application 
 # ELF to be linked with the GPROF library. If true, adds -DALT_PROVIDE_GMON to 
 # ALT_CPPFLAGS and -pg to ALT_CFLAGS in public.mk. none 
-# setting hal.enable_gprof is 0
+# setting hal.enable_gprof is false
 
 # Enables lightweight device driver API. This reduces code and data footprint 
 # by removing the HAL layer that maps device names (e.g. /dev/uart0) to file 
@@ -186,7 +186,7 @@ ALT_CPPFLAGS += -DALT_NO_EXIT
 # devices. If true, adds -DALT_USE_DIRECT_DRIVERS to ALT_CPPFLAGS in public.mk. 
 # The Altera Host and read-only ZIP file systems can't be used if 
 # hal.enable_lightweight_device_driver_api is true. 
-# setting hal.enable_lightweight_device_driver_api is 1
+# setting hal.enable_lightweight_device_driver_api is true
 ALT_CPPFLAGS += -DALT_USE_DIRECT_DRIVERS
 
 # Adds code to emulate multiply and divide instructions in case they are 
@@ -194,7 +194,7 @@ ALT_CPPFLAGS += -DALT_USE_DIRECT_DRIVERS
 # the compiler won't use multiply and divide instructions that aren't present 
 # in the CPU. If false, adds -DALT_NO_INSTRUCTION_EMULATION to ALT_CPPFLAGS in 
 # public.mk. none 
-# setting hal.enable_mul_div_emulation is 0
+# setting hal.enable_mul_div_emulation is false
 ALT_CPPFLAGS += -DALT_NO_INSTRUCTION_EMULATION
 
 # Certain drivers are compiled with reduced functionality to reduce code 
@@ -206,29 +206,29 @@ ALT_CPPFLAGS += -DALT_NO_INSTRUCTION_EMULATION
 # access routines) to fail. You can define a symbol provided by each driver to 
 # prevent it from being removed. If true, adds -DALT_USE_SMALL_DRIVERS to 
 # ALT_CPPFLAGS in public.mk. none 
-# setting hal.enable_reduced_device_drivers is 1
+# setting hal.enable_reduced_device_drivers is true
 ALT_CPPFLAGS += -DALT_USE_SMALL_DRIVERS
 
 # Turns on HAL runtime stack checking feature. Enabling this setting causes 
 # additional code to be placed into each subroutine call to generate an 
 # exception if a stack collision occurs with the heap or statically allocated 
-# data. If true, adds -DALT_STACK_CHECK and -fstack-check to ALT_CPPFLAGS in 
-# public.mk. none 
-# setting hal.enable_runtime_stack_checking is 0
+# data. If true, adds -DALT_STACK_CHECK and -fstack-limit-register=et to 
+# ALT_CPPFLAGS in public.mk. none 
+# setting hal.enable_runtime_stack_checking is false
 
 # The BSP is compiled with optimizations to speedup HDL simulation such as 
 # initializing the cache, clearing the .bss section, and skipping long delay 
 # loops. If true, adds -DALT_SIM_OPTIMIZE to ALT_CPPFLAGS in public.mk. When 
 # this setting is true, the BSP shouldn't be used to build applications that 
 # are expected to run real hardware. 
-# setting hal.enable_sim_optimize is 0
+# setting hal.enable_sim_optimize is false
 
 # Causes the small newlib (C library) to be used. This reduces code and data 
 # footprint at the expense of reduced functionality. Several newlib features 
 # are removed such as floating-point support in printf(), stdin input routines, 
 # and buffered I/O. The small C library is not compatible with Micrium 
 # MicroC/OS-II. If true, adds -msmallc to ALT_LDFLAGS in public.mk. none 
-# setting hal.enable_small_c_library is 1
+# setting hal.enable_small_c_library is true
 ALT_LDFLAGS += -msmallc
 ALT_CPPFLAGS += -DSMALL_C_LIB
 
@@ -241,74 +241,74 @@ ALT_CPPFLAGS += -DSMALL_C_LIB
 # application .elf file (and BSP it is linked against) corresponds to the 
 # hardware design on the target. If false, adds --accept-bad-sysid to 
 # SOPC_SYSID_FLAG in public.mk. none 
-# setting hal.enable_sopc_sysid_check is 0
+# setting hal.enable_sopc_sysid_check is false
 SOPC_SYSID_FLAG += --accept-bad-sysid
 
 # Enable BSP generation to query if SOPC system is big endian. If true ignores 
 # export of 'ALT_CFLAGS += -meb' to public.mk if big endian system. none 
-# setting hal.make.ignore_system_derived.big_endian is 0
+# setting hal.make.ignore_system_derived.big_endian is false
 
 # Enable BSP generation to query if SOPC system has a debug core present. If 
 # true ignores export of 'CPU_HAS_DEBUG_CORE = 1' to public.mk if a debug core 
 # is found in the system. If true ignores export of 'CPU_HAS_DEBUG_CORE = 0' if 
 # no debug core is found in the system. none 
-# setting hal.make.ignore_system_derived.debug_core_present is 0
+# setting hal.make.ignore_system_derived.debug_core_present is false
 
 # Enable BSP generation to query if SOPC system has FPU present. If true 
 # ignores export of 'ALT_CFLAGS += -mhard-float' to public.mk if FPU is found 
 # in the system. If true ignores export of 'ALT_CFLAGS += -mhard-soft' if FPU 
 # is not found in the system. none 
-# setting hal.make.ignore_system_derived.fpu_present is 0
+# setting hal.make.ignore_system_derived.fpu_present is false
 
 # Enable BSP generation to query if SOPC system has hardware divide present. If 
 # true ignores export of 'ALT_CFLAGS += -mno-hw-div' to public.mk if no 
 # division is found in system. If true ignores export of 'ALT_CFLAGS += 
 # -mhw-div' if division is found in the system. none 
-# setting hal.make.ignore_system_derived.hardware_divide_present is 0
+# setting hal.make.ignore_system_derived.hardware_divide_present is false
 
 # Enable BSP generation to query if SOPC system floating point custom 
 # instruction with a divider is present. If true ignores export of 'ALT_CFLAGS 
 # += -mcustom-fpu-cfg=60-2' and 'ALT_LDFLAGS += -mcustom-fpu-cfg=60-2' to 
 # public.mk if the custom instruction is found in the system. none 
-# setting hal.make.ignore_system_derived.hardware_fp_cust_inst_divider_present is 0
+# setting hal.make.ignore_system_derived.hardware_fp_cust_inst_divider_present is false
 
 # Enable BSP generation to query if SOPC system floating point custom 
 # instruction without a divider is present. If true ignores export of 
 # 'ALT_CFLAGS += -mcustom-fpu-cfg=60-1' and 'ALT_LDFLAGS += 
 # -mcustom-fpu-cfg=60-1' to public.mk if the custom instruction is found in the 
 # system. none 
-# setting hal.make.ignore_system_derived.hardware_fp_cust_inst_no_divider_present is 0
+# setting hal.make.ignore_system_derived.hardware_fp_cust_inst_no_divider_present is false
 
 # Enable BSP generation to query if SOPC system has multiplier present. If true 
 # ignores export of 'ALT_CFLAGS += -mno-hw-mul' to public.mk if no multiplier 
 # is found in the system. If true ignores export of 'ALT_CFLAGS += -mhw-mul' if 
 # multiplier is found in the system. none 
-# setting hal.make.ignore_system_derived.hardware_multiplier_present is 0
+# setting hal.make.ignore_system_derived.hardware_multiplier_present is false
 
 # Enable BSP generation to query if SOPC system has hardware mulx present. If 
 # true ignores export of 'ALT_CFLAGS += -mno-hw-mulx' to public.mk if no mulx 
 # is found in the system. If true ignores export of 'ALT_CFLAGS += -mhw-mulx' 
 # if mulx is found in the system. none 
-# setting hal.make.ignore_system_derived.hardware_mulx_present is 0
+# setting hal.make.ignore_system_derived.hardware_mulx_present is false
 
 # Enable BSP generation to query if SOPC system has simulation enabled. If true 
 # ignores export of 'ELF_PATCH_FLAG += --simulation_enabled' to public.mk. none 
-# setting hal.make.ignore_system_derived.sopc_simulation_enabled is 0
+# setting hal.make.ignore_system_derived.sopc_simulation_enabled is false
 
 # Enable BSP generation to query SOPC system for system ID base address. If 
 # true ignores export of 'SOPC_SYSID_FLAG += --sidp=<address>' and 
 # 'ELF_PATCH_FLAG += --sidp=<address>' to public.mk. none 
-# setting hal.make.ignore_system_derived.sopc_system_base_address is 0
+# setting hal.make.ignore_system_derived.sopc_system_base_address is false
 
 # Enable BSP generation to query SOPC system for system ID. If true ignores 
 # export of 'SOPC_SYSID_FLAG += --id=<sysid>' and 'ELF_PATCH_FLAG += 
 # --id=<sysid>' to public.mk. none 
-# setting hal.make.ignore_system_derived.sopc_system_id is 0
+# setting hal.make.ignore_system_derived.sopc_system_id is false
 
 # Enable BSP generation to query SOPC system for system timestamp. If true 
 # ignores export of 'SOPC_SYSID_FLAG += --timestamp=<timestamp>' and 
 # 'ELF_PATCH_FLAG += --timestamp=<timestamp>' to public.mk. none 
-# setting hal.make.ignore_system_derived.sopc_system_timestamp is 0
+# setting hal.make.ignore_system_derived.sopc_system_timestamp is false
 
 # Slave descriptor of STDERR character-mode device. This setting is used by the 
 # ALT_STDERR family of defines in system.h. none 

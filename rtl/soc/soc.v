@@ -140,9 +140,9 @@ system u0(
     .export_sound_dat                  (AUD_DACDAT),
     .export_sound_lr                   (AUD_DACLRCK),
     
-    .export_sd_clk                     (SD_CLK),
-    .export_sd_dat                     (SD_DAT),
-    .export_sd_cmd                     (SD_CMD),
+    .sd_clk_export                     (SD_CLK),
+    .sd_dat_export                     (SD_DAT),
+    .sd_cmd_export                     (SD_CMD),
     
     .export_ps2_out_port_a20_enable    (ps2_a20_enable),
     .export_ps2_out_port_reset_n       (ps2_reset_n),

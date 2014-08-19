@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 2, 2014 12:46:00 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1396392360587</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Aug 19, 2014 8:37:51 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1408473471717</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/alek/aktualne/github/ao486/syn/soc/firmware/exe_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../system.sopcinfo</SopcDesignFile>
@@ -725,7 +725,7 @@
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
-                <Description>Turns on HAL runtime stack checking feature. Enabling this setting causes additional code to be placed into each subroutine call to generate an exception if a stack collision occurs with the heap or statically allocated data. If true, adds -DALT_STACK_CHECK and -fstack-check to ALT_CPPFLAGS in public.mk.</Description>
+                <Description>Turns on HAL runtime stack checking feature. Enabling this setting causes additional code to be placed into each subroutine call to generate an exception if a stack collision occurs with the heap or statically allocated data. If true, adds -DALT_STACK_CHECK and -fstack-limit-register=et to ALT_CPPFLAGS in public.mk.</Description>
                 <Restrictions>none</Restrictions>
                 <Enabled>false</Enabled>
                 <Group>none</Group>
@@ -822,7 +822,7 @@
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Build a custom version of newlib with the specified space-separated compiler flags.</Description>
-                <Restrictions>The custom newlib build will be placed in the &amp;lt;bsp root>/newlib directory, and will be used only for applications that utilize this BSP.</Restrictions>
+                <Restrictions>The custom newlib build will be placed in the &lt;bsp root>/newlib directory, and will be used only for applications that utilize this BSP.</Restrictions>
                 <Enabled>false</Enabled>
                 <Group>none</Group>
         </Setting>
